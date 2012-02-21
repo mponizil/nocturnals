@@ -1,12 +1,27 @@
+/*     PhoneGap v1.4.1 */
 /*
- * PhoneGap v1.2.0 is available under *either* the terms of the modified BSD license *or* the
- * MIT License (2008). See http://opensource.org/licenses/alphabetical for full text.
- * 
- * Copyright (c) 2005-2010, Nitobi Software Inc.
- * Copyright (c) 2010-2011, IBM Corporation
- * Copyright (c) 2011, Codevise Solutions Ltd.
+       Licensed to the Apache Software Foundation (ASF) under one
+       or more contributor license agreements.  See the NOTICE file
+       distributed with this work for additional information
+       regarding copyright ownership.  The ASF licenses this file
+       to you under the Apache License, Version 2.0 (the
+       "License"); you may not use this file except in compliance
+       with the License.  You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+       Unless required by applicable law or agreed to in writing,
+       software distributed under the License is distributed on an
+       "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+       KIND, either express or implied.  See the License for the
+       specific language governing permissions and limitations
+       under the License.
+*/
+
+
+/*
+ * Some base contributions
  * Copyright (c) 2011, Proyectos Equis Ka, S.L.
- * 
  */
 
 if (typeof PhoneGap === "undefined") {
@@ -989,14 +1004,7 @@ Accelerometer.installDeviceMotionHandler = function()
 PhoneGap.addConstructor(Accelerometer.install);
 PhoneGap.addConstructor(Accelerometer.installDeviceMotionHandler);
 
-};/*
- * PhoneGap is available under *either* the terms of the modified BSD license *or* the
- * MIT License (2008). See http://opensource.org/licenses/alphabetical for full text.
- *
- * Copyright (c) 2005-2010, Nitobi Software Inc.
- * Copyright (c) 2010-2011, IBM Corporation
- */
-
+};
 if (!PhoneGap.hasResource("battery")) {
 PhoneGap.addResource("battery");
 
@@ -1272,7 +1280,6 @@ PhoneGap.addConstructor(function() {
 	}
 });
 };
-
 if (!PhoneGap.hasResource("capture")) {
 	PhoneGap.addResource("capture");
 /**
@@ -1328,11 +1335,10 @@ Capture.prototype.captureImage = function(successCallback, errorCallback, option
 };
 
 /**
- * Launch camera application for taking image(s).
- * 
- * @param {Function} successCB
- * @param {Function} errorCB
- * @param {CaptureImageOptions} options
+ * Casts a PluginResult message property  (array of objects) to an array of MediaFile objects
+ * (used in Objective-C)
+ *
+ * @param {PluginResult} pluginResult
  */
 Capture.prototype._castMediaFile = function(pluginResult) {
     var mediaFiles = [];
@@ -3047,10 +3053,6 @@ PhoneGap.addConstructor(function() {
 
 
 /*
- * PhoneGap is available under *either* the terms of the modified BSD license *or* the
- * MIT License (2008). See http://opensource.org/licenses/alphabetical for full text.
- *  
- * Copyright (c) 2005-2011, Nitobi Software Inc.
  * Copyright (c) 2011, Matt Kane
  */
 
@@ -3138,6 +3140,17 @@ FileTransfer.prototype._castUploadResult = function(pluginResult) {
 	pluginResult.message = result;
 	return pluginResult;
 }
+
+/**
+ * Downloads a file form a given URL and saves it to the specified directory.
+ * @param source {String}          URL of the server to receive the file
+ * @param target {String}         Full path of the file on the device
+ * @param successCallback (Function}  Callback to be invoked when upload has completed
+ * @param errorCallback {Function}    Callback to be invoked upon error
+ */
+FileTransfer.prototype.download = function(source, target, successCallback, errorCallback) {
+	PhoneGap.exec(successCallback, errorCallback, 'com.phonegap.filetransfer', 'download', [source, target]);
+};
 
 /**
  * Options to customize the HTTP request used to upload files.
@@ -3258,8 +3271,24 @@ Geolocation.prototype.getCurrentPosition = function(successCallback, errorCallba
             params.timeout = options.timeout;
         }
     }
+
+    var successListener = win;
+    var failListener = fail;
+    if (!this.locationRunning)
+    {
+        successListener = function(position)
+        { 
+            win(position);
+            self.stop();
+        };
+        errorListener = function(positionError)
+        { 
+            fail(positionError);
+            self.stop();
+        };
+    }
     
-    this.listener = {"success":win,"fail":fail};
+    this.listener = {"success":successListener,"fail":failListener};
     this.start(params);
 	
 	var onTimeout = function()
@@ -3366,6 +3395,8 @@ Geolocation.prototype.setLocation = function(position)
 Geolocation.prototype.setError = function(error) 
 {
 	var _error = new PositionError(error.code, error.message);
+
+    this.locationRunning = false
 	
     if(this.timeoutTimerId)
     {
@@ -3386,12 +3417,14 @@ Geolocation.prototype.setError = function(error)
 Geolocation.prototype.start = function(positionOptions) 
 {
     PhoneGap.exec(null, null, "com.phonegap.geolocation", "startLocation", [positionOptions]);
+    this.locationRunning = true
 
 };
 
 Geolocation.prototype.stop = function() 
 {
     PhoneGap.exec(null, null, "com.phonegap.geolocation", "stopLocation", []);
+    this.locationRunning = false
 };
 
 
@@ -3581,14 +3614,6 @@ PhoneGap.addConstructor(function()
 
 if (!PhoneGap.hasResource("media")) {
 	PhoneGap.addResource("media");
-
-/*
- * PhoneGap is available under *either* the terms of the modified BSD license *or* the
- * MIT License (2008). See http://opensource.org/licenses/alphabetical for full text.
- *
- * Copyright (c) 2005-2010, Nitobi Software Inc.
- * Copyright (c) 2010,2011 IBM Corporation
- */
 
 /**
  * List of media objects.

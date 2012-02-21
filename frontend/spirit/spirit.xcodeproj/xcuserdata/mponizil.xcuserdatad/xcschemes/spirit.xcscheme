@@ -13,7 +13,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BB76827D14F33D8900281662"
+               BlueprintIdentifier = "BB09B69614F349A80016AC2B"
                BuildableName = "spirit.app"
                BlueprintName = "spirit"
                ReferencedContainer = "container:spirit.xcodeproj">
@@ -31,7 +31,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BB76827D14F33D8900281662"
+            BlueprintIdentifier = "BB09B69614F349A80016AC2B"
             BuildableName = "spirit.app"
             BlueprintName = "spirit"
             ReferencedContainer = "container:spirit.xcodeproj">
@@ -49,7 +49,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BB76827D14F33D8900281662"
+            BlueprintIdentifier = "BB09B69614F349A80016AC2B"
             BuildableName = "spirit.app"
             BlueprintName = "spirit"
             ReferencedContainer = "container:spirit.xcodeproj">
@@ -67,7 +67,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BB76827D14F33D8900281662"
+            BlueprintIdentifier = "BB09B69614F349A80016AC2B"
             BuildableName = "spirit.app"
             BlueprintName = "spirit"
             ReferencedContainer = "container:spirit.xcodeproj">
