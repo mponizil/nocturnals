@@ -19,7 +19,10 @@
 	<key>OpenAllWhitelistURLsInWebView</key>
 	<false/>
 	<key>ExternalHosts</key>
-	<array/>
+	<array>
+		<string>localhost</string>
+		<string>code.jquery.com</string>
+	</array>
 	<key>Plugins</key>
 	<dict>
 		<key>com.phonegap.accelerometer</key>
