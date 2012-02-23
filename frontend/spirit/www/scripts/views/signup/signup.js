@@ -12,16 +12,16 @@ define([
   'Backbone',
   'Mustache',
   'views/next/next',
-  'text!templates/home.mustache!strip'
-  ], function ($, _, Backbone, Mustache, NextView, home_template) {
+  'text!templates/signup.mustache!strip'
+  ], function ($, _, Backbone, Mustache, NextView, signup_template) {
 
-  var HomeView = Backbone.View.extend({
+  var SignupView = Backbone.View.extend({
 
     initialize: function() {
     },
 
     template: function(params) {
-      return Mustache.to_html(home_template, params);
+      return Mustache.to_html(signup_template, params);
     },
 
     events: {
@@ -51,6 +51,6 @@ define([
     }
   });
 
-  return HomeView;
+  return SignupView;
 
 });

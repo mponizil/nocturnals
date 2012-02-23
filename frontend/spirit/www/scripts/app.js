@@ -6,11 +6,11 @@
  * Time: 9:50 AM
  */
 
-define(['jQuery', 'views/home/home'], function ($, HomeView) {
+define(['jQuery', 'views/init/init'], function ($, InitView) {
   return {
     init: function () {
-      var firstPage = (new HomeView).render().$el;
-      $('body').append(firstPage);
+      var init_view = (new InitView).render().$el;
+      $('body').append(init_view);
       $.mobile.initializePage();
     }
   };

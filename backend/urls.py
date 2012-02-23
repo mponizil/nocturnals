@@ -5,5 +5,6 @@ from django.conf.urls.defaults import *
 # admin.autodiscover()
 
 urlpatterns = patterns('',
+    url(r'^init$', 'advice.views.init'),
     url(r'^users/new$', 'account.views.new'),
 )

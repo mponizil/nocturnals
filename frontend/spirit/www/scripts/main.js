@@ -43,6 +43,10 @@ require([
     $.mobile.ajaxEnabled = false;
   });
 
+  $.ajaxSetup({
+    dataType: "json"
+  });
+
   // After above initializations are done we can launch app.init
   // jQueryMobile is referenced in order to start its initialization
   require(['app', 'jQueryMobile'], function (app) {
