@@ -11,7 +11,7 @@ define([
   'underscore',
   'Backbone',
   'Mustache',
-  'views/signup/signup',
+  'views/auth/signup',
   'views/app/dashboard',
   'text!templates/init.mustache!strip'
   ], function ($, _, Backbone, Mustache, SignupView, DashboardView, init_template) {
@@ -21,7 +21,7 @@ define([
     initialize: function() {
       $.ajax({
         type: "POST",
-        url: CONFIG.ENDPOINT + "/init",
+        url: CONFIG.ENDPOINT + "/auth/init",
         success: this.userStatus
       });
     },
@@ -39,13 +39,11 @@ define([
       if (data.loggedin) {
         var dashboardView = new DashboardView;
         var page = dashboardView.render().$el;
-
         $.mobile.pageContainer.append(page);
         $.mobile.changePage(page, { role: 'page', transition: 'slide' });
       } else {
         var signupView = new SignupView;
         var page = signupView.render().$el;
-
         $.mobile.pageContainer.append(page);
         $.mobile.changePage(page, { role: 'page', transition: 'slide' });
       }

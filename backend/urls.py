@@ -1,10 +1,10 @@
 from django.conf.urls.defaults import *
-
-# Uncomment the next two lines to enable the admin:
-# from django.contrib import admin
-# admin.autodiscover()
+from django.contrib import admin
+admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^init$', 'advice.views.init'),
-    url(r'^users/new$', 'account.views.new'),
+    url(r'^auth/', include('auth.urls')),
+    url(r'^vortex/', include('vortex.urls')),
+
+    url(r'^admin/', include(admin.site.urls)),
 )

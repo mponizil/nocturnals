@@ -21,7 +21,8 @@ require.config({
     domReady: 'libs/require/domReady-1.0.0',
     Mustache: 'libs/mustache/mustache.requirejs',
     PhoneGap: 'libs/phonegap/phonegap-loader'
-  }
+  },
+  urlArgs: 'bust=' + (new Date()).getTime()
 });
 
 require([
