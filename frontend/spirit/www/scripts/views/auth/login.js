@@ -42,10 +42,14 @@ define([
         url: CONFIG.ENDPOINT + "/auth/login",
         data: login_data,
         success: function(data) {
-          var dashboardView = new DashboardView;
-          var page = dashboardView.render().$el;
-          $.mobile.pageContainer.append(page);
-          $.mobile.changePage(page, { role: 'page', transition: 'slide' });
+          if (data.success) {
+            var dashboardView = new DashboardView;
+            var page = dashboardView.render().$el;
+            $.mobile.pageContainer.append(page);
+            $.mobile.changePage(page, { role: 'page', transition: 'slide' });
+          } else {
+            alert(data.error);
+          }
         }
       });
       return false;

@@ -1,3 +1,4 @@
 info
 *.pyc
 .DS_Store
+*.db
