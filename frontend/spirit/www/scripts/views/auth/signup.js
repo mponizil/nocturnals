@@ -1,9 +1,6 @@
 /**
- * Created by Piotr Walczyszyn (outof.me | @pwalczyszyn)
- *
- * User: pwalczys
- * Date: 2/16/12
- * Time: 9:53 AM
+ * views/auth/signup.js
+ * Allows user to signup
  */
 
 define([

@@ -1,9 +1,6 @@
 /**
- * Created by Piotr Walczyszyn (@pwalczyszyn)
- *
- * User: pwalczys
- * Date: 2/16/12
- * Time: 9:20 AM
+ * main.js
+ * Define globals and prepare config
  */
 
 var CONFIG = {

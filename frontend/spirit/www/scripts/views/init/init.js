@@ -1,9 +1,8 @@
 /**
- * Created by Piotr Walczyszyn (outof.me | @pwalczyszyn)
- *
- * User: pwalczys
- * Date: 2/16/12
- * Time: 9:53 AM
+ * views/init/init.js
+ * Checks if user is logged in
+ * Yes: forwards to dashboard
+ * No: forwards to signup
  */
 
 define([

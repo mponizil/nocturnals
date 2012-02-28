@@ -1,9 +1,6 @@
 /**
- * Created by Piotr Walczyszyn (outof.me | @pwalczyszyn)
- *
- * User: pwalczys
- * Date: 2/16/12
- * Time: 9:50 AM
+ * app.js
+ * Used to initialize the app and begin
  */
 
 define([
