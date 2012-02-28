@@ -9,6 +9,9 @@
 var CONFIG = {
   ENDPOINT: "http://localhost:8000"
 };
+var SpiritApp = {
+  Pages: {}
+}
 
 require.config({
   paths: {

@@ -11,12 +11,10 @@ define([
   'underscore',
   'Backbone',
   'Mustache',
-  'views/auth/signup',
-  'views/app/dashboard',
   'text!templates/init.mustache!strip'
-  ], function ($, _, Backbone, Mustache, SignupView, DashboardView, init_template) {
+  ], function ($, _, Backbone, Mustache, init_template) {
 
-  var InitView = Backbone.View.extend({
+  SpiritApp.Pages.InitView = Backbone.View.extend({
 
     initialize: function() {
       $.ajax({
@@ -37,12 +35,12 @@ define([
 
     userStatus: function(data) {
       if (data.loggedin) {
-        var dashboardView = new DashboardView;
+        var dashboardView = new SpiritApp.Pages.DashboardView;
         var page = dashboardView.render().$el;
         $.mobile.pageContainer.append(page);
         $.mobile.changePage(page, { role: 'page', transition: 'slide' });
       } else {
-        var signupView = new SignupView;
+        var signupView = new SpiritApp.Pages.SignupView;
         var page = signupView.render().$el;
         $.mobile.pageContainer.append(page);
         $.mobile.changePage(page, { role: 'page', transition: 'slide' });
@@ -51,6 +49,6 @@ define([
 
   });
 
-  return InitView;
+  return SpiritApp.Pages.InitView;
 
 });
