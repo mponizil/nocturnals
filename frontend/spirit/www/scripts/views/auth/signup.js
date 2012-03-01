@@ -8,7 +8,7 @@ define([
   'underscore',
   'Backbone',
   'Mustache',
-  'text!templates/signup.mustache!strip'
+  'text!templates/auth/signup.mustache!strip'
   ], function ($, _, Backbone, Mustache, signup_template) {
 
   SpiritApp.Pages.SignupView = Backbone.View.extend({
@@ -54,7 +54,7 @@ define([
       var loginView = new SpiritApp.Pages.LoginView;
       var page = loginView.render().$el;
       $.mobile.pageContainer.append(page);
-      $.mobile.changePage(page, { role: 'page', reverse: true, transition: 'slide' });
+      $.mobile.changePage(page, { role: 'page', reverse: true, transition: 'flip' });
     }
   });
 

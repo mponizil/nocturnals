@@ -1,4 +1,5 @@
 from django.http import HttpResponse
+from django.db import IntegrityError
 
 from django.template import RequestContext, loader
 from django.contrib.auth import authenticate, login, logout
@@ -31,11 +32,12 @@ def register(request):
         res = { "success": False, "error": "Please enter all the fields." }
         return HttpResponse(json.dumps(res))
     
-    if User.objects.filter(username=username).count() > 0:
+    try:
+        user = User.objects.create_user(username,"",password)
+    except IntegrityError as error:
         res = { "success": False, "error": "The username is taken." }
         return HttpResponse(json.dumps(res))
     
-    user = User.objects.create_user(username,"",password)
     user.save()
     
     auth_user = authenticate(username=username,password=password)
@@ -49,6 +51,8 @@ def register(request):
 def auth(request):
     username = request.POST['username']
     password = request.POST['password']
+    print username
+    print password
     
     if not username or not password:
         res = { "success": False, "error": "Please enter all the fields." }

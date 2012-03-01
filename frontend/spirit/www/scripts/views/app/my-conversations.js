@@ -8,7 +8,7 @@ define([
   'underscore',
   'Backbone',
   'Mustache',
-  'text!templates/my-conversations.mustache!strip'
+  'text!templates/app/my-conversations.mustache!strip'
   ], function ($, _, Backbone, Mustache, my_conversations_template) {
 
   SpiritApp.Pages.MyConversationsView = Backbone.View.extend({
@@ -35,7 +35,7 @@ define([
       var dashboardView = new SpiritApp.Pages.DashboardView;
       var page = dashboardView.render().$el;
       $.mobile.pageContainer.append(page);
-      $.mobile.changePage(page, { role: 'page', transition: 'slide' });
+      $.mobile.changePage(page, { role: 'page', reverse: true, transition: 'slide' });
     }
 
   });

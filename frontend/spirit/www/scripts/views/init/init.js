@@ -10,7 +10,7 @@ define([
   'underscore',
   'Backbone',
   'Mustache',
-  'text!templates/init.mustache!strip'
+  'text!templates/init/init.mustache!strip'
   ], function ($, _, Backbone, Mustache, init_template) {
 
   SpiritApp.Pages.InitView = Backbone.View.extend({

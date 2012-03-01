@@ -8,7 +8,7 @@ define([
   'underscore',
   'Backbone',
   'Mustache',
-  'text!templates/browse-feed.mustache!strip'
+  'text!templates/app/browse-feed.mustache!strip'
   ], function ($, _, Backbone, Mustache, browse_feed_template) {
 
   SpiritApp.Pages.BrowseFeedView = Backbone.View.extend({
@@ -30,7 +30,7 @@ define([
       var dashboardView = new SpiritApp.Pages.DashboardView;
       var page = dashboardView.render().$el;
       $.mobile.pageContainer.append(page);
-      $.mobile.changePage(page, { role: 'page', transition: 'slide' });
+      $.mobile.changePage(page, { role: 'page', reverse: true, transition: 'slide' });
     }
 
   });
