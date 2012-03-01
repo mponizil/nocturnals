@@ -54,12 +54,12 @@ def auth(request):
         res = { "success": False, "error": "Please enter all the fields." }
         return HttpResponse(json.dumps(res))
     
-    if User.objects.filter(username=username).count() != 1:
+    auth_user = authenticate(username=username, password=password)
+    if auth_user is not None:
+        login(request, auth_user)
+    else:
         res = { "success": False, "error": "Invalid login." }
         return HttpResponse(json.dumps(res))
-    
-    auth_user = authenticate(username=username,password=password)
-    login(request, auth_user)
     
     res = { "success": True, "data": { "username": username } }
     return HttpResponse(json.dumps(res))

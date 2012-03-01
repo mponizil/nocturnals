@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<div data-role="header">
+  <a id="link-dashboard">Dashboard</a>
+  <h1>My Conversations</h1>
+</div>
+
+<div data-role="content">
+  <ul data-role="listview">
+    {{#conversations}}
+    <li><a>{{preview}}</a></li>
+    {{/conversations}}
+  </ul>
+</div>
+
+</body>
+</html>

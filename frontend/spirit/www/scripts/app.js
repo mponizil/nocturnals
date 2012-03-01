@@ -8,7 +8,10 @@ define([
   'views/init/init',
   'views/auth/login',
   'views/auth/signup',
-  'views/app/dashboard'
+  'views/app/dashboard',
+  'views/app/my-conversations',
+  'views/app/import-conversations',
+  'views/app/browse-feed'
   ], function ($, InitView) {
   return {
     init: function () {

@@ -18,7 +18,10 @@ define([
     },
 
     events: {
-      'click #logout-link' : 'logout'
+      'click #logout-link'          : 'logout',
+      'click #my-conversations'     : 'myConversations',
+      'click #import-conversations' : 'importConversations',
+      'click #browse-feed'          : 'browseFeed'
     },
 
     render: function() {
@@ -37,6 +40,27 @@ define([
           $.mobile.changePage(page, { role: 'page', transition: 'slide' });
         }
       })
+    },
+
+    myConversations: function() {
+      var myConversationsView = new SpiritApp.Pages.MyConversationsView;
+      var page = myConversationsView.render().$el;
+      $.mobile.pageContainer.append(page);
+      $.mobile.changePage(page, { role: 'page', transition: 'slide' });
+    },
+
+    importConversations: function() {
+      var importConversationsView = new SpiritApp.Pages.ImportConversationsView;
+      var page = importConversationsView.render().$el;
+      $.mobile.pageContainer.append(page);
+      $.mobile.changePage(page, { role: 'page', transition: 'slide' });
+    },
+
+    browseFeed: function() {
+      var browseFeedView = new SpiritApp.Pages.BrowseFeedView;
+      var page = browseFeedView.render().$el;
+      $.mobile.pageContainer.append(page);
+      $.mobile.changePage(page, { role: 'page', transition: 'slide' });
     }
 
   });
