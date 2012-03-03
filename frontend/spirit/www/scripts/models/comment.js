@@ -8,26 +8,23 @@ define([
   'underscore',
   'Backbone',
   'models/user'
-  ], function ($, _, Backbone, User) {
+  'models/text',
+  ], function ($, _, Backbone, User, Text) {
 
-  var Message = Backbone.RelationalModel.extend({
+  var Comment = Backbone.RelationalModel.extend({
 
     relations: [{
       type: Backbone.HasOne,
       key: 'author',
       relatedModel: 'User',
       reverseRelation: {
-        type: Backbone.HasMany,
-        key: 'messages'
+        key: 'conversations'
       }
-    }],
+    }]
 
     defaults: {
-      person: 1,
-      message: null
+      
     },
-
-    // urlRoot: CONFIG.ENDPOINT + "/",
 
     initialize: function() {
       
@@ -35,6 +32,6 @@ define([
 
   });
 
-  return Message;
+  return Comment;
 
 });

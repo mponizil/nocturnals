@@ -8,34 +8,41 @@ define([
   'underscore',
   'Backbone',
   'models/user'
-  'models/message',
-  'collections/message-collection',
-  ], function ($, _, Backbone, User, Message, MessageCollection) {
+  'models/text',
+  'collections/texts',
+  'collections/comments'
+  ], function ($, _, Backbone, User, Text, TextsCollection, CommentsCollection) {
 
   var Conversation = Backbone.RelationalModel.extend({
 
     relations: [{
-      type: Backbone.HasMany,
-      key: 'messages',
-      relatedModel: 'Message',
-      collectionType: 'MessageCollection',
-      reverseRelation: {
-        key: 'conversation'
-      }
-    }, {
       type: Backbone.HasOne,
       key: 'author',
       relatedModel: 'User',
       reverseRelation: {
         key: 'conversations'
       }
+    }, {
+      type: Backbone.HasMany,
+      key: 'texts',
+      relatedModel: 'Text',
+      collectionType: 'TextsCollection',
+      reverseRelation: {
+        key: 'conversation'
+      }
+    }, {
+      type: Backbone.HasMany,
+      key: 'comments',
+      relatedModel: 'Comment',
+      collectionType: 'CommentsCollection',
+      reverseRelation: {
+        key: 'conversation'
+      }
     }]
 
     defaults: {
       
     },
-
-    url: CONFIG.ENDPOINT + "/",
 
     initialize: function() {
       

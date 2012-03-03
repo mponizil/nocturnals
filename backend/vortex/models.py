@@ -1,10 +1,6 @@
 from django.db import models
 from datetime import datetime
-from accounts.models import UserProfile as User
-
-# python manage.py schemamigration vortex --initial
-# python manage.py schemamigration vortex --auto
-# python manage.py migrate
+from django.contrib.auth.models import User
 
 class Conversation(models.Model):
     date_created = models.DateTimeField()
@@ -19,7 +15,7 @@ class Conversation(models.Model):
         super(Conversation, self).save()
     
     def __unicode__(self):
-        return str(self.author.username + ": " + self.id)
+        return self.author.username + ": " + str(self.id)
 
 class Text(models.Model):
     date_created = models.DateTimeField()
@@ -75,4 +71,4 @@ class CouncilMember(models.Model):
         super(Conversation, self).save()
     
     def __unicode__(self):
-        return str(self.user.username + ": " + self.conversation.id)
+        return self.user.username + ": " + str(self.conversation.id)
