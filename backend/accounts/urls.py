@@ -1,6 +1,6 @@
 from django.conf.urls.defaults import *
 
-urlpatterns = patterns('auth',
+urlpatterns = patterns('accounts',
     url(r'^init$', 'api.init'),
     url(r'^register$', 'api.register'),
     url(r'^login$', 'api.auth'),

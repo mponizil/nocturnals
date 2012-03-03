@@ -1,6 +1,6 @@
 from django.db import models
 from datetime import datetime
-from auth.models import UserProfile as User
+from accounts.models import UserProfile as User
 
 # python manage.py schemamigration vortex --initial
 # python manage.py schemamigration vortex --auto

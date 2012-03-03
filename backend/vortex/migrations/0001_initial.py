@@ -12,7 +12,7 @@ class Migration(SchemaMigration):
         db.create_table('vortex_conversation', (
             ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('date_created', self.gf('django.db.models.fields.DateTimeField')()),
-            ('author', self.gf('django.db.models.fields.related.ForeignKey')(related_name='conversations', to=orm['auth.UserProfile'])),
+            ('author', self.gf('django.db.models.fields.related.ForeignKey')(related_name='conversations', to=orm['accounts.UserProfile'])),
             ('context', self.gf('django.db.models.fields.TextField')(blank=True)),
             ('target', self.gf('django.db.models.fields.CharField')(max_length=255, blank=True)),
             ('private', self.gf('django.db.models.fields.BooleanField')(default=True)),
@@ -24,7 +24,7 @@ class Migration(SchemaMigration):
             ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('date_created', self.gf('django.db.models.fields.DateTimeField')()),
             ('conversation', self.gf('django.db.models.fields.related.ForeignKey')(related_name='texts', to=orm['vortex.Conversation'])),
-            ('user_author', self.gf('django.db.models.fields.related.ForeignKey')(blank=True, related_name='texts', null=True, to=orm['auth.UserProfile'])),
+            ('user_author', self.gf('django.db.models.fields.related.ForeignKey')(blank=True, related_name='texts', null=True, to=orm['accounts.UserProfile'])),
             ('author', self.gf('django.db.models.fields.CharField')(max_length=255)),
             ('body', self.gf('django.db.models.fields.TextField')()),
         ))
@@ -36,7 +36,7 @@ class Migration(SchemaMigration):
             ('date_created', self.gf('django.db.models.fields.DateTimeField')()),
             ('conversation', self.gf('django.db.models.fields.related.ForeignKey')(related_name='comments', to=orm['vortex.Conversation'])),
             ('text', self.gf('django.db.models.fields.related.ForeignKey')(blank=True, related_name='comments', null=True, to=orm['vortex.Text'])),
-            ('author', self.gf('django.db.models.fields.related.ForeignKey')(related_name='comments', to=orm['auth.UserProfile'])),
+            ('author', self.gf('django.db.models.fields.related.ForeignKey')(related_name='comments', to=orm['accounts.UserProfile'])),
             ('body', self.gf('django.db.models.fields.TextField')()),
         ))
         db.send_create_signal('vortex', ['Comment'])
@@ -53,7 +53,7 @@ class Migration(SchemaMigration):
         db.create_table('vortex_council_members', (
             ('id', models.AutoField(verbose_name='ID', primary_key=True, auto_created=True)),
             ('council', models.ForeignKey(orm['vortex.council'], null=False)),
-            ('userprofile', models.ForeignKey(orm['auth.userprofile'], null=False))
+            ('userprofile', models.ForeignKey(orm['accounts.userprofile'], null=False))
         ))
         db.create_unique('vortex_council_members', ['council_id', 'userprofile_id'])
 
@@ -62,7 +62,7 @@ class Migration(SchemaMigration):
             ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('date_created', self.gf('django.db.models.fields.DateTimeField')()),
             ('conversation', self.gf('django.db.models.fields.related.ForeignKey')(related_name='council_members', to=orm['vortex.Conversation'])),
-            ('user', self.gf('django.db.models.fields.related.ForeignKey')(related_name='member_of_councils', to=orm['auth.UserProfile'])),
+            ('user', self.gf('django.db.models.fields.related.ForeignKey')(related_name='member_of_councils', to=orm['accounts.UserProfile'])),
         ))
         db.send_create_signal('vortex', ['CouncilMember'])
 
@@ -89,6 +89,12 @@ class Migration(SchemaMigration):
 
 
     models = {
+        'accounts.userprofile': {
+            'Meta': {'object_name': 'UserProfile'},
+            'friends': ('django.db.models.fields.related.ManyToManyField', [], {'related_name': "'friends_rel_+'", 'to': "orm['accounts.UserProfile']"}),
+            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'user': ('django.db.models.fields.related.OneToOneField', [], {'to': "orm['auth.User']", 'unique': 'True'})
+        },
         'auth.group': {
             'Meta': {'object_name': 'Group'},
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
@@ -118,12 +124,6 @@ class Migration(SchemaMigration):
             'user_permissions': ('django.db.models.fields.related.ManyToManyField', [], {'to': "orm['auth.Permission']", 'symmetrical': 'False', 'blank': 'True'}),
             'username': ('django.db.models.fields.CharField', [], {'unique': 'True', 'max_length': '30'})
         },
-        'auth.userprofile': {
-            'Meta': {'object_name': 'UserProfile'},
-            'friends': ('django.db.models.fields.related.ManyToManyField', [], {'related_name': "'friends_rel_+'", 'to': "orm['auth.UserProfile']"}),
-            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'user': ('django.db.models.fields.related.OneToOneField', [], {'to': "orm['auth.User']", 'unique': 'True'})
-        },
         'contenttypes.contenttype': {
             'Meta': {'ordering': "('name',)", 'unique_together': "(('app_label', 'model'),)", 'object_name': 'ContentType', 'db_table': "'django_content_type'"},
             'app_label': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
@@ -133,7 +133,7 @@ class Migration(SchemaMigration):
         },
         'vortex.comment': {
             'Meta': {'object_name': 'Comment'},
-            'author': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'comments'", 'to': "orm['auth.UserProfile']"}),
+            'author': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'comments'", 'to': "orm['accounts.UserProfile']"}),
             'body': ('django.db.models.fields.TextField', [], {}),
             'conversation': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'comments'", 'to': "orm['vortex.Conversation']"}),
             'date_created': ('django.db.models.fields.DateTimeField', [], {}),
@@ -142,7 +142,7 @@ class Migration(SchemaMigration):
         },
         'vortex.conversation': {
             'Meta': {'object_name': 'Conversation'},
-            'author': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'conversations'", 'to': "orm['auth.UserProfile']"}),
+            'author': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'conversations'", 'to': "orm['accounts.UserProfile']"}),
             'context': ('django.db.models.fields.TextField', [], {'blank': 'True'}),
             'date_created': ('django.db.models.fields.DateTimeField', [], {}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
@@ -153,7 +153,7 @@ class Migration(SchemaMigration):
             'Meta': {'object_name': 'Council'},
             'date_created': ('django.db.models.fields.DateTimeField', [], {}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'members': ('django.db.models.fields.related.ManyToManyField', [], {'related_name': "'councils'", 'symmetrical': 'False', 'to': "orm['auth.UserProfile']"}),
+            'members': ('django.db.models.fields.related.ManyToManyField', [], {'related_name': "'councils'", 'symmetrical': 'False', 'to': "orm['accounts.UserProfile']"}),
             'title': ('django.db.models.fields.CharField', [], {'max_length': '255'})
         },
         'vortex.councilmember': {
@@ -161,7 +161,7 @@ class Migration(SchemaMigration):
             'conversation': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'council_members'", 'to': "orm['vortex.Conversation']"}),
             'date_created': ('django.db.models.fields.DateTimeField', [], {}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'user': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'member_of_councils'", 'to': "orm['auth.UserProfile']"})
+            'user': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'member_of_councils'", 'to': "orm['accounts.UserProfile']"})
         },
         'vortex.text': {
             'Meta': {'object_name': 'Text'},
@@ -170,7 +170,7 @@ class Migration(SchemaMigration):
             'conversation': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'texts'", 'to': "orm['vortex.Conversation']"}),
             'date_created': ('django.db.models.fields.DateTimeField', [], {}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'user_author': ('django.db.models.fields.related.ForeignKey', [], {'blank': 'True', 'related_name': "'texts'", 'null': 'True', 'to': "orm['auth.UserProfile']"})
+            'user_author': ('django.db.models.fields.related.ForeignKey', [], {'blank': 'True', 'related_name': "'texts'", 'null': 'True', 'to': "orm['accounts.UserProfile']"})
         }
     }
 
