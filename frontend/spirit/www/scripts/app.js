@@ -11,7 +11,8 @@ define([
   'views/app/dashboard',
   'views/app/my-conversations',
   'views/app/import-conversations',
-  'views/app/browse-feed'
+  'views/app/browse-feed',
+  'views/app/conversation'
   ], function ($, InitView) {
   return {
     init: function () {

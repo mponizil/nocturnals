@@ -15,11 +15,19 @@ import json
 @require_POST
 def init(request):
     if request.user.is_authenticated():
-        loggedin = True
+        logged_in = True
     else:
-        loggedin = False
+        logged_in = False
     
-    res = { "success": True, "loggedin": loggedin }
+    res = {
+        "success": True,
+        "data": {
+            "logged_in": logged_in,
+            "user": {
+                "username": request.user.username
+            }
+        }
+    }
     return HttpResponse(json.dumps(res))
 
 @csrf_exempt
@@ -43,7 +51,7 @@ def register(request):
     auth_user = authenticate(username=username,password=password)
     login(request, auth_user)
     
-    res = { "success": True, "data": { "username": username } }
+    res = { "success": True, "data": { "user": { "username": username } } }
     return HttpResponse(json.dumps(res))
 
 @csrf_exempt
@@ -51,8 +59,6 @@ def register(request):
 def auth(request):
     username = request.POST['username']
     password = request.POST['password']
-    print username
-    print password
     
     if not username or not password:
         res = { "success": False, "error": "Please enter all the fields." }
@@ -65,7 +71,8 @@ def auth(request):
         res = { "success": False, "error": "Invalid login." }
         return HttpResponse(json.dumps(res))
     
-    res = { "success": True, "data": { "username": username } }
+    print username
+    res = { "success": True, "data": { "user": { "username": username } } }
     return HttpResponse(json.dumps(res))
 
 def deauth(request):

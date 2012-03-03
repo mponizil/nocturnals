@@ -1,5 +1,5 @@
 /**
- * models/my-conversations.js
+ * models/comment.js
  * 
  */
 
@@ -8,8 +8,7 @@ define([
   'underscore',
   'Backbone',
   'models/user'
-  'models/text',
-  ], function ($, _, Backbone, User, Text) {
+  ], function ($, _, Backbone, User) {
 
   var Comment = Backbone.RelationalModel.extend({
 
@@ -20,7 +19,7 @@ define([
       reverseRelation: {
         key: 'conversations'
       }
-    }]
+    }],
 
     defaults: {
       

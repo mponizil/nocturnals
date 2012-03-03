@@ -1,18 +1,21 @@
 /**
- * models/my-conversations.js
+ * collections/texts.js
  * 
  */
 
 define([
   'jQuery',
   'underscore',
-  'Backbone'
-  ], function ($, _, Backbone) {
+  'Backbone',
+  'models/text'
+  ], function ($, _, Backbone, Text) {
 
-  var TextsCollection = Backbone.Collection.extend({
-    
+  var Texts = Backbone.Collection.extend({
+
+    model: Text
+
   });
 
-  return TextsCollection;
+  return Texts;
 
 });

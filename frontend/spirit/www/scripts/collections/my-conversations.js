@@ -10,12 +10,12 @@ define([
   'models/conversation'
   ], function ($, _, Backbone, Conversation) {
 
-  var Conversations = Backbone.Collection.extend({
+  var MyConversations = Backbone.Collection.extend({
 
     model: Conversation
 
   });
 
-  return Conversations;
+  return MyConversations;
 
 });

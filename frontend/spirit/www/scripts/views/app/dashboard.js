@@ -33,7 +33,8 @@ define([
       $.ajax({
         type: "GET",
         url: CONFIG.ENDPOINT + "/auth/logout",
-        success: function(data) {
+        success: function(response) {
+          SpiritApp.User = null;
           var loginView = new SpiritApp.Pages.LoginView;
           var page = loginView.render().$el;
           $.mobile.pageContainer.append(page);

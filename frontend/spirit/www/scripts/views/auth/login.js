@@ -8,8 +8,9 @@ define([
   'underscore',
   'Backbone',
   'Mustache',
+  'models/user',
   'text!templates/auth/login.mustache!strip'
-  ], function ($, _, Backbone, Mustache, login_template) {
+  ], function ($, _, Backbone, Mustache, User, login_template) {
 
   SpiritApp.Pages.LoginView = Backbone.View.extend({
 
@@ -31,19 +32,22 @@ define([
     },
 
     login: function(event) {
-      var login_data = $("#login-form").serialize();
+      var login_data = this.$("#login-form").serialize();
       $.ajax({
         type: "POST",
         url: CONFIG.ENDPOINT + "/auth/login",
         data: login_data,
-        success: function(data) {
-          if (data.success) {
+        success: function(response) {
+          if (response.success) {
+            SpiritApp.User = new User({
+              username: response.data.user.username
+            });
             var dashboardView = new SpiritApp.Pages.DashboardView;
             var page = dashboardView.render().$el;
             $.mobile.pageContainer.append(page);
             $.mobile.changePage(page, { role: 'page', transition: 'slide' });
           } else {
-            alert(data.error);
+            alert(response.error);
           }
         }
       });

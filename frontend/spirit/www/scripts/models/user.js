@@ -1,5 +1,5 @@
 /**
- * models/my-conversations.js
+ * models/user.js
  * 
  */
 
@@ -9,7 +9,7 @@ define([
   'Backbone'
   ], function ($, _, Backbone) {
 
-  var Message = Backbone.RelationalModel.extend({
+  var User = Backbone.RelationalModel.extend({
 
     defaults: {
       username: null
@@ -23,6 +23,6 @@ define([
 
   });
 
-  return Message;
+  return User;
 
 });

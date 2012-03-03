@@ -1,5 +1,5 @@
 /**
- * models/my-conversations.js
+ * models/conversation.js
  * 
  */
 
@@ -7,11 +7,11 @@ define([
   'jQuery',
   'underscore',
   'Backbone',
-  'models/user'
+  'models/user',
   'models/text',
   'collections/texts',
-  'collections/comments'
-  ], function ($, _, Backbone, User, Text, TextsCollection, CommentsCollection) {
+  'collections/conversation-comments'
+  ], function ($, _, Backbone, User, Text, Comment, Texts, ConversationComments) {
 
   var Conversation = Backbone.RelationalModel.extend({
 
@@ -26,7 +26,7 @@ define([
       type: Backbone.HasMany,
       key: 'texts',
       relatedModel: 'Text',
-      collectionType: 'TextsCollection',
+      collectionType: 'Texts',
       reverseRelation: {
         key: 'conversation'
       }
@@ -34,18 +34,21 @@ define([
       type: Backbone.HasMany,
       key: 'comments',
       relatedModel: 'Comment',
-      collectionType: 'CommentsCollection',
+      collectionType: 'ConversationComments',
       reverseRelation: {
         key: 'conversation'
       }
-    }]
+    }],
 
     defaults: {
       
     },
 
     initialize: function() {
-      
+    },
+
+    parse: function(response) {
+      console.log(response);
     }
 
   });

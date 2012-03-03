@@ -14,3 +14,8 @@ def my_conversations(request):
     conversations = Conversation.objects.filter(author=request.user)
     res = serializers.serialize("json", conversations)
     return HttpResponse(res)
+
+def conversation(request, id):
+    conversation = Conversation.objects.get(id=id)
+    res = serializers.serialize("json", [conversation])
+    return HttpResponse(res)

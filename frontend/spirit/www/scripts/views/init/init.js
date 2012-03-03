@@ -10,8 +10,9 @@ define([
   'underscore',
   'Backbone',
   'Mustache',
+  'models/user',
   'text!templates/init/init.mustache!strip'
-  ], function ($, _, Backbone, Mustache, init_template) {
+  ], function ($, _, Backbone, Mustache, User, init_template) {
 
   SpiritApp.Pages.InitView = Backbone.View.extend({
 
@@ -32,8 +33,11 @@ define([
       return this;
     },
 
-    userStatus: function(data) {
-      if (data.loggedin) {
+    userStatus: function(response) {
+      if (response.data.logged_in) {
+        SpiritApp.User = new User({
+          username: response.data.user.username
+        });
         var dashboardView = new SpiritApp.Pages.DashboardView;
         var page = dashboardView.render().$el;
         $.mobile.pageContainer.append(page);
