@@ -1,10 +1,20 @@
 from django.conf.urls.defaults import *
+
 from django.contrib import admin
 admin.autodiscover()
 
-urlpatterns = patterns('',
-    url(r'^auth/', include('accounts.urls')),
-    url(r'^vortex/', include('vortex.urls')),
+from tastypie.api import Api
+from vortex.api import *
+v1_api = Api(api_name='v1')
+v1_api.register(UserResource())
+v1_api.register(ConversationResource())
+v1_api.register(TextResource())
 
-    url(r'^admin/', include(admin.site.urls)),
+urlpatterns = patterns('',
+    (r'^auth/', include('accounts.urls')),
+    (r'^vortex/', include('vortex.urls')),
+    
+    (r'^api/', include(v1_api.urls)),
+
+    (r'^admin/', include(admin.site.urls)),
 )

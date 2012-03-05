@@ -40,15 +40,8 @@ define([
       }
     }],
 
-    defaults: {
-      
-    },
-
-    initialize: function() {
-    },
-
-    parse: function(response) {
-      console.log(response);
+    url: function() {
+      return CONFIG.ENDPOINT + "/api/v1/conversation/" + this.get("id") + "/?format=json"
     }
 
   });

@@ -40,6 +40,7 @@ define([
         success: function(response) {
           if (response.success) {
             SpiritApp.User = new User({
+              id: response.data.user.id,
               username: response.data.user.username
             })
             var dashboardView = new SpiritApp.Pages.DashboardView;

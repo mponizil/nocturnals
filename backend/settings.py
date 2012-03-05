@@ -119,6 +119,7 @@ INSTALLED_APPS = (
     # 'south',
     'accounts',
     'vortex',
+    'tastypie'
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )

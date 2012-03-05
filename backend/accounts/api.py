@@ -24,6 +24,7 @@ def init(request):
         "data": {
             "logged_in": logged_in,
             "user": {
+                "id": request.user.id,
                 "username": request.user.username
             }
         }
@@ -51,7 +52,7 @@ def register(request):
     auth_user = authenticate(username=username,password=password)
     login(request, auth_user)
     
-    res = { "success": True, "data": { "user": { "username": username } } }
+    res = { "success": True, "data": { "user": { "id": request.user.id, "username": username } } }
     return HttpResponse(json.dumps(res))
 
 @csrf_exempt
@@ -72,7 +73,7 @@ def auth(request):
         return HttpResponse(json.dumps(res))
     
     print username
-    res = { "success": True, "data": { "user": { "username": username } } }
+    res = { "success": True, "data": { "user": { "id": request.user.id, "username": username } } }
     return HttpResponse(json.dumps(res))
 
 def deauth(request):

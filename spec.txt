@@ -1,0 +1,38 @@
+/<user_id>/conversations
+/1/conversations
+[{
+  "date_created": "10/04/2012 09:33:36",
+  "author": {
+    "id": 1,
+    "username": "mponizil"
+  },
+  "context": "so i met this hot babe last night",
+  "target": "cynthia"
+}, {
+  "date_created": "20/04/2012 09:33:36",
+  "author": {
+    "id": 1,
+    "username": "mponizil"
+  },
+  "context": "really don't know what to say to this girl",
+  "target": "cynthia"
+}]
+
+/conversations
+[{
+  "date_created": "10/04/2012 09:33:36",
+  "author": {
+    "id": 1,
+    "username": "mponizil"
+  },
+  "context": "so i met this hot babe last night",
+  "target": "cynthia"
+}, {
+  "date_created": "20/04/2012 09:33:36",
+  "author": {
+    "id": 1,
+    "username": "mponizil"
+  },
+  "context": "really don't know what to say to this girl",
+  "target": "cynthia"
+}]

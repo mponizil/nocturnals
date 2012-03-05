@@ -9,13 +9,10 @@ define([
   'Backbone',
   'Mustache',
   'models/conversation',
-  'collections/my-conversations',
   'text!templates/app/my-conversations.mustache!strip'
-  ], function ($, _, Backbone, Mustache, Conversation, MyConversations, my_conversations_template) {
+  ], function ($, _, Backbone, Mustache, Conversation, my_conversations_template) {
 
   SpiritApp.Pages.MyConversationsView = Backbone.View.extend({
-
-    collection: MyConversations,
 
     template: function(params) {
       return Mustache.to_html(my_conversations_template, params);
@@ -32,7 +29,8 @@ define([
         { id: 2, preview: "Helloooo" },
         { id: 3, preview: "Got so much homewo..." }
       ]
-      this.$el.html(this.template({ conversations: conversations }));
+      console.log(this.collection.toJSON());
+      this.$el.html(this.template({ conversations: this.collection.toJSON() }));
       return this;
     },
 
@@ -46,11 +44,14 @@ define([
     conversation: function(event) {
       var conversation_id = $(event.target).data("id");
       var conversation = new Conversation({ id: conversation_id });
-      // conversation.fetch();
-      var conversationView = new SpiritApp.Pages.ConversationView({ model: conversation });
-      var page = conversationView.render().$el;
-      $.mobile.pageContainer.append(page);
-      $.mobile.changePage(page, { role: 'page', transition: 'slide' });
+      conversation.fetch({
+          success: function(response) {
+          var conversationView = new SpiritApp.Pages.ConversationView({ model: conversation });
+          var page = conversationView.render().$el;
+          $.mobile.pageContainer.append(page);
+          $.mobile.changePage(page, { role: 'page', transition: 'slide' });
+        }
+      });
     }
 
   });

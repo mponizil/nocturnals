@@ -9,10 +9,10 @@ define([
   'Backbone'
   ], function ($, _, Backbone) {
 
-  var CommentsCollection = Backbone.Collection.extend({
+  var Comments = Backbone.Collection.extend({
     
   });
 
-  return CommentsCollection;
+  return new Comments;
 
 });

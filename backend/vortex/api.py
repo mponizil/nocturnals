@@ -1,21 +1,31 @@
-from accounts.models import *
+from django.contrib.auth.models import User
+from tastypie import fields
+from tastypie.resources import ModelResource, ALL, ALL_WITH_RELATIONS
 from vortex.models import *
 
-from django.http import HttpResponse
+class UserResource(ModelResource):
+    class Meta:
+        queryset = User.objects.all()
+        resource_name = 'user'
+        excludes = ['email', 'password', 'is_active', 'is_staff', 'is_superuser', 'last_login']
+        filtering = {
+            'id': ALL
+        }
 
-from django.views.decorators.csrf import csrf_exempt
-from django.core.context_processors import csrf
-from django.views.decorators.http import require_POST
+class ConversationResource(ModelResource):
+    author = fields.ForeignKey(UserResource, 'author', full=True)
+    texts = fields.ToManyField('vortex.api.TextResource', 'texts', full=True)
+    
+    class Meta:
+        queryset = Conversation.objects.all()
+        resource_name = 'conversation'
+        filtering = {
+            'author': ALL_WITH_RELATIONS
+        }
 
-from django.core import serializers
-import json
-
-def my_conversations(request):
-    conversations = Conversation.objects.filter(author=request.user)
-    res = serializers.serialize("json", conversations)
-    return HttpResponse(res)
-
-def conversation(request, id):
-    conversation = Conversation.objects.get(id=id)
-    res = serializers.serialize("json", [conversation])
-    return HttpResponse(res)
+class TextResource(ModelResource):
+    conversation = fields.ForeignKey(ConversationResource, 'conversation')
+    
+    class Meta:
+        queryset = Text.objects.all()
+        resource_name = 'text'

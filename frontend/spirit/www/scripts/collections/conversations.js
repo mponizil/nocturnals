@@ -12,10 +12,16 @@ define([
 
   var Conversations = Backbone.Collection.extend({
 
-    model: Conversation
+    url: CONFIG.ENDPOINT + "/api/v1/conversation/?format=json",
+
+    model: Conversation,
+
+    parse: function(response) {
+      return response.objects;
+    }
 
   });
 
-  return Conversations;
+  return new Conversations;
 
 });

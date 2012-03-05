@@ -1,0 +1,279 @@
+[
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "username": "joebob",
+    "password": "joebob"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 3,
+  "fields": {
+    "username": "acamp",
+    "password": "acamp"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 4,
+  "fields": {
+    "username": "beth",
+    "password": "beth"
+  }
+},
+{
+    "model": "vortex.conversation",
+    "pk": 1,
+    "fields": {
+        "date_created": "2012-02-20 10:34:24",
+        "author": 2,
+        "context": "I met this smokin' hot babe last night",
+        "target": "Cynthia",
+        "private": true
+    }
+},
+{
+    "model": "vortex.conversation",
+    "pk": 2,
+    "fields": {
+        "date_created": "2012-02-20 10:34:24",
+        "author": 2,
+        "context": "Think I got a chance?",
+        "target": "Rachel",
+        "private": true
+    }
+},
+{
+    "model": "vortex.conversation",
+    "pk": 3,
+    "fields": {
+        "date_created": "2012-02-20 10:34:24",
+        "author": 3,
+        "context": "Sometimes I just don't know what to say",
+        "target": "Sara",
+        "private": true
+    }
+},
+{
+    "model": "vortex.conversation",
+    "pk": 4,
+    "fields": {
+        "date_created": "2012-02-20 10:34:24",
+        "author": 4,
+        "context": "OMG he's so cute!",
+        "target": "Tom",
+        "private": true
+    }
+},
+{
+    "model": "vortex.conversation",
+    "pk": 5,
+    "fields": {
+        "date_created": "2012-02-20 10:34:24",
+        "author": 4,
+        "context": "This guy is the butcher at my supermarket",
+        "target": "Alfredo",
+        "private": true
+    }
+},
+{
+    "model": "vortex.text",
+    "pk": 1,
+    "fields": {
+        "date_created": "2012-02-20 10:34:24",
+        "conversation": 1,
+        "user_author": 2,
+        "author": "joebob",
+        "body": "Hey, fun meeting you last night :)"
+    }
+},
+{
+    "model": "vortex.text",
+    "pk": 2,
+    "fields": {
+        "date_created": "2012-02-20 10:34:24",
+        "conversation": 1,
+        "user_author": 1,
+        "author": "Cynthia",
+        "body": "Heyyyy it was gr8 meeting you"
+    }
+},
+{
+    "model": "vortex.text",
+    "pk": 3,
+    "fields": {
+        "date_created": "2012-02-20 10:34:24",
+        "conversation": 1,
+        "user_author": 2,
+        "author": "joebob",
+        "body": "Absolutely we should get coffee sometime"
+    }
+},
+{
+    "model": "vortex.text",
+    "pk": 4,
+    "fields": {
+        "date_created": "2012-02-20 10:34:24",
+        "conversation": 1,
+        "user_author": 1,
+        "author": "Cynthia",
+        "body": "Ehh idk we just met"
+    }
+},
+{
+    "model": "vortex.text",
+    "pk": 5,
+    "fields": {
+        "date_created": "2012-02-20 10:34:24",
+        "conversation": 2,
+        "user_author": 2,
+        "author": "joebob",
+        "body": "Hey what's up?"
+    }
+},
+{
+    "model": "vortex.text",
+    "pk": 6,
+    "fields": {
+        "date_created": "2012-02-20 10:34:24",
+        "conversation": 2,
+        "user_author": 1,
+        "author": "Rachel",
+        "body": "Nm just a bunch of homework u?"
+    }
+},
+{
+    "model": "vortex.text",
+    "pk": 7,
+    "fields": {
+        "date_created": "2012-02-20 10:34:24",
+        "conversation": 2,
+        "user_author": 2,
+        "author": "joebob",
+        "body": "Ah hangin out you know"
+    }
+},
+{
+    "model": "vortex.text",
+    "pk": 8,
+    "fields": {
+        "date_created": "2012-02-20 10:34:24",
+        "conversation": 3,
+        "user_author": 3,
+        "author": "acamp",
+        "body": "wasssup baby how you been?"
+    }
+},
+{
+    "model": "vortex.text",
+    "pk": 9,
+    "fields": {
+        "date_created": "2012-02-20 10:34:24",
+        "conversation": 3,
+        "user_author": 1,
+        "author": "Sara",
+        "body": "Heyy I'm alright hbu?"
+    }
+},
+{
+    "model": "vortex.text",
+    "pk": 10,
+    "fields": {
+        "date_created": "2012-02-20 10:34:24",
+        "conversation": 3,
+        "user_author": 3,
+        "author": "acamp",
+        "body": "o im alright do you think we're gonna get together?"
+    }
+},
+{
+    "model": "vortex.text",
+    "pk": 11,
+    "fields": {
+        "date_created": "2012-02-20 10:34:24",
+        "conversation": 4,
+        "user_author": 1,
+        "author": "Tom",
+        "body": "What's up? How was the rest of your night?"
+    }
+},
+{
+    "model": "vortex.text",
+    "pk": 12,
+    "fields": {
+        "date_created": "2012-02-20 10:34:24",
+        "conversation": 4,
+        "user_author": 4,
+        "author": "beth",
+        "body": "Hey! It was really good we got some dollar pizza"
+    }
+},
+{
+    "model": "vortex.text",
+    "pk": 13,
+    "fields": {
+        "date_created": "2012-02-20 10:34:24",
+        "conversation": 4,
+        "user_author": 1,
+        "author": "Tom",
+        "body": "Well great! $1 pizza is the best!"
+    }
+},
+{
+    "model": "vortex.text",
+    "pk": 14,
+    "fields": {
+        "date_created": "2012-02-20 10:34:24",
+        "conversation": 5,
+        "user_author": 1,
+        "author": "Alfredo",
+        "body": "Hello friend!"
+    }
+},
+{
+    "model": "vortex.text",
+    "pk": 15,
+    "fields": {
+        "date_created": "2012-02-20 10:34:24",
+        "conversation": 5,
+        "user_author": 4,
+        "author": "beth",
+        "body": "Hey!"
+    }
+},
+{
+    "model": "vortex.text",
+    "pk": 16,
+    "fields": {
+        "date_created": "2012-02-20 10:34:24",
+        "conversation": 5,
+        "user_author": 1,
+        "author": "Alfredo",
+        "body": "I'm here preparing the turkey for slicing"
+    }
+},
+{
+    "model": "vortex.text",
+    "pk": 17,
+    "fields": {
+        "date_created": "2012-02-20 10:34:24",
+        "conversation": 5,
+        "user_author": 4,
+        "author": "beth",
+        "body": "Ohhh myy"
+    }
+},
+{
+    "model": "vortex.text",
+    "pk": 18,
+    "fields": {
+        "date_created": "2012-02-20 10:34:24",
+        "conversation": 5,
+        "user_author": 1,
+        "author": "Alfredo",
+        "body": "Srsly baby you gotta come see"
+    }
+}
+]

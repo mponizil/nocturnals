@@ -10,12 +10,12 @@ define([
   'models/comment'
   ], function ($, _, Backbone, Comment) {
 
-  var Comments = Backbone.Collection.extend({
+  var ConversationComments = Backbone.Collection.extend({
 
     model: Comment
 
   });
 
-  return Comments;
+  return new ConversationComments;
 
 });

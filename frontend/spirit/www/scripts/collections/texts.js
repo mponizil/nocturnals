@@ -16,6 +16,6 @@ define([
 
   });
 
-  return Texts;
+  return new Texts;
 
 });

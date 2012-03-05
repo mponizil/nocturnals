@@ -36,6 +36,7 @@ define([
     userStatus: function(response) {
       if (response.data.logged_in) {
         SpiritApp.User = new User({
+          id: response.data.user.id,
           username: response.data.user.username
         });
         var dashboardView = new SpiritApp.Pages.DashboardView;

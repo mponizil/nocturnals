@@ -8,8 +8,9 @@ define([
   'underscore',
   'Backbone',
   'Mustache',
+  'collections/conversations',
   'text!templates/app/dashboard.mustache!strip'
-  ], function ($, _, Backbone, Mustache, dashboard_template) {
+  ], function ($, _, Backbone, Mustache, Conversations, dashboard_template) {
 
   SpiritApp.Pages.DashboardView = Backbone.View.extend({
 
@@ -44,10 +45,19 @@ define([
     },
 
     myConversations: function() {
-      var myConversationsView = new SpiritApp.Pages.MyConversationsView;
-      var page = myConversationsView.render().$el;
-      $.mobile.pageContainer.append(page);
-      $.mobile.changePage(page, { role: 'page', transition: 'slide' });
+      Conversations.fetch({
+        data: {
+          author: SpiritApp.User.get("id")
+        },
+        success: function(response) {
+          var myConversationsView = new SpiritApp.Pages.MyConversationsView({
+            collection: Conversations
+          });
+          var page = myConversationsView.render().$el;
+          $.mobile.pageContainer.append(page);
+          $.mobile.changePage(page, { role: 'page', transition: 'slide' });
+        }
+      });
     },
 
     importConversations: function() {
