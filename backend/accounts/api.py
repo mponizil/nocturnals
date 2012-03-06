@@ -1,3 +1,7 @@
+from django.contrib.auth.models import User
+from tastypie import fields
+from tastypie.resources import ModelResource, ALL, ALL_WITH_RELATIONS
+
 from django.http import HttpResponse
 from django.db import IntegrityError
 
@@ -10,6 +14,15 @@ from django.core.context_processors import csrf
 from django.views.decorators.http import require_POST
 
 import json
+
+class UserResource(ModelResource):
+    class Meta:
+        queryset = User.objects.all()
+        resource_name = 'user'
+        excludes = ['email', 'password', 'is_active', 'is_staff', 'is_superuser', 'last_login']
+        filtering = {
+            'id': ALL
+        }
 
 @csrf_exempt
 @require_POST

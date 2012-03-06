@@ -4,6 +4,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 from tastypie.api import Api
+from accounts.api import *
 from vortex.api import *
 v1_api = Api(api_name='v1')
 v1_api.register(UserResource())

@@ -4,7 +4,7 @@
   "pk": 2,
   "fields": {
     "username": "joebob",
-    "password": "joebob"
+    "password": "sha1$4cf21$ac925414160470d2e8a3d7951d181749d686deee"
   }
 },
 {
@@ -12,7 +12,7 @@
   "pk": 3,
   "fields": {
     "username": "acamp",
-    "password": "acamp"
+    "password": "sha1$34e34$06c0095d28011809d856b01c184dafa172f55344"
   }
 },
 {
@@ -20,7 +20,7 @@
   "pk": 4,
   "fields": {
     "username": "beth",
-    "password": "beth"
+    "password": "sha1$cb4e4$119d0598c5620d53bf2848e9f2e2bfd4fa693d61"
   }
 },
 {
