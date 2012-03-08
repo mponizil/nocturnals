@@ -8,13 +8,16 @@ define([
   'underscore',
   'Backbone',
   'Mustache',
-  'models/user',
+  'views/auth/signup',
   'text!templates/auth/login.mustache!strip'
-  ], function ($, _, Backbone, Mustache, User, login_template) {
+  ], function ($, _, Backbone, Mustache, SignupView, login_template) {
 
-  SpiritApp.Pages.LoginView = Backbone.View.extend({
+  var LoginView = Backbone.View.extend({
+
+    el: $("#login-page"),
 
     initialize: function() {
+      this.render();
     },
 
     template: function(params) {
@@ -23,7 +26,7 @@ define([
 
     events: {
       'submit #login-form' : 'login',
-      'click #signup-link' : 'signup'
+      'click #signup-link' : 'signupPage'
     },
 
     render: function() {
@@ -37,32 +40,28 @@ define([
         type: "POST",
         url: CONFIG.ENDPOINT + "/auth/login",
         data: login_data,
-        success: function(response) {
-          if (response.success) {
-            SpiritApp.User = new User({
-              id: response.data.user.id,
-              username: response.data.user.username
-            });
-            var dashboardView = new SpiritApp.Pages.DashboardView;
-            var page = dashboardView.render().$el;
-            $.mobile.pageContainer.append(page);
-            $.mobile.changePage(page, { role: 'page', transition: 'slide' });
-          } else {
-            alert(response.error);
-          }
-        }
+        success: this.loginResponse
       });
       return false;
     },
 
-    signup: function(event) {
-      var signupView = new SpiritApp.Pages.SignupView;
-      var page = signupView.render().$el;
-      $.mobile.pageContainer.append(page);
-      $.mobile.changePage(page, { role: 'page', transition: 'flip' });
+    loginResponse: function(response) {
+      if (response.success) {
+        SpiritApp.User.set({
+          id: response.data.user.id,
+          username: response.data.user.username
+        });
+        SpiritApp.User.trigger("logged_in");
+      } else {
+        alert(response.error);
+      }
+    },
+
+    signupPage: function(event) {
+      this.trigger("signup_page");
     }
   });
 
-  return SpiritApp.Pages.LoginView;
+  return LoginView;
 
 });

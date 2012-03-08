@@ -1,5 +1,5 @@
 /**
- * views/app/dashboard.js
+ * views/app/my-conversations.js
  * Shows user their options
  */
 
@@ -9,53 +9,66 @@ define([
   'Backbone',
   'Mustache',
   'models/conversation',
+  'collections/conversations',
+  'views/app/conversation',
   'text!templates/app/my-conversations.mustache!strip'
-  ], function ($, _, Backbone, Mustache, Conversation, my_conversations_template) {
+  ], function ($, _, Backbone, Mustache, Conversation, Conversations, ConversationView, my_conversations_template) {
 
-  SpiritApp.Pages.MyConversationsView = Backbone.View.extend({
+  var MyConversationsView = Backbone.View.extend({
+
+    el: $("#my-conversations-page"),
+
+    initialize: function() {
+    },
+
+    initPage: function() {
+      var _mc = this;
+      Conversations.fetch({
+        data: {
+          author: SpiritApp.User.get("id")
+        },
+        success: function() {
+          _mc.render();
+        }
+      });
+    },
 
     template: function(params) {
       return Mustache.to_html(my_conversations_template, params);
     },
 
     events: {
-      'click #link-dashboard' : 'dashboard',
-      'click li a'            : 'conversation'
+      'click #link-dashboard' : 'dashboardPage',
+      'click li a'            : 'conversationPage'
     },
 
     render: function() {
-      var conversations = [
-        { id: 1, preview: "Hey ;)" },
-        { id: 2, preview: "Helloooo" },
-        { id: 3, preview: "Got so much homewo..." }
-      ]
-      console.log(this.collection.toJSON());
-      this.$el.html(this.template({ conversations: this.collection.toJSON() }));
+      this.$el.html(this.template({ conversations: Conversations.toJSON() }));
+      this.$el.page("destroy").page();
       return this;
     },
 
-    dashboard: function() {
-      var dashboardView = new SpiritApp.Pages.DashboardView;
-      var page = dashboardView.render().$el;
-      $.mobile.pageContainer.append(page);
-      $.mobile.changePage(page, { role: 'page', reverse: true, transition: 'slide' });
+    dashboardPage: function() {
+      var dashboard_page = $("#dashboard-page");
+      $.mobile.changePage(dashboard_page, { changeHash: false, reverse: true, transition: 'slide' });
     },
 
-    conversation: function(event) {
+    conversationPage: function(event) {
       var conversation_id = $(event.target).data("id");
-      var conversation = new Conversation({ id: conversation_id });
-      conversation.fetch({
-          success: function(response) {
-          var conversationView = new SpiritApp.Pages.ConversationView({ model: conversation });
-          var page = conversationView.render().$el;
-          $.mobile.pageContainer.append(page);
-          $.mobile.changePage(page, { role: 'page', transition: 'slide' });
+      var conversation_view = new ConversationView({
+        model: new Conversation({ id: conversation_id }),
+        back: {
+          slug: "my-conversations",
+          title: "My Conversations"
         }
       });
+      var conversation_page = $("#conversation-page");
+      $.mobile.changePage(conversation_page, { changeHash: false, transition: 'slide' });
+      conversation_view.initPage();
     }
 
   });
 
-  return SpiritApp.Pages.DashboardView;
+  return MyConversationsView;
 
 });

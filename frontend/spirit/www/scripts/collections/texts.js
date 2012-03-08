@@ -12,7 +12,11 @@ define([
 
   var Texts = Backbone.Collection.extend({
 
-    model: Text
+    model: Text,
+
+    parse: function(response) {
+      return response.objects;
+    }
 
   });
 

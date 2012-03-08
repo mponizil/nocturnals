@@ -34,8 +34,6 @@ define([
     defaults: {
     },
 
-    // urlRoot: CONFIG.ENDPOINT + "/",
-
     initialize: function() {
       
     }

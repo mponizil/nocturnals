@@ -8,13 +8,16 @@ define([
   'underscore',
   'Backbone',
   'Mustache',
-  'models/user',
+  'views/auth/login',
   'text!templates/auth/signup.mustache!strip'
-  ], function ($, _, Backbone, Mustache, User, signup_template) {
+  ], function ($, _, Backbone, Mustache, LoginView, signup_template) {
 
-  SpiritApp.Pages.SignupView = Backbone.View.extend({
+  var SignupView = Backbone.View.extend({
+
+    el: $("#signup-page"),
 
     initialize: function() {
+      this.render();
     },
 
     template: function(params) {
@@ -23,7 +26,7 @@ define([
 
     events: {
       'submit #signup-form' : 'signup',
-      'click #login-link'   : 'login'
+      'click #login-link'   : 'loginPage'
     },
 
     render: function() {
@@ -37,32 +40,28 @@ define([
         type: "POST",
         url: CONFIG.ENDPOINT + "/auth/register",
         data: signup_data,
-        success: function(response) {
-          if (response.success) {
-            SpiritApp.User = new User({
-              id: response.data.user.id,
-              username: response.data.user.username
-            })
-            var dashboardView = new SpiritApp.Pages.DashboardView;
-            var page = dashboardView.render().$el;
-            $.mobile.pageContainer.append(page);
-            $.mobile.changePage(page, { role: 'page', transition: 'slide' });
-          } else {
-            alert(response.error);
-          }
-        }
+        success: this.signupResponse
       });
       return false;
     },
 
-    login: function(event) {
-      var loginView = new SpiritApp.Pages.LoginView;
-      var page = loginView.render().$el;
-      $.mobile.pageContainer.append(page);
-      $.mobile.changePage(page, { role: 'page', reverse: true, transition: 'flip' });
+    signupResponse: function(response) {
+      if (response.success) {
+        SpiritApp.User.set({
+          id: response.data.user.id,
+          username: response.data.user.username
+        });
+        SpiritApp.User.trigger("logged_in");
+      } else {
+        alert(response.error);
+      }
+    },
+
+    loginPage: function(event) {
+      this.trigger("login_page");
     }
   });
 
-  return SpiritApp.Pages.SignupView;
+  return SignupView;
 
 });

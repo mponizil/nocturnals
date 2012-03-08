@@ -491,6 +491,7 @@
 				BB09B6E814F349A80016AC2B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

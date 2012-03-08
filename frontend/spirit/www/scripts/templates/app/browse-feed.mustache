@@ -10,7 +10,11 @@
 </div>
 
 <div data-role="content">
-  Browse Feed
+  <ul data-role="listview">
+    {{#conversations}}
+    <li><a data-id="{{id}}">{{context}}</a></li>
+    {{/conversations}}
+  </ul>
 </div>
 
 </body>

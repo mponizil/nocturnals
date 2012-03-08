@@ -11,12 +11,6 @@ define([
 
   var User = Backbone.RelationalModel.extend({
 
-    defaults: {
-      username: null
-    },
-
-    // urlRoot: CONFIG.ENDPOINT + "/",
-
     initialize: function() {
       
     }

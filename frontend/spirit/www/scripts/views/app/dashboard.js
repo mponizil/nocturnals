@@ -9,10 +9,24 @@ define([
   'Backbone',
   'Mustache',
   'collections/conversations',
+  'views/app/my-conversations',
+  'views/app/import-conversations',
+  'views/app/browse-feed',
   'text!templates/app/dashboard.mustache!strip'
-  ], function ($, _, Backbone, Mustache, Conversations, dashboard_template) {
+  ], function ($, _, Backbone, Mustache, Conversations, MyConversationsView, ImportConversationsView, BrowseFeedView, dashboard_template) {
 
-  SpiritApp.Pages.DashboardView = Backbone.View.extend({
+  var DashboardView = Backbone.View.extend({
+
+    el: $("#dashboard-page"),
+
+    initialize: function() {
+      this.render();
+
+      this.views = {};
+      this.views.my_conversations = new MyConversationsView;
+      this.views.import_conversations = new ImportConversationsView;
+      this.views.browse_feed = new BrowseFeedView;
+    },
 
     template: function(params) {
       return Mustache.to_html(dashboard_template, params);
@@ -35,47 +49,31 @@ define([
         type: "GET",
         url: CONFIG.ENDPOINT + "/auth/logout",
         success: function(response) {
-          SpiritApp.User = null;
-          var loginView = new SpiritApp.Pages.LoginView;
-          var page = loginView.render().$el;
-          $.mobile.pageContainer.append(page);
-          $.mobile.changePage(page, { role: 'page', reverse: true, transition: 'slide' });
+          SpiritApp.User.trigger("logged_out");
         }
       })
     },
 
     myConversations: function() {
-      Conversations.fetch({
-        data: {
-          author: SpiritApp.User.get("id")
-        },
-        success: function(response) {
-          var myConversationsView = new SpiritApp.Pages.MyConversationsView({
-            collection: Conversations
-          });
-          var page = myConversationsView.render().$el;
-          $.mobile.pageContainer.append(page);
-          $.mobile.changePage(page, { role: 'page', transition: 'slide' });
-        }
-      });
+      var my_conversations_page = $("#my-conversations-page");
+      $.mobile.changePage(my_conversations_page, { changeHash: false, transition: 'slide' });
+      this.views.my_conversations.initPage();
     },
 
     importConversations: function() {
-      var importConversationsView = new SpiritApp.Pages.ImportConversationsView;
-      var page = importConversationsView.render().$el;
-      $.mobile.pageContainer.append(page);
-      $.mobile.changePage(page, { role: 'page', transition: 'slide' });
+      var import_conversations_page = $("#import-conversations-page");
+      $.mobile.changePage(import_conversations_page, { changeHash: false, transition: 'slide' });
+      this.views.import_conversations.initPage();
     },
 
     browseFeed: function() {
-      var browseFeedView = new SpiritApp.Pages.BrowseFeedView;
-      var page = browseFeedView.render().$el;
-      $.mobile.pageContainer.append(page);
-      $.mobile.changePage(page, { role: 'page', transition: 'slide' });
+      var browse_feed_page = $("#browse-feed-page");
+      $.mobile.changePage(browse_feed_page, { changeHash: false, transition: 'slide' });
+      this.views.browse_feed.initPage();
     }
 
   });
 
-  return SpiritApp.Pages.DashboardView;
+  return DashboardView;
 
 });

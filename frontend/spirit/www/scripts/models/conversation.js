@@ -9,6 +9,7 @@ define([
   'Backbone',
   'models/user',
   'models/text',
+  'models/comment',
   'collections/texts',
   'collections/conversation-comments'
   ], function ($, _, Backbone, User, Text, Comment, Texts, ConversationComments) {

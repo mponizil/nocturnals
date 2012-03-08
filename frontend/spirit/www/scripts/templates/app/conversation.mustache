@@ -5,14 +5,16 @@
 <body>
 
 <div data-role="header">
-  <a id="link-my-conversations" data-icon="arrow-l">My Conversations</a>
+  <a id="link-{{back.slug}}" data-icon="arrow-l" class="back">{{back.title}}</a>
   <h1>Conversation</h1>
 </div>
 
 <div data-role="content">
-  {{author.username}}
-  {{context}}
-  {{target}}
+  {{#texts}}
+  <div>
+    {{body}}
+  </div>
+  {{/texts}}
 </div>
 
 </body>

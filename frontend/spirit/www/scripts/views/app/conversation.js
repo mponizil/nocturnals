@@ -11,31 +11,51 @@ define([
   'text!templates/app/conversation.mustache!strip'
   ], function ($, _, Backbone, Mustache, conversation_template) {
 
-  SpiritApp.Pages.ConversationView = Backbone.View.extend({
+  var ConversationView = Backbone.View.extend({
+
+    el: $("#conversation-page"),
+
+    initialize: function() {
+    },
+
+    initPage: function() {
+      var _c = this;
+      _c.model.fetch({
+        success: function() {
+          _c.render();
+        }
+      });
+    },
 
     template: function(params) {
       return Mustache.to_html(conversation_template, params);
     },
 
     events: {
-      'click #link-my-conversations' : 'myConversations'
+      'click #link-my-conversations' : 'myConversationsPage',
+      'click #link-browse-feed'      : 'browseFeedPage'
     },
 
     render: function() {
-      console.log(this.model.toJSON());
-      this.$el.html(this.template(this.model.toJSON()));
+      var data = $.extend({}, this.model.toJSON(), { back: this.options.back });
+      console.log(data);
+      this.$el.html(this.template(data));
+      this.$el.page("destroy").page();
       return this;
     },
 
-    myConversations: function() {
-      var myConversationsView = new SpiritApp.Pages.MyConversationsView;
-      var page = myConversationsView.render().$el;
-      $.mobile.pageContainer.append(page);
-      $.mobile.changePage(page, { role: 'page', reverse: true, transition: 'slide' });
+    myConversationsPage: function() {
+      var my_conversations_page = $("#my-conversations-page");
+      $.mobile.changePage(my_conversations_page, { changeHash: false, reverse: true, transition: 'slide' });
+    },
+
+    browseFeedPage: function() {
+      var browse_feed_page = $("#browse-feed-page");
+      $.mobile.changePage(browse_feed_page, { changeHash: false, reverse: true, transition: 'slide' });
     }
 
   });
 
-  return SpiritApp.Pages.ConversationView;
+  return ConversationView;
 
 });

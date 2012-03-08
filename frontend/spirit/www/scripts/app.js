@@ -5,19 +5,11 @@
 
 define([
   'jQuery',
-  'views/init/init',
-  'views/auth/login',
-  'views/auth/signup',
-  'views/app/dashboard',
-  'views/app/my-conversations',
-  'views/app/import-conversations',
-  'views/app/browse-feed',
-  'views/app/conversation'
-  ], function ($, InitView) {
+  'views/app'
+  ], function ($, AppView) {
   return {
     init: function () {
-      var init_view = (new InitView).render().$el;
-      $('body').append(init_view);
+      SpiritApp.App = new AppView;
       $.mobile.initializePage();
     }
   };

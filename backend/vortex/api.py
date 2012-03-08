@@ -5,6 +5,7 @@ from vortex.models import *
 class ConversationResource(ModelResource):
     author = fields.ForeignKey('accounts.api.UserResource', 'author', full=True)
     texts = fields.ToManyField('vortex.api.TextResource', 'texts')
+    comments = fields.ToManyField('vortex.api.CommentResource', 'comments')
     
     class Meta:
         queryset = Conversation.objects.all()
@@ -14,8 +15,18 @@ class ConversationResource(ModelResource):
         }
 
 class TextResource(ModelResource):
-    conversation = fields.ForeignKey(ConversationResource, 'conversation', full=True)
+    conversation = fields.ForeignKey('vortex.api.ConversationResource', 'conversation')
+    comments = fields.ToManyField('vortex.api.CommentResource', 'conversation')
     
     class Meta:
         queryset = Text.objects.all()
         resource_name = 'text'
+
+class CommentResource(ModelResource):
+    conversation = fields.ForeignKey('vortex.api.ConversationResource', 'conversation')
+    text = fields.ForeignKey('vortex.api.TextResource', 'text')
+    author = fields.ForeignKey('accounts.api.UserResource', 'author')
+    
+    class Meta:
+        queryset = Comment.objects.all()
+        resource_name = 'comment'

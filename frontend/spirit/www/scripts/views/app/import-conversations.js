@@ -11,14 +11,25 @@ define([
   'text!templates/app/import-conversations.mustache!strip'
   ], function ($, _, Backbone, Mustache, import_conversations_template) {
 
-  SpiritApp.Pages.ImportConversationsView = Backbone.View.extend({
+  var ImportConversationsView = Backbone.View.extend({
+
+    el: $("#import-conversations-page"),
+
+    initialize: function() {
+    },
+
+    initPage: function() {
+      this.$el.html(this.template());
+      this.$el.page("destroy").page();
+      return this;
+    },
 
     template: function(params) {
       return Mustache.to_html(import_conversations_template, params);
     },
 
     events: {
-      'click #link-dashboard' : 'dashboard'
+      'click #link-dashboard' : 'dashboardPage'
     },
 
     render: function() {
@@ -26,15 +37,13 @@ define([
       return this;
     }  ,
 
-    dashboard: function() {
-      var dashboardView = new SpiritApp.Pages.DashboardView;
-      var page = dashboardView.render().$el;
-      $.mobile.pageContainer.append(page);
-      $.mobile.changePage(page, { role: 'page', reverse: true, transition: 'slide' });
+    dashboardPage: function() {
+      var dashboard_page = $("#dashboard-page");
+      $.mobile.changePage(dashboard_page, { changeHash: false, reverse: true, transition: 'slide' });
     }
 
   });
 
-  return SpiritApp.Pages.ImportConversationsView;
+  return ImportConversationsView;
 
 });

@@ -7,7 +7,7 @@ var CONFIG = {
   ENDPOINT: "http://localhost:8000"
 };
 var SpiritApp = {
-  Pages: {},
+  App: {},
   User: {}
 }
 
