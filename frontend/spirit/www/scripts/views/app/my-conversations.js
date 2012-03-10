@@ -22,13 +22,13 @@ define([
     },
 
     initPage: function() {
-      var _mc = this;
-      Conversations.fetch({
+      var _mcv = this;
+      _mcv.collection.fetch({
         data: {
           author: SpiritApp.User.get("id")
         },
         success: function() {
-          _mc.render();
+          _mcv.render();
         }
       });
     },
@@ -43,7 +43,10 @@ define([
     },
 
     render: function() {
-      this.$el.html(this.template({ conversations: Conversations.toJSON() }));
+      var conversations = _.map(this.collection.toJSON(), function(conversation, index) {
+        return $.extend({}, conversation, { index: index });
+      });
+      this.$el.html(this.template({ conversations: conversations }));
       this.$el.page("destroy").page();
       return this;
     },
@@ -54,9 +57,9 @@ define([
     },
 
     conversationPage: function(event) {
-      var conversation_id = $(event.target).data("id");
+      var conversation_index = $(event.target).data("index");
       var conversation_view = new ConversationView({
-        model: new Conversation({ id: conversation_id }),
+        model: this.collection.at(conversation_index),
         back: {
           slug: "my-conversations",
           title: "My Conversations"

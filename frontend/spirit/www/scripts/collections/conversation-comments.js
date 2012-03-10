@@ -12,14 +12,10 @@ define([
 
   var ConversationComments = Backbone.Collection.extend({
 
-    model: Comment,
-
-    parse: function(response) {
-      return response.objects;
-    }
+    model: Comment
 
   });
 
-  return new ConversationComments;
+  return ConversationComments;
 
 });

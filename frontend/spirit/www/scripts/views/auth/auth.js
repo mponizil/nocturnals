@@ -26,8 +26,8 @@ define([
 
       this.getUserStatus();
 
-      this.views.signup = new SignupView;
-      this.views.login = new LoginView;
+      this.views.signup = new SignupView();
+      this.views.login = new LoginView();
       this.views.signup.on("login_page", this.loginPage, this);
       this.views.login.on("signup_page", this.signupPage, this);
     },

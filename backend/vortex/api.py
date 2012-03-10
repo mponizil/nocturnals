@@ -16,11 +16,14 @@ class ConversationResource(ModelResource):
 
 class TextResource(ModelResource):
     conversation = fields.ForeignKey('vortex.api.ConversationResource', 'conversation')
-    comments = fields.ToManyField('vortex.api.CommentResource', 'conversation')
+    comments = fields.ToManyField('vortex.api.CommentResource', 'comments')
     
     class Meta:
         queryset = Text.objects.all()
         resource_name = 'text'
+        filtering = {
+            'conversation': ALL_WITH_RELATIONS
+        }
 
 class CommentResource(ModelResource):
     conversation = fields.ForeignKey('vortex.api.ConversationResource', 'conversation')

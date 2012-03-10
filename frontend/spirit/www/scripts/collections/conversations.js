@@ -14,14 +14,10 @@ define([
 
     url: CONFIG.ENDPOINT + "/api/v1/conversation/?format=json",
 
-    model: Conversation,
-
-    parse: function(response) {
-      return response.objects;
-    }
+    model: Conversation
 
   });
 
-  return new Conversations;
+  return Conversations;
 
 });

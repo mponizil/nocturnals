@@ -21,8 +21,8 @@ define([
       SpiritApp.User.on("logged_out", this.loggedOut, this);
 
       this.views = {};
-      this.views.auth = new AuthView;
-      this.views.dashboard = new DashboardView;
+      this.views.auth = new AuthView();
+      this.views.dashboard = new DashboardView();
     },
 
     loggedOut: function() {

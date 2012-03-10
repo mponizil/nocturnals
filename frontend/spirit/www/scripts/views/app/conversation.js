@@ -19,10 +19,13 @@ define([
     },
 
     initPage: function() {
-      var _c = this;
-      _c.model.fetch({
+      var _cv = this;
+      _cv.model.fetchRelated('texts', {
+        data: {
+          conversation: _cv.model.get("id")
+        },
         success: function() {
-          _c.render();
+          _cv.render();
         }
       });
     },
@@ -38,7 +41,6 @@ define([
 
     render: function() {
       var data = $.extend({}, this.model.toJSON(), { back: this.options.back });
-      console.log(data);
       this.$el.html(this.template(data));
       this.$el.page("destroy").page();
       return this;

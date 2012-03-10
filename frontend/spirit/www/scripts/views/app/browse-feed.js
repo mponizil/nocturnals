@@ -22,10 +22,10 @@ define([
     },
 
     initPage: function() {
-      var _bf = this;
-      Conversations.fetch({
+      var _bfv = this;
+      _bfv.collection.fetch({
         success: function() {
-          _bf.render();
+          _bfv.render();
         }
       });
     },
@@ -40,21 +40,23 @@ define([
     },
 
     render: function() {
-      this.$el.html(this.template({ conversations: Conversations.toJSON() }));
+      var conversations = _.map(this.collection.toJSON(), function(conversation, index) {
+        return $.extend({}, conversation, { index: index });
+      });
+      this.$el.html(this.template({ conversations: conversations }));
       this.$el.page("destroy").page();
       return this;
     },
 
     dashboardPage: function() {
-      console.log('dash')
       var dashboard_page = $("#dashboard-page");
       $.mobile.changePage(dashboard_page, { changeHash: false, reverse: true, transition: 'slide' });
     },
 
     conversationPage: function(event) {
-      var conversation_id = $(event.target).data("id");
+      var conversation_index = $(event.target).data("index");
       var conversation_view = new ConversationView({
-        model: new Conversation({ id: conversation_id }),
+        model: this.collection.at(conversation_index),
         back: {
           slug: "browse-feed",
           title: "Browse Feed"

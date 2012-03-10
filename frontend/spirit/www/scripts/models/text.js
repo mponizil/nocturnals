@@ -17,15 +17,15 @@ define([
     relations: [{
       type: Backbone.HasOne,
       key: 'author',
-      relatedModel: 'User',
+      relatedModel: User,
       reverseRelation: {
         key: 'texts'
       }
     }, {
       type: Backbone.HasMany,
       key: 'comments',
-      relatedModel: 'Comment',
-      collectionType: 'TextComments',
+      relatedModel: Comment,
+      collectionType: TextComments,
       reverseRelation: {
         key: 'text'
       }
@@ -35,7 +35,10 @@ define([
     },
 
     initialize: function() {
-      
+    },
+
+    url: function() {
+      return CONFIG.ENDPOINT + this.get("resource_uri") + "?format=json";
     }
 
   });

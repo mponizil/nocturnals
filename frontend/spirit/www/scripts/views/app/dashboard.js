@@ -23,9 +23,13 @@ define([
       this.render();
 
       this.views = {};
-      this.views.my_conversations = new MyConversationsView;
-      this.views.import_conversations = new ImportConversationsView;
-      this.views.browse_feed = new BrowseFeedView;
+      this.views.my_conversations = new MyConversationsView({
+        collection: new Conversations()
+      });
+      this.views.import_conversations = new ImportConversationsView();
+      this.views.browse_feed = new BrowseFeedView({
+        collection: new Conversations()
+      });
     },
 
     template: function(params) {

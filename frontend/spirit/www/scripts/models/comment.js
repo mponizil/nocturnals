@@ -15,7 +15,7 @@ define([
     relations: [{
       type: Backbone.HasOne,
       key: 'author',
-      relatedModel: 'User',
+      relatedModel: User,
       reverseRelation: {
         key: 'conversations'
       }

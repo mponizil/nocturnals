@@ -12,14 +12,14 @@ define([
 
   var Texts = Backbone.Collection.extend({
 
-    model: Text,
+    url: function() {
+      return CONFIG.ENDPOINT + '/api/v1/text/?format=json';
+    },
 
-    parse: function(response) {
-      return response.objects;
-    }
+    model: Text
 
   });
 
-  return new Texts;
+  return Texts;
 
 });

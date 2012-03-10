@@ -9,7 +9,7 @@ define([
   ], function ($, AppView) {
   return {
     init: function () {
-      SpiritApp.App = new AppView;
+      SpiritApp.App = new AppView();
       $.mobile.initializePage();
     }
   };
