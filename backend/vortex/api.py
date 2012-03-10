@@ -16,7 +16,6 @@ class ConversationResource(ModelResource):
 
 class TextResource(ModelResource):
     conversation = fields.ForeignKey('vortex.api.ConversationResource', 'conversation')
-    comments = fields.ToManyField('vortex.api.CommentResource', 'comments')
     
     class Meta:
         queryset = Text.objects.all()
@@ -27,7 +26,6 @@ class TextResource(ModelResource):
 
 class CommentResource(ModelResource):
     conversation = fields.ForeignKey('vortex.api.ConversationResource', 'conversation')
-    text = fields.ForeignKey('vortex.api.TextResource', 'text')
     author = fields.ForeignKey('accounts.api.UserResource', 'author')
     
     class Meta:

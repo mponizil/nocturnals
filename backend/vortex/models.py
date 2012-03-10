@@ -35,7 +35,6 @@ class Text(models.Model):
 class Comment(models.Model):
     date_created = models.DateTimeField()
     conversation = models.ForeignKey(Conversation, verbose_name="conversation this comment is on", related_name="comments")
-    text = models.ForeignKey(Text, verbose_name="individual text this comment is on", related_name="comments", null=True, blank=True)
     author = models.ForeignKey(User, verbose_name="user who wrote this comment", related_name="comments")
     body = models.TextField()
     

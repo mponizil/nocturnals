@@ -21,14 +21,6 @@ define([
       reverseRelation: {
         key: 'texts'
       }
-    }, {
-      type: Backbone.HasMany,
-      key: 'comments',
-      relatedModel: Comment,
-      collectionType: TextComments,
-      reverseRelation: {
-        key: 'text'
-      }
     }],
 
     defaults: {
