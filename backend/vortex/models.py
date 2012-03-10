@@ -15,7 +15,7 @@ class Conversation(models.Model):
         super(Conversation, self).save()
     
     def __unicode__(self):
-        return self.author.username + ": " + str(self.id)
+        return self.author.username + ": " + self.target[:40]
 
 class Text(models.Model):
     date_created = models.DateTimeField()
@@ -27,10 +27,10 @@ class Text(models.Model):
     def save(self):
         if self.date_created == None:
           self.date_created = datetime.now()
-        super(Conversation, self).save()
+        super(Text, self).save()
     
     def __unicode__(self):
-        return str(self.body)[:20]
+        return self.author + ": " + self.body[:40]
 
 class Comment(models.Model):
     date_created = models.DateTimeField()
@@ -41,10 +41,10 @@ class Comment(models.Model):
     def save(self):
         if self.date_created == None:
           self.date_created = datetime.now()
-        super(Conversation, self).save()
+        super(Comment, self).save()
     
     def __unicode__(self):
-        return str(self.body)[:20]
+        return self.author.username + ": " + self.body[:40]
 
 class Council(models.Model):
     date_created = models.DateTimeField()
@@ -54,10 +54,10 @@ class Council(models.Model):
     def save(self):
         if self.date_created == None:
           self.date_created = datetime.now()
-        super(Conversation, self).save()
+        super(Council, self).save()
     
     def __unicode__(self):
-        return str(self.title)
+        return self.title
 
 class CouncilMember(models.Model):
     date_created = models.DateTimeField()
@@ -67,7 +67,7 @@ class CouncilMember(models.Model):
     def save(self):
         if self.date_created == None:
           self.date_created = datetime.now()
-        super(Conversation, self).save()
+        super(CouncilMember, self).save()
     
     def __unicode__(self):
-        return self.user.username + ": " + str(self.conversation.id)
+        return self.user.username + ": " + self.conversation.target[:40]
