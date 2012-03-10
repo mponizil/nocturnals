@@ -9,8 +9,7 @@ define([
   'Backbone',
   'models/user',
   'models/comment',
-  'collections/text-comments'
-  ], function ($, _, Backbone, User, Comment, TextComments) {
+  ], function ($, _, Backbone, User, Comment) {
 
   var Text = Backbone.RelationalModel.extend({
 
