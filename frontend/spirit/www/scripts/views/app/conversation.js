@@ -31,6 +31,7 @@ define([
     },
 
     template: function(params) {
+      console.log(params)
       return Mustache.to_html(conversation_template, params);
     },
 

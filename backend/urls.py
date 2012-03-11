@@ -10,6 +10,7 @@ v1_api = Api(api_name='v1')
 v1_api.register(UserResource())
 v1_api.register(ConversationResource())
 v1_api.register(TextResource())
+v1_api.register(CommentResource())
 
 urlpatterns = patterns('',
     (r'^auth/', include('accounts.urls')),

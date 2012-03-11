@@ -7,7 +7,7 @@ TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
     ('Misha', 'misha.ponizil@gmail.com'),
-    ('Steve', 'sjk432@nyu.edu')
+    ('Steve', 'sjk432@nyu.edu'),
 )
 
 MANAGERS = ADMINS
@@ -119,7 +119,7 @@ INSTALLED_APPS = (
     # 'south',
     'accounts',
     'vortex',
-    'tastypie'
+    'tastypie',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )

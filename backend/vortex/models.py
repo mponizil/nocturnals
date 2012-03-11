@@ -7,7 +7,7 @@ class Conversation(models.Model):
     author = models.ForeignKey(User, verbose_name="user who created this conversation", related_name="conversations")
     context = models.TextField(blank=True)
     target = models.CharField(max_length=255, blank=True)
-    private = models.BooleanField(default=True)
+    public = models.BooleanField(default=False)
     
     def save(self):
         if self.date_created == None:

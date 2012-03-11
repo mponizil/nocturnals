@@ -160,7 +160,7 @@
     "model": "vortex.conversation", 
     "fields": {
       "date_created": "2012-03-10 15:28:27", 
-      "private": true, 
+      "public": false, 
       "target": "Cynthia", 
       "context": "Hit on this girl last night and got her number", 
       "author": 1
@@ -171,7 +171,7 @@
     "model": "vortex.conversation", 
     "fields": {
       "date_created": "2012-03-10 15:28:48", 
-      "private": true, 
+      "public": false, 
       "target": "Rachel", 
       "context": "Been talking to this chick for a couple weeks", 
       "author": 1
@@ -182,7 +182,7 @@
     "model": "vortex.conversation", 
     "fields": {
       "date_created": "2012-03-10 15:29:03", 
-      "private": true, 
+      "public": true, 
       "target": "Sarah", 
       "context": "i need serious help with this babe", 
       "author": 2
@@ -193,7 +193,7 @@
     "model": "vortex.conversation", 
     "fields": {
       "date_created": "2012-03-10 15:29:22", 
-      "private": true, 
+      "public": false, 
       "target": "Dorothy", 
       "context": "Can't get my mind off this girl", 
       "author": 3
@@ -204,7 +204,7 @@
     "model": "vortex.conversation", 
     "fields": {
       "date_created": "2012-03-10 15:29:36", 
-      "private": true, 
+      "public": false, 
       "target": "Tom", 
       "context": "Hottest guy I've ever met", 
       "author": 4
@@ -215,7 +215,7 @@
     "model": "vortex.conversation", 
     "fields": {
       "date_created": "2012-03-10 15:29:54", 
-      "private": true, 
+      "public": false, 
       "target": "Bob", 
       "context": "Can't tell if I'm into him", 
       "author": 4
@@ -226,7 +226,7 @@
     "model": "vortex.conversation", 
     "fields": {
       "date_created": "2012-03-10 15:30:06", 
-      "private": true, 
+      "public": false, 
       "target": "Elana", 
       "context": "Smokin hot", 
       "author": 5
@@ -237,7 +237,7 @@
     "model": "vortex.conversation", 
     "fields": {
       "date_created": "2012-03-10 15:30:31", 
-      "private": true, 
+      "public": false, 
       "target": "Chelsea", 
       "context": "This girl is crazy", 
       "author": 5
@@ -248,7 +248,7 @@
     "model": "vortex.conversation", 
     "fields": {
       "date_created": "2012-03-10 15:32:09", 
-      "private": true, 
+      "public": false, 
       "target": "Bethanie", 
       "context": "Need help talkin to my girlfriend", 
       "author": 6
