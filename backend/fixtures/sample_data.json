@@ -260,8 +260,8 @@
     "fields": {
       "body": "What's up?", 
       "date_created": "2012-03-10 15:32:31", 
-      "author": "mponizil", 
-      "user_author": 1, 
+      "author_name": "mponizil", 
+      "author": 1, 
       "conversation": 1
     }
   }, 
@@ -271,8 +271,8 @@
     "fields": {
       "body": "nm just chillin", 
       "date_created": "2012-03-10 15:33:09", 
-      "author": "Cynthia", 
-      "user_author": null, 
+      "author_name": "Cynthia", 
+      "author": null, 
       "conversation": 1
     }
   }, 
@@ -282,8 +282,8 @@
     "fields": {
       "body": "I dig it girrl", 
       "date_created": "2012-03-10 15:33:51", 
-      "author": "mponizil", 
-      "user_author": 1, 
+      "author_name": "mponizil", 
+      "author": 1, 
       "conversation": 1
     }
   }, 
@@ -293,8 +293,8 @@
     "fields": {
       "body": "Hahahah lol", 
       "date_created": "2012-03-10 15:34:21", 
-      "author": "Cynthia", 
-      "user_author": null, 
+      "author_name": "Cynthia", 
+      "author": null, 
       "conversation": 1
     }
   }, 
@@ -304,8 +304,8 @@
     "fields": {
       "body": "You ever been to the circus?", 
       "date_created": "2012-03-10 15:34:33", 
-      "author": "andres", 
-      "user_author": 2, 
+      "author_name": "andres", 
+      "author": 2, 
       "conversation": 1
     }
   }, 
@@ -315,8 +315,8 @@
     "fields": {
       "body": "Heyyyy", 
       "date_created": "2012-03-10 15:38:14", 
-      "author": "Rachel", 
-      "user_author": null, 
+      "author_name": "Rachel", 
+      "author": null, 
       "conversation": 2
     }
   }, 
@@ -326,8 +326,8 @@
     "fields": {
       "body": "yo babe whats goin on", 
       "date_created": "2012-03-10 15:38:27", 
-      "author": "steve", 
-      "user_author": 3, 
+      "author_name": "steve", 
+      "author": 3, 
       "conversation": 2
     }
   }, 
@@ -337,8 +337,8 @@
     "fields": {
       "body": "yo babe whats goin on", 
       "date_created": "2012-03-10 15:38:42", 
-      "author": "mponizil", 
-      "user_author": 1, 
+      "author_name": "mponizil", 
+      "author": 1, 
       "conversation": 2
     }
   }, 
@@ -348,8 +348,8 @@
     "fields": {
       "body": "lol nm u?", 
       "date_created": "2012-03-10 15:39:02", 
-      "author": "Rachel", 
-      "user_author": null, 
+      "author_name": "Rachel", 
+      "author": null, 
       "conversation": 2
     }
   }, 
@@ -359,8 +359,8 @@
     "fields": {
       "body": "girllll i got everything you need", 
       "date_created": "2012-03-10 15:39:21", 
-      "author": "andres", 
-      "user_author": 2, 
+      "author_name": "andres", 
+      "author": 2, 
       "conversation": 3
     }
   }, 
@@ -370,8 +370,8 @@
     "fields": {
       "body": "boii you gotta show me what you got", 
       "date_created": "2012-03-10 15:39:37", 
-      "author": "Sarah", 
-      "user_author": null, 
+      "author_name": "Sarah", 
+      "author": null, 
       "conversation": 3
     }
   }, 
@@ -381,8 +381,8 @@
     "fields": {
       "body": "lemme tell you hun", 
       "date_created": "2012-03-10 15:39:54", 
-      "author": "andres", 
-      "user_author": 2, 
+      "author_name": "andres", 
+      "author": 2, 
       "conversation": 3
     }
   }, 
@@ -392,8 +392,8 @@
     "fields": {
       "body": "you ever been do the circus?", 
       "date_created": "2012-03-10 15:40:06", 
-      "author": "mponizil", 
-      "user_author": 1, 
+      "author_name": "mponizil", 
+      "author": 1, 
       "conversation": 3
     }
   }, 
@@ -403,8 +403,8 @@
     "fields": {
       "body": "tell me what", 
       "date_created": "2012-03-10 15:40:27", 
-      "author": "Sarah", 
-      "user_author": null, 
+      "author_name": "Sarah", 
+      "author": null, 
       "conversation": 3
     }
   }, 
@@ -414,8 +414,8 @@
     "fields": {
       "body": "hey dorothy!", 
       "date_created": "2012-03-10 15:40:37", 
-      "author": "steve", 
-      "user_author": 3, 
+      "author_name": "steve", 
+      "author": 3, 
       "conversation": 4
     }
   }, 
@@ -425,8 +425,8 @@
     "fields": {
       "body": "hi steve", 
       "date_created": "2012-03-10 15:40:54", 
-      "author": "Dorothy", 
-      "user_author": null, 
+      "author_name": "Dorothy", 
+      "author": null, 
       "conversation": 4
     }
   }, 
@@ -436,8 +436,8 @@
     "fields": {
       "body": "watchu up to", 
       "date_created": "2012-03-10 15:41:05", 
-      "author": "steve", 
-      "user_author": 3, 
+      "author_name": "steve", 
+      "author": 3, 
       "conversation": 4
     }
   }, 
@@ -447,8 +447,8 @@
     "fields": {
       "body": "ohhh just hangin out", 
       "date_created": "2012-03-10 15:41:20", 
-      "author": "Dorothy", 
-      "user_author": null, 
+      "author_name": "Dorothy", 
+      "author": null, 
       "conversation": 4
     }
   }, 
@@ -458,8 +458,8 @@
     "fields": {
       "body": "we should bang", 
       "date_created": "2012-03-10 15:41:31", 
-      "author": "mponizil", 
-      "user_author": 1, 
+      "author_name": "mponizil", 
+      "author": 1, 
       "conversation": 4
     }
   }, 
@@ -469,8 +469,8 @@
     "fields": {
       "body": "wassup baby", 
       "date_created": "2012-03-10 15:41:43", 
-      "author": "Tom", 
-      "user_author": null, 
+      "author_name": "Tom", 
+      "author": null, 
       "conversation": 5
     }
   }, 
@@ -480,8 +480,8 @@
     "fields": {
       "body": "gurl?", 
       "date_created": "2012-03-10 15:41:59", 
-      "author": "Tom", 
-      "user_author": null, 
+      "author_name": "Tom", 
+      "author": null, 
       "conversation": 5
     }
   }, 
@@ -491,8 +491,8 @@
     "fields": {
       "body": "oh yea you're that creepy guy from the party last night", 
       "date_created": "2012-03-10 15:42:10", 
-      "author": "eddie", 
-      "user_author": 5, 
+      "author_name": "eddie", 
+      "author": 5, 
       "conversation": 5
     }
   }, 
@@ -502,8 +502,8 @@
     "fields": {
       "body": "oh yea you're that creepy guy from the party last night", 
       "date_created": "2012-03-10 15:43:51", 
-      "author": "angelica", 
-      "user_author": 4, 
+      "author_name": "angelica", 
+      "author": 4, 
       "conversation": 5
     }
   }, 
@@ -513,8 +513,8 @@
     "fields": {
       "body": "wtf??", 
       "date_created": "2012-03-10 15:44:14", 
-      "author": "Tom", 
-      "user_author": null, 
+      "author_name": "Tom", 
+      "author": null, 
       "conversation": 5
     }
   }, 
@@ -524,8 +524,8 @@
     "fields": {
       "body": "wtf is this????", 
       "date_created": "2012-03-10 15:44:23", 
-      "author": "Tom", 
-      "user_author": null, 
+      "author_name": "Tom", 
+      "author": null, 
       "conversation": 5
     }
   }, 
@@ -535,8 +535,8 @@
     "fields": {
       "body": "heyyyy", 
       "date_created": "2012-03-10 15:44:33", 
-      "author": "angelica", 
-      "user_author": 4, 
+      "author_name": "angelica", 
+      "author": 4, 
       "conversation": 6
     }
   }, 
@@ -546,8 +546,8 @@
     "fields": {
       "body": "Hey Angelica! Great meeting you last night!", 
       "date_created": "2012-03-10 15:44:43", 
-      "author": "Bob", 
-      "user_author": null, 
+      "author_name": "Bob", 
+      "author": null, 
       "conversation": 6
     }
   }, 
@@ -557,8 +557,8 @@
     "fields": {
       "body": "How was your time last night? Have fun??", 
       "date_created": "2012-03-10 15:45:04", 
-      "author": "Bob", 
-      "user_author": null, 
+      "author_name": "Bob", 
+      "author": null, 
       "conversation": 6
     }
   }, 
@@ -568,8 +568,8 @@
     "fields": {
       "body": "not as much fun as you had", 
       "date_created": "2012-03-10 15:45:21", 
-      "author": "ashwinn", 
-      "user_author": 6, 
+      "author_name": "ashwinn", 
+      "author": 6, 
       "conversation": 6
     }
   }, 
@@ -579,8 +579,8 @@
     "fields": {
       "body": "i dont even remember how i got home", 
       "date_created": "2012-03-10 15:45:37", 
-      "author": "steve", 
-      "user_author": 3, 
+      "author_name": "steve", 
+      "author": 3, 
       "conversation": 6
     }
   }, 
@@ -590,8 +590,8 @@
     "fields": {
       "body": "Hahah yea I had a great time", 
       "date_created": "2012-03-10 15:46:22", 
-      "author": "angelica", 
-      "user_author": 4, 
+      "author_name": "angelica", 
+      "author": 4, 
       "conversation": 6
     }
   }, 
@@ -601,8 +601,8 @@
     "fields": {
       "body": "hey lets grab lunch some time", 
       "date_created": "2012-03-10 15:46:36", 
-      "author": "eddie", 
-      "user_author": 5, 
+      "author_name": "eddie", 
+      "author": 5, 
       "conversation": 7
     }
   }, 
@@ -612,8 +612,8 @@
     "fields": {
       "body": "actually lets make that dinner", 
       "date_created": "2012-03-10 15:46:59", 
-      "author": "andres", 
-      "user_author": 2, 
+      "author_name": "andres", 
+      "author": 2, 
       "conversation": 7
     }
   }, 
@@ -623,8 +623,8 @@
     "fields": {
       "body": "Hey!! Yea I'd love to", 
       "date_created": "2012-03-10 15:47:18", 
-      "author": "Elana", 
-      "user_author": null, 
+      "author_name": "Elana", 
+      "author": null, 
       "conversation": 7
     }
   }, 
@@ -634,8 +634,8 @@
     "fields": {
       "body": "you ever eaten at thunder jackson's?", 
       "date_created": "2012-03-10 15:47:32", 
-      "author": "mponizil", 
-      "user_author": 1, 
+      "author_name": "mponizil", 
+      "author": 1, 
       "conversation": 7
     }
   }, 
@@ -645,8 +645,8 @@
     "fields": {
       "body": "you ever eaten at thunder jackson's?", 
       "date_created": "2012-03-10 15:48:05", 
-      "author": "eddie", 
-      "user_author": 5, 
+      "author_name": "eddie", 
+      "author": 5, 
       "conversation": 7
     }
   }, 
@@ -656,8 +656,8 @@
     "fields": {
       "body": "wassup you free saturday?", 
       "date_created": "2012-03-10 15:48:13", 
-      "author": "eddie", 
-      "user_author": 5, 
+      "author_name": "eddie", 
+      "author": 5, 
       "conversation": 8
     }
   }, 
@@ -667,8 +667,8 @@
     "fields": {
       "body": "Heyyyy no not really.. Maybe next Saturday?", 
       "date_created": "2012-03-10 15:48:33", 
-      "author": "Chelsea", 
-      "user_author": null, 
+      "author_name": "Chelsea", 
+      "author": null, 
       "conversation": 8
     }
   }, 
@@ -678,8 +678,8 @@
     "fields": {
       "body": "this saturday or nothin babe", 
       "date_created": "2012-03-10 15:48:51", 
-      "author": "ashwinn", 
-      "user_author": 6, 
+      "author_name": "ashwinn", 
+      "author": 6, 
       "conversation": 8
     }
   }, 
@@ -689,8 +689,8 @@
     "fields": {
       "body": "next sat is cool", 
       "date_created": "2012-03-10 15:49:06", 
-      "author": "eddie", 
-      "user_author": 5, 
+      "author_name": "eddie", 
+      "author": 5, 
       "conversation": 8
     }
   }, 
@@ -700,8 +700,8 @@
     "fields": {
       "body": "Great! lol", 
       "date_created": "2012-03-10 15:49:23", 
-      "author": "Chelsea", 
-      "user_author": null, 
+      "author_name": "Chelsea", 
+      "author": null, 
       "conversation": 8
     }
   }, 
@@ -711,8 +711,8 @@
     "fields": {
       "body": "aw ash you're such a cutie", 
       "date_created": "2012-03-10 15:49:35", 
-      "author": "Bethanie", 
-      "user_author": null, 
+      "author_name": "Bethanie", 
+      "author": null, 
       "conversation": 9
     }
   }, 
@@ -722,8 +722,8 @@
     "fields": {
       "body": "yea baby you love my good looks", 
       "date_created": "2012-03-10 15:49:53", 
-      "author": "andres", 
-      "user_author": 2, 
+      "author_name": "andres", 
+      "author": 2, 
       "conversation": 9
     }
   }, 
@@ -733,8 +733,8 @@
     "fields": {
       "body": "Hahah thanks did you have fun last night?", 
       "date_created": "2012-03-10 15:50:27", 
-      "author": "ashwinn", 
-      "user_author": 6, 
+      "author_name": "ashwinn", 
+      "author": 6, 
       "conversation": 9
     }
   }, 

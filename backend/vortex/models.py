@@ -20,8 +20,8 @@ class Conversation(models.Model):
 class Text(models.Model):
     date_created = models.DateTimeField()
     conversation = models.ForeignKey(Conversation, verbose_name="conversation this text belongs to", related_name="texts")
-    user_author = models.ForeignKey(User, verbose_name="author as a user object", related_name="texts", null=True, blank=True)
-    author = models.CharField(max_length=255, verbose_name="author name as a string")
+    author = models.ForeignKey(User, verbose_name="author as a user object", related_name="texts", null=True, blank=True)
+    author_name = models.CharField(max_length=255, verbose_name="author name as a string")
     body = models.TextField()
     
     def save(self):

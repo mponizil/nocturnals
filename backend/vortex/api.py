@@ -28,7 +28,7 @@ class ConversationResource(ModelResource):
                 return super(ConversationResource, self).get_object_list(request).filter(public=True)
 
 class TextResource(ModelResource):
-    # user_author = fields.ForeignKey('accounts.api.UserResource', 'user_author', full=True)
+    author = fields.ForeignKey('accounts.api.UserResource', 'author', null=True, full=True)
     conversation = fields.ForeignKey('vortex.api.ConversationResource', 'conversation')
     
     class Meta:
