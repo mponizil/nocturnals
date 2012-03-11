@@ -21,17 +21,16 @@ define([
     initPage: function() {
       var _cv = this;
       _cv.model.fetchRelated('texts', {
-        data: {
-          conversation: _cv.model.get("id")
-        },
-        success: function() {
-          _cv.render();
-        }
+        data: { conversation: _cv.model.get("id") },
+        success: function() { _cv.render(); }
+      });
+      _cv.model.fetchRelated('comments', {
+        data: { conversation: _cv.model.get("id") },
+        success: function() { _cv.render(); }
       });
     },
 
     template: function(params) {
-      console.log(params)
       return Mustache.to_html(conversation_template, params);
     },
 

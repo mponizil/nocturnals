@@ -17,7 +17,7 @@ class ConversationResource(ModelResource):
         }
         authentication = Authentication()
         authorization = DjangoAuthorization()
-
+    
     def get_object_list(self, request):
         if request.GET.get("author") is None:
             return super(ConversationResource, self).get_object_list(request).filter(public=True)
@@ -47,5 +47,8 @@ class CommentResource(ModelResource):
     class Meta:
         queryset = Comment.objects.all()
         resource_name = 'comment'
+        filtering = {
+            'conversation': ALL_WITH_RELATIONS
+        }
         authentication = Authentication()
         authorization = DjangoAuthorization()

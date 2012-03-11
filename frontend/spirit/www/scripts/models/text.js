@@ -7,9 +7,8 @@ define([
   'jQuery',
   'underscore',
   'Backbone',
-  'models/user',
-  'models/comment',
-  ], function ($, _, Backbone, User, Comment) {
+  'models/user'
+  ], function ($, _, Backbone, User) {
 
   var Text = Backbone.RelationalModel.extend({
 

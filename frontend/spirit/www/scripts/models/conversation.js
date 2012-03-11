@@ -11,8 +11,8 @@ define([
   'models/text',
   'models/comment',
   'collections/texts',
-  'collections/conversation-comments'
-  ], function ($, _, Backbone, User, Text, Comment, Texts, ConversationComments) {
+  'collections/comments'
+  ], function ($, _, Backbone, User, Text, Comment, Texts, Comments) {
 
   var Conversation = Backbone.RelationalModel.extend({
 
@@ -35,7 +35,7 @@ define([
       type: Backbone.HasMany,
       key: 'comments',
       relatedModel: Comment,
-      collectionType: ConversationComments,
+      collectionType: Comments,
       reverseRelation: {
         key: 'conversation'
       }

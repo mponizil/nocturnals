@@ -22,11 +22,13 @@ define([
     }],
 
     defaults: {
-      
     },
 
     initialize: function() {
-      
+    },
+
+    url: function() {
+      return CONFIG.ENDPOINT + this.get("resource_uri") + "?format=json";
     }
 
   });

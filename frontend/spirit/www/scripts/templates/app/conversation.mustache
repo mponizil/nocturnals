@@ -10,11 +10,22 @@
 </div>
 
 <div data-role="content">
-  {{#texts}}
-  <div>
-    {{author_name}}: {{body}}
+  <div id="texts">
+    <h2>Texts</h2>
+    {{#texts}}
+    <div>
+      {{author_name}}: {{body}}
+    </div>
+    {{/texts}}
   </div>
-  {{/texts}}
+  <div id="comments">
+    <h2>Comments</h2>
+    {{#comments}}
+    <div>
+      {{author.username}}: {{body}}
+    </div>
+    {{/comments}}
+  </div>
 </div>
 
 </body>
