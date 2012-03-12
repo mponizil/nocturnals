@@ -12,7 +12,6 @@ define([
   var User = Backbone.RelationalModel.extend({
 
     initialize: function() {
-      
     }
 
   });

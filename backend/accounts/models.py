@@ -4,7 +4,8 @@ from django.db.models.signals import post_save
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, unique=True)
-    friends = models.ManyToManyField("self", related_name="friends")
+    friends = models.ManyToManyField("self", related_name="friends", null=True, blank=True)
+    phone = models.CharField(max_length=12, null=True, blank=True)
     
     def __unicode__(self):
         return str(self.user.username)

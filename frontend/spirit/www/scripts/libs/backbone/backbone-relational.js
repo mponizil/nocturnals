@@ -992,7 +992,7 @@
           var id = _.isString( item ) || _.isNumber( item ) ? item : item[ rel.relatedModel.prototype.idAttribute ];
           return id && !Backbone.Relational.store.find( rel.relatedModel, id );
         }, this );
-      
+
       if ( toFetch && toFetch.length ) {
         // Create a model for each entry in 'keyContents' that is to be fetched
         var models = _.map( toFetch, function( item ) {
@@ -1009,11 +1009,15 @@
 
           return model;
         }, this );
-        
+
         // Try if the 'collection' can provide a url to fetch a set of models in one request.
-        if ( rel.related instanceof Backbone.Collection && _.isFunction( rel.related.url ) ) {
-          setUrl = rel.related.url( models );
-        }
+        // if ( rel.related instanceof Backbone.Collection && _.isFunction( rel.related.url ) ) {
+        //   setUrl = rel.related.url( models );
+        // }
+        // INSTEAD: assume that of course the 'collection' can provide a url to fetch a set of models in one request.
+        // And that is done by passing query params specifying the collection of data to fetch. But still allow for the
+        // case that url is a function.
+        setUrl = (_.isFunction( rel.related.url )) ? rel.related.url( models ) : rel.related.url;
         
         // An assumption is that when 'Backbone.Collection.url' is a function, it can handle building of set urls.
         // To make sure it can, test if the url we got by supplying a list of models to fetch is different from
@@ -1050,6 +1054,7 @@
         //     return model.fetch( opts );
         //   }, this );
         // }
+        // INSTEAD: Never fetch a 'collection' of models one by one, always assume a collection endpoint exists
         var opts = _.defaults(
           {
             error: function() {

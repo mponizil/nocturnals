@@ -41,9 +41,7 @@ define([
       }
     }],
 
-    url: function() {
-      return CONFIG.ENDPOINT + "/api/v1/conversation/" + this.get("id") + "/?format=json";
-    }
+    url: CONFIG.ENDPOINT + "/api/v1/conversation/"
 
   });
 

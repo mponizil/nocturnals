@@ -10,13 +10,22 @@
 </div>
 
 <div data-role="content">
-  <div id="texts">
+  <div id="texts" class="clearfix">
     <h2>Texts</h2>
     {{#texts}}
     <div>
       {{author_name}}: {{body}}
     </div>
     {{/texts}}
+    <div>
+      <form id="new-text-form">
+        <div data-role="fieldcontain" class="ui-field-contain">
+          <label for="new-text" class="ui-hidden-accessible">New message</label>
+          <input type="text" name="new-text" id="new-text" value="" placeholder="New message" />
+          <button type="submit" id="new-text-button">Send</button>
+        </div>
+      </form>
+    </div>
   </div>
   <div id="comments">
     <h2>Comments</h2>
@@ -25,6 +34,15 @@
       {{author.username}}: {{body}}
     </div>
     {{/comments}}
+    <div>
+      <form id="new-comment-form">
+        <div data-role="fieldcontain" class="ui-field-contain">
+          <label for="new-comment" class="ui-hidden-accessible">Post a comment</label>
+          <input type="text" name="new-comment" id="new-comment" value="" placeholder="Post a comment" />
+          <button type="submit" id="new-comment-button">Post</button>
+        </div>
+      </form>
+    </div>
   </div>
 </div>
 

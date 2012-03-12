@@ -1,1110 +1,974 @@
 [
   {
-    "pk": 1, 
-    "model": "auth.user", 
+    "pk": 1,
+    "model": "auth.user",
     "fields": {
-      "username": "mponizil", 
-      "first_name": "", 
-      "last_name": "", 
-      "is_active": true, 
-      "is_superuser": true, 
-      "is_staff": true, 
-      "last_login": "2012-03-10 15:26:45", 
-      "groups": [], 
-      "user_permissions": [], 
-      "password": "sha1$84269$4f285cf41e028e22f725668705c0aea1ad526f8b", 
-      "email": "misha.ponizil@gmail.com", 
+      "username": "mponizil",
+      "first_name": "",
+      "last_name": "",
+      "is_active": true,
+      "is_superuser": true,
+      "is_staff": true,
+      "last_login": "2012-03-12 02:51:07",
+      "groups": [],
+      "user_permissions": [],
+      "password": "sha1$84269$4f285cf41e028e22f725668705c0aea1ad526f8b",
+      "email": "misha.ponizil@gmail.com",
       "date_joined": "2012-03-10 15:26:38"
     }
-  }, 
+  },
   {
-    "pk": 2, 
-    "model": "auth.user", 
+    "pk": 2,
+    "model": "auth.user",
     "fields": {
-      "username": "andres", 
-      "first_name": "", 
-      "last_name": "", 
-      "is_active": true, 
-      "is_superuser": false, 
-      "is_staff": false, 
-      "last_login": "2012-03-10 15:27:13", 
-      "groups": [], 
-      "user_permissions": [], 
-      "password": "sha1$c234e$07d54d5b8b1c6c3e411e6227109ebb6986349a1e", 
-      "email": "", 
+      "username": "andres",
+      "first_name": "",
+      "last_name": "",
+      "is_active": true,
+      "is_superuser": false,
+      "is_staff": false,
+      "last_login": "2012-03-10 15:27:13",
+      "groups": [],
+      "user_permissions": [],
+      "password": "sha1$c234e$07d54d5b8b1c6c3e411e6227109ebb6986349a1e",
+      "email": "",
       "date_joined": "2012-03-10 15:27:13"
     }
-  }, 
+  },
   {
-    "pk": 3, 
-    "model": "auth.user", 
+    "pk": 3,
+    "model": "auth.user",
     "fields": {
-      "username": "steve", 
-      "first_name": "", 
-      "last_name": "", 
-      "is_active": true, 
-      "is_superuser": false, 
-      "is_staff": false, 
-      "last_login": "2012-03-10 15:27:21", 
-      "groups": [], 
-      "user_permissions": [], 
-      "password": "sha1$7fc62$1a206eb88d0f5d128d848e318be41b7418b215fc", 
-      "email": "", 
+      "username": "steve",
+      "first_name": "",
+      "last_name": "",
+      "is_active": true,
+      "is_superuser": false,
+      "is_staff": false,
+      "last_login": "2012-03-10 15:27:21",
+      "groups": [],
+      "user_permissions": [],
+      "password": "sha1$7fc62$1a206eb88d0f5d128d848e318be41b7418b215fc",
+      "email": "",
       "date_joined": "2012-03-10 15:27:21"
     }
-  }, 
+  },
   {
-    "pk": 4, 
-    "model": "auth.user", 
+    "pk": 4,
+    "model": "auth.user",
     "fields": {
-      "username": "angelica", 
-      "first_name": "", 
-      "last_name": "", 
-      "is_active": true, 
-      "is_superuser": false, 
-      "is_staff": false, 
-      "last_login": "2012-03-10 15:27:31", 
-      "groups": [], 
-      "user_permissions": [], 
-      "password": "sha1$36851$73789554036ef0a5afa04b39e244dd5329d9a2f7", 
-      "email": "", 
+      "username": "angelica",
+      "first_name": "",
+      "last_name": "",
+      "is_active": true,
+      "is_superuser": false,
+      "is_staff": false,
+      "last_login": "2012-03-10 15:27:31",
+      "groups": [],
+      "user_permissions": [],
+      "password": "sha1$36851$73789554036ef0a5afa04b39e244dd5329d9a2f7",
+      "email": "",
       "date_joined": "2012-03-10 15:27:31"
     }
-  }, 
+  },
   {
-    "pk": 5, 
-    "model": "auth.user", 
+    "pk": 5,
+    "model": "auth.user",
     "fields": {
-      "username": "eddie", 
-      "first_name": "", 
-      "last_name": "", 
-      "is_active": true, 
-      "is_superuser": false, 
-      "is_staff": false, 
-      "last_login": "2012-03-10 15:27:49", 
-      "groups": [], 
-      "user_permissions": [], 
-      "password": "sha1$fcd07$2991c5a9bddb1feded294ec65e91ffeb0d575afd", 
-      "email": "", 
+      "username": "eddie",
+      "first_name": "",
+      "last_name": "",
+      "is_active": true,
+      "is_superuser": false,
+      "is_staff": false,
+      "last_login": "2012-03-10 15:27:49",
+      "groups": [],
+      "user_permissions": [],
+      "password": "sha1$fcd07$2991c5a9bddb1feded294ec65e91ffeb0d575afd",
+      "email": "",
       "date_joined": "2012-03-10 15:27:49"
     }
-  }, 
+  },
   {
-    "pk": 6, 
-    "model": "auth.user", 
+    "pk": 6,
+    "model": "auth.user",
     "fields": {
-      "username": "ashwinn", 
-      "first_name": "", 
-      "last_name": "", 
-      "is_active": true, 
-      "is_superuser": false, 
-      "is_staff": false, 
-      "last_login": "2012-03-10 15:28:01", 
-      "groups": [], 
-      "user_permissions": [], 
-      "password": "sha1$5e54b$6b552e94b125eaa6fd9ca4aee689780f90a2d30b", 
-      "email": "", 
+      "username": "ashwinn",
+      "first_name": "",
+      "last_name": "",
+      "is_active": true,
+      "is_superuser": false,
+      "is_staff": false,
+      "last_login": "2012-03-10 15:28:01",
+      "groups": [],
+      "user_permissions": [],
+      "password": "sha1$5e54b$6b552e94b125eaa6fd9ca4aee689780f90a2d30b",
+      "email": "",
       "date_joined": "2012-03-10 15:28:01"
     }
-  }, 
+  },
   {
-    "pk": 1, 
-    "model": "accounts.userprofile", 
+    "pk": 1,
+    "model": "accounts.userprofile",
     "fields": {
-      "friends": [], 
+      "phone": "+17608463179",
+      "friends": [],
       "user": 1
     }
-  }, 
+  },
   {
-    "pk": 2, 
-    "model": "accounts.userprofile", 
+    "pk": 2,
+    "model": "accounts.userprofile",
     "fields": {
-      "friends": [], 
+      "phone": null,
+      "friends": [],
       "user": 2
     }
-  }, 
+  },
   {
-    "pk": 3, 
-    "model": "accounts.userprofile", 
+    "pk": 3,
+    "model": "accounts.userprofile",
     "fields": {
-      "friends": [], 
+      "phone": null,
+      "friends": [],
       "user": 3
     }
-  }, 
+  },
   {
-    "pk": 4, 
-    "model": "accounts.userprofile", 
+    "pk": 4,
+    "model": "accounts.userprofile",
     "fields": {
-      "friends": [], 
+      "phone": null,
+      "friends": [],
       "user": 4
     }
-  }, 
+  },
   {
-    "pk": 5, 
-    "model": "accounts.userprofile", 
+    "pk": 5,
+    "model": "accounts.userprofile",
     "fields": {
-      "friends": [], 
+      "phone": null,
+      "friends": [],
       "user": 5
     }
-  }, 
+  },
   {
-    "pk": 6, 
-    "model": "accounts.userprofile", 
+    "pk": 6,
+    "model": "accounts.userprofile",
     "fields": {
-      "friends": [], 
+      "phone": null,
+      "friends": [],
       "user": 6
     }
-  }, 
+  },
   {
-    "pk": 1, 
-    "model": "vortex.conversation", 
+    "pk": 1,
+    "model": "vortex.conversation",
     "fields": {
-      "date_created": "2012-03-10 15:28:27", 
-      "public": false, 
-      "target": "Cynthia", 
-      "context": "Hit on this girl last night and got her number", 
-      "author": 1
+      "target": "Cynthia",
+      "author": 1,
+      "context": "Hit on this girl last night and got her number",
+      "date_created": "2012-03-10 15:28:27",
+      "council_members": [
+        2,
+        3
+      ],
+      "public": false
     }
-  }, 
+  },
   {
-    "pk": 2, 
-    "model": "vortex.conversation", 
+    "pk": 2,
+    "model": "vortex.conversation",
     "fields": {
-      "date_created": "2012-03-10 15:28:48", 
-      "public": false, 
-      "target": "Rachel", 
-      "context": "Been talking to this chick for a couple weeks", 
-      "author": 1
+      "target": "Rachel",
+      "author": 1,
+      "context": "Been talking to this chick for a couple weeks",
+      "date_created": "2012-03-10 15:28:48",
+      "council_members": [
+        2,
+        3,
+        6
+      ],
+      "public": false
     }
-  }, 
+  },
   {
-    "pk": 3, 
-    "model": "vortex.conversation", 
+    "pk": 3,
+    "model": "vortex.conversation",
     "fields": {
-      "date_created": "2012-03-10 15:29:03", 
-      "public": true, 
-      "target": "Sarah", 
-      "context": "i need serious help with this babe", 
-      "author": 2
+      "target": "Sarah",
+      "author": 2,
+      "context": "i need serious help with this babe",
+      "date_created": "2012-03-10 15:29:03",
+      "council_members": [
+        1
+      ],
+      "public": true
     }
-  }, 
+  },
   {
-    "pk": 4, 
-    "model": "vortex.conversation", 
+    "pk": 4,
+    "model": "vortex.conversation",
     "fields": {
-      "date_created": "2012-03-10 15:29:22", 
-      "public": false, 
-      "target": "Dorothy", 
-      "context": "Can't get my mind off this girl", 
-      "author": 3
+      "target": "Dorothy",
+      "author": 3,
+      "context": "Can't get my mind off this girl",
+      "date_created": "2012-03-10 15:29:22",
+      "council_members": [
+        1,
+        2
+      ],
+      "public": false
     }
-  }, 
+  },
   {
-    "pk": 5, 
-    "model": "vortex.conversation", 
+    "pk": 5,
+    "model": "vortex.conversation",
     "fields": {
-      "date_created": "2012-03-10 15:29:36", 
-      "public": false, 
-      "target": "Tom", 
-      "context": "Hottest guy I've ever met", 
-      "author": 4
+      "target": "Tom",
+      "author": 4,
+      "context": "Hottest guy I've ever met",
+      "date_created": "2012-03-10 15:29:36",
+      "council_members": [
+        5
+      ],
+      "public": false
     }
-  }, 
+  },
   {
-    "pk": 6, 
-    "model": "vortex.conversation", 
+    "pk": 6,
+    "model": "vortex.conversation",
     "fields": {
-      "date_created": "2012-03-10 15:29:54", 
-      "public": false, 
-      "target": "Bob", 
-      "context": "Can't tell if I'm into him", 
-      "author": 4
+      "target": "Bob",
+      "author": 4,
+      "context": "Can't tell if I'm into him",
+      "date_created": "2012-03-10 15:29:54",
+      "council_members": [
+        1,
+        3,
+        6
+      ],
+      "public": false
     }
-  }, 
+  },
   {
-    "pk": 7, 
-    "model": "vortex.conversation", 
+    "pk": 7,
+    "model": "vortex.conversation",
     "fields": {
-      "date_created": "2012-03-10 15:30:06", 
-      "public": false, 
-      "target": "Elana", 
-      "context": "Smokin hot", 
-      "author": 5
+      "target": "Elana",
+      "author": 5,
+      "context": "Smokin hot",
+      "date_created": "2012-03-10 15:30:06",
+      "council_members": [
+        1,
+        2,
+        6
+      ],
+      "public": false
     }
-  }, 
+  },
   {
-    "pk": 8, 
-    "model": "vortex.conversation", 
+    "pk": 8,
+    "model": "vortex.conversation",
     "fields": {
-      "date_created": "2012-03-10 15:30:31", 
-      "public": false, 
-      "target": "Chelsea", 
-      "context": "This girl is crazy", 
-      "author": 5
+      "target": "Chelsea",
+      "author": 5,
+      "context": "This girl is crazy",
+      "date_created": "2012-03-10 15:30:31",
+      "council_members": [
+        1,
+        6
+      ],
+      "public": false
     }
-  }, 
+  },
   {
-    "pk": 9, 
-    "model": "vortex.conversation", 
+    "pk": 9,
+    "model": "vortex.conversation",
     "fields": {
-      "date_created": "2012-03-10 15:32:09", 
-      "public": false, 
-      "target": "Bethanie", 
-      "context": "Need help talkin to my girlfriend", 
-      "author": 6
+      "target": "Bethanie",
+      "author": 6,
+      "context": "Need help talkin to my girlfriend",
+      "date_created": "2012-03-10 15:32:09",
+      "council_members": [
+        2,
+        3,
+        5
+      ],
+      "public": false
     }
-  }, 
+  },
   {
-    "pk": 1, 
-    "model": "vortex.text", 
+    "pk": 1,
+    "model": "vortex.text",
     "fields": {
-      "body": "What's up?", 
-      "date_created": "2012-03-10 15:32:31", 
-      "author_name": "mponizil", 
-      "author": 1, 
+      "body": "What's up?",
+      "date_created": "2012-03-10 15:32:31",
+      "author": 1,
+      "author_name": "mponizil",
       "conversation": 1
     }
-  }, 
+  },
   {
-    "pk": 2, 
-    "model": "vortex.text", 
+    "pk": 2,
+    "model": "vortex.text",
     "fields": {
-      "body": "nm just chillin", 
-      "date_created": "2012-03-10 15:33:09", 
-      "author_name": "Cynthia", 
-      "author": null, 
+      "body": "nm just chillin",
+      "date_created": "2012-03-10 15:33:09",
+      "author": null,
+      "author_name": "Cynthia",
       "conversation": 1
     }
-  }, 
+  },
   {
-    "pk": 3, 
-    "model": "vortex.text", 
+    "pk": 3,
+    "model": "vortex.text",
     "fields": {
-      "body": "I dig it girrl", 
-      "date_created": "2012-03-10 15:33:51", 
-      "author_name": "mponizil", 
-      "author": 1, 
+      "body": "I dig it girrl",
+      "date_created": "2012-03-10 15:33:51",
+      "author": 1,
+      "author_name": "mponizil",
       "conversation": 1
     }
-  }, 
+  },
   {
-    "pk": 4, 
-    "model": "vortex.text", 
+    "pk": 4,
+    "model": "vortex.text",
     "fields": {
-      "body": "Hahahah lol", 
-      "date_created": "2012-03-10 15:34:21", 
-      "author_name": "Cynthia", 
-      "author": null, 
+      "body": "Hahahah lol",
+      "date_created": "2012-03-10 15:34:21",
+      "author": null,
+      "author_name": "Cynthia",
       "conversation": 1
     }
-  }, 
+  },
   {
-    "pk": 5, 
-    "model": "vortex.text", 
+    "pk": 5,
+    "model": "vortex.text",
     "fields": {
-      "body": "You ever been to the circus?", 
-      "date_created": "2012-03-10 15:34:33", 
-      "author_name": "andres", 
-      "author": 2, 
+      "body": "You ever been to the circus?",
+      "date_created": "2012-03-10 15:34:33",
+      "author": 2,
+      "author_name": "andres",
       "conversation": 1
     }
-  }, 
+  },
   {
-    "pk": 6, 
-    "model": "vortex.text", 
+    "pk": 6,
+    "model": "vortex.text",
     "fields": {
-      "body": "Heyyyy", 
-      "date_created": "2012-03-10 15:38:14", 
-      "author_name": "Rachel", 
-      "author": null, 
+      "body": "Heyyyy",
+      "date_created": "2012-03-10 15:38:14",
+      "author": null,
+      "author_name": "Rachel",
       "conversation": 2
     }
-  }, 
+  },
   {
-    "pk": 7, 
-    "model": "vortex.text", 
+    "pk": 7,
+    "model": "vortex.text",
     "fields": {
-      "body": "yo babe whats goin on", 
-      "date_created": "2012-03-10 15:38:27", 
-      "author_name": "steve", 
-      "author": 3, 
+      "body": "yo babe whats goin on",
+      "date_created": "2012-03-10 15:38:27",
+      "author": 3,
+      "author_name": "steve",
       "conversation": 2
     }
-  }, 
+  },
   {
-    "pk": 8, 
-    "model": "vortex.text", 
+    "pk": 8,
+    "model": "vortex.text",
     "fields": {
-      "body": "yo babe whats goin on", 
-      "date_created": "2012-03-10 15:38:42", 
-      "author_name": "mponizil", 
-      "author": 1, 
+      "body": "yo babe whats goin on",
+      "date_created": "2012-03-10 15:38:42",
+      "author": 1,
+      "author_name": "mponizil",
       "conversation": 2
     }
-  }, 
+  },
   {
-    "pk": 9, 
-    "model": "vortex.text", 
+    "pk": 9,
+    "model": "vortex.text",
     "fields": {
-      "body": "lol nm u?", 
-      "date_created": "2012-03-10 15:39:02", 
-      "author_name": "Rachel", 
-      "author": null, 
+      "body": "lol nm u?",
+      "date_created": "2012-03-10 15:39:02",
+      "author": null,
+      "author_name": "Rachel",
       "conversation": 2
     }
-  }, 
+  },
   {
-    "pk": 10, 
-    "model": "vortex.text", 
+    "pk": 10,
+    "model": "vortex.text",
     "fields": {
-      "body": "girllll i got everything you need", 
-      "date_created": "2012-03-10 15:39:21", 
-      "author_name": "andres", 
-      "author": 2, 
+      "body": "girllll i got everything you need",
+      "date_created": "2012-03-10 15:39:21",
+      "author": 2,
+      "author_name": "andres",
       "conversation": 3
     }
-  }, 
+  },
   {
-    "pk": 11, 
-    "model": "vortex.text", 
+    "pk": 11,
+    "model": "vortex.text",
     "fields": {
-      "body": "boii you gotta show me what you got", 
-      "date_created": "2012-03-10 15:39:37", 
-      "author_name": "Sarah", 
-      "author": null, 
+      "body": "boii you gotta show me what you got",
+      "date_created": "2012-03-10 15:39:37",
+      "author": null,
+      "author_name": "Sarah",
       "conversation": 3
     }
-  }, 
+  },
   {
-    "pk": 12, 
-    "model": "vortex.text", 
+    "pk": 12,
+    "model": "vortex.text",
     "fields": {
-      "body": "lemme tell you hun", 
-      "date_created": "2012-03-10 15:39:54", 
-      "author_name": "andres", 
-      "author": 2, 
+      "body": "lemme tell you hun",
+      "date_created": "2012-03-10 15:39:54",
+      "author": 2,
+      "author_name": "andres",
       "conversation": 3
     }
-  }, 
+  },
   {
-    "pk": 13, 
-    "model": "vortex.text", 
+    "pk": 13,
+    "model": "vortex.text",
     "fields": {
-      "body": "you ever been do the circus?", 
-      "date_created": "2012-03-10 15:40:06", 
-      "author_name": "mponizil", 
-      "author": 1, 
+      "body": "you ever been do the circus?",
+      "date_created": "2012-03-10 15:40:06",
+      "author": 1,
+      "author_name": "mponizil",
       "conversation": 3
     }
-  }, 
+  },
   {
-    "pk": 14, 
-    "model": "vortex.text", 
+    "pk": 14,
+    "model": "vortex.text",
     "fields": {
-      "body": "tell me what", 
-      "date_created": "2012-03-10 15:40:27", 
-      "author_name": "Sarah", 
-      "author": null, 
+      "body": "tell me what",
+      "date_created": "2012-03-10 15:40:27",
+      "author": null,
+      "author_name": "Sarah",
       "conversation": 3
     }
-  }, 
+  },
   {
-    "pk": 15, 
-    "model": "vortex.text", 
+    "pk": 15,
+    "model": "vortex.text",
     "fields": {
-      "body": "hey dorothy!", 
-      "date_created": "2012-03-10 15:40:37", 
-      "author_name": "steve", 
-      "author": 3, 
+      "body": "hey dorothy!",
+      "date_created": "2012-03-10 15:40:37",
+      "author": 3,
+      "author_name": "steve",
       "conversation": 4
     }
-  }, 
+  },
   {
-    "pk": 16, 
-    "model": "vortex.text", 
+    "pk": 16,
+    "model": "vortex.text",
     "fields": {
-      "body": "hi steve", 
-      "date_created": "2012-03-10 15:40:54", 
-      "author_name": "Dorothy", 
-      "author": null, 
+      "body": "hi steve",
+      "date_created": "2012-03-10 15:40:54",
+      "author": null,
+      "author_name": "Dorothy",
       "conversation": 4
     }
-  }, 
+  },
   {
-    "pk": 17, 
-    "model": "vortex.text", 
+    "pk": 17,
+    "model": "vortex.text",
     "fields": {
-      "body": "watchu up to", 
-      "date_created": "2012-03-10 15:41:05", 
-      "author_name": "steve", 
-      "author": 3, 
+      "body": "watchu up to",
+      "date_created": "2012-03-10 15:41:05",
+      "author": 3,
+      "author_name": "steve",
       "conversation": 4
     }
-  }, 
+  },
   {
-    "pk": 18, 
-    "model": "vortex.text", 
+    "pk": 18,
+    "model": "vortex.text",
     "fields": {
-      "body": "ohhh just hangin out", 
-      "date_created": "2012-03-10 15:41:20", 
-      "author_name": "Dorothy", 
-      "author": null, 
+      "body": "ohhh just hangin out",
+      "date_created": "2012-03-10 15:41:20",
+      "author": null,
+      "author_name": "Dorothy",
       "conversation": 4
     }
-  }, 
+  },
   {
-    "pk": 19, 
-    "model": "vortex.text", 
+    "pk": 19,
+    "model": "vortex.text",
     "fields": {
-      "body": "we should bang", 
-      "date_created": "2012-03-10 15:41:31", 
-      "author_name": "mponizil", 
-      "author": 1, 
+      "body": "we should bang",
+      "date_created": "2012-03-10 15:41:31",
+      "author": 1,
+      "author_name": "mponizil",
       "conversation": 4
     }
-  }, 
+  },
   {
-    "pk": 20, 
-    "model": "vortex.text", 
+    "pk": 20,
+    "model": "vortex.text",
     "fields": {
-      "body": "wassup baby", 
-      "date_created": "2012-03-10 15:41:43", 
-      "author_name": "Tom", 
-      "author": null, 
+      "body": "wassup baby",
+      "date_created": "2012-03-10 15:41:43",
+      "author": null,
+      "author_name": "Tom",
       "conversation": 5
     }
-  }, 
+  },
   {
-    "pk": 21, 
-    "model": "vortex.text", 
+    "pk": 21,
+    "model": "vortex.text",
     "fields": {
-      "body": "gurl?", 
-      "date_created": "2012-03-10 15:41:59", 
-      "author_name": "Tom", 
-      "author": null, 
+      "body": "gurl?",
+      "date_created": "2012-03-10 15:41:59",
+      "author": null,
+      "author_name": "Tom",
       "conversation": 5
     }
-  }, 
+  },
   {
-    "pk": 22, 
-    "model": "vortex.text", 
+    "pk": 22,
+    "model": "vortex.text",
     "fields": {
-      "body": "oh yea you're that creepy guy from the party last night", 
-      "date_created": "2012-03-10 15:42:10", 
-      "author_name": "eddie", 
-      "author": 5, 
+      "body": "oh yea you're that creepy guy from the party last night",
+      "date_created": "2012-03-10 15:42:10",
+      "author": 5,
+      "author_name": "eddie",
       "conversation": 5
     }
-  }, 
+  },
   {
-    "pk": 23, 
-    "model": "vortex.text", 
+    "pk": 23,
+    "model": "vortex.text",
     "fields": {
-      "body": "oh yea you're that creepy guy from the party last night", 
-      "date_created": "2012-03-10 15:43:51", 
-      "author_name": "angelica", 
-      "author": 4, 
+      "body": "oh yea you're that creepy guy from the party last night",
+      "date_created": "2012-03-10 15:43:51",
+      "author": 4,
+      "author_name": "angelica",
       "conversation": 5
     }
-  }, 
+  },
   {
-    "pk": 24, 
-    "model": "vortex.text", 
+    "pk": 24,
+    "model": "vortex.text",
     "fields": {
-      "body": "wtf??", 
-      "date_created": "2012-03-10 15:44:14", 
-      "author_name": "Tom", 
-      "author": null, 
+      "body": "wtf??",
+      "date_created": "2012-03-10 15:44:14",
+      "author": null,
+      "author_name": "Tom",
       "conversation": 5
     }
-  }, 
+  },
   {
-    "pk": 25, 
-    "model": "vortex.text", 
+    "pk": 25,
+    "model": "vortex.text",
     "fields": {
-      "body": "wtf is this????", 
-      "date_created": "2012-03-10 15:44:23", 
-      "author_name": "Tom", 
-      "author": null, 
+      "body": "wtf is this????",
+      "date_created": "2012-03-10 15:44:23",
+      "author": null,
+      "author_name": "Tom",
       "conversation": 5
     }
-  }, 
+  },
   {
-    "pk": 26, 
-    "model": "vortex.text", 
+    "pk": 26,
+    "model": "vortex.text",
     "fields": {
-      "body": "heyyyy", 
-      "date_created": "2012-03-10 15:44:33", 
-      "author_name": "angelica", 
-      "author": 4, 
+      "body": "heyyyy",
+      "date_created": "2012-03-10 15:44:33",
+      "author": 4,
+      "author_name": "angelica",
       "conversation": 6
     }
-  }, 
+  },
   {
-    "pk": 27, 
-    "model": "vortex.text", 
+    "pk": 27,
+    "model": "vortex.text",
     "fields": {
-      "body": "Hey Angelica! Great meeting you last night!", 
-      "date_created": "2012-03-10 15:44:43", 
-      "author_name": "Bob", 
-      "author": null, 
+      "body": "Hey Angelica! Great meeting you last night!",
+      "date_created": "2012-03-10 15:44:43",
+      "author": null,
+      "author_name": "Bob",
       "conversation": 6
     }
-  }, 
+  },
   {
-    "pk": 28, 
-    "model": "vortex.text", 
+    "pk": 28,
+    "model": "vortex.text",
     "fields": {
-      "body": "How was your time last night? Have fun??", 
-      "date_created": "2012-03-10 15:45:04", 
-      "author_name": "Bob", 
-      "author": null, 
+      "body": "How was your time last night? Have fun??",
+      "date_created": "2012-03-10 15:45:04",
+      "author": null,
+      "author_name": "Bob",
       "conversation": 6
     }
-  }, 
+  },
   {
-    "pk": 29, 
-    "model": "vortex.text", 
+    "pk": 29,
+    "model": "vortex.text",
     "fields": {
-      "body": "not as much fun as you had", 
-      "date_created": "2012-03-10 15:45:21", 
-      "author_name": "ashwinn", 
-      "author": 6, 
+      "body": "not as much fun as you had",
+      "date_created": "2012-03-10 15:45:21",
+      "author": 6,
+      "author_name": "ashwinn",
       "conversation": 6
     }
-  }, 
+  },
   {
-    "pk": 30, 
-    "model": "vortex.text", 
+    "pk": 30,
+    "model": "vortex.text",
     "fields": {
-      "body": "i dont even remember how i got home", 
-      "date_created": "2012-03-10 15:45:37", 
-      "author_name": "steve", 
-      "author": 3, 
+      "body": "i dont even remember how i got home",
+      "date_created": "2012-03-10 15:45:37",
+      "author": 3,
+      "author_name": "steve",
       "conversation": 6
     }
-  }, 
+  },
   {
-    "pk": 31, 
-    "model": "vortex.text", 
+    "pk": 31,
+    "model": "vortex.text",
     "fields": {
-      "body": "Hahah yea I had a great time", 
-      "date_created": "2012-03-10 15:46:22", 
-      "author_name": "angelica", 
-      "author": 4, 
+      "body": "Hahah yea I had a great time",
+      "date_created": "2012-03-10 15:46:22",
+      "author": 4,
+      "author_name": "angelica",
       "conversation": 6
     }
-  }, 
+  },
   {
-    "pk": 32, 
-    "model": "vortex.text", 
+    "pk": 32,
+    "model": "vortex.text",
     "fields": {
-      "body": "hey lets grab lunch some time", 
-      "date_created": "2012-03-10 15:46:36", 
-      "author_name": "eddie", 
-      "author": 5, 
+      "body": "hey lets grab lunch some time",
+      "date_created": "2012-03-10 15:46:36",
+      "author": 5,
+      "author_name": "eddie",
       "conversation": 7
     }
-  }, 
+  },
   {
-    "pk": 33, 
-    "model": "vortex.text", 
+    "pk": 33,
+    "model": "vortex.text",
     "fields": {
-      "body": "actually lets make that dinner", 
-      "date_created": "2012-03-10 15:46:59", 
-      "author_name": "andres", 
-      "author": 2, 
+      "body": "actually lets make that dinner",
+      "date_created": "2012-03-10 15:46:59",
+      "author": 2,
+      "author_name": "andres",
       "conversation": 7
     }
-  }, 
+  },
   {
-    "pk": 34, 
-    "model": "vortex.text", 
+    "pk": 34,
+    "model": "vortex.text",
     "fields": {
-      "body": "Hey!! Yea I'd love to", 
-      "date_created": "2012-03-10 15:47:18", 
-      "author_name": "Elana", 
-      "author": null, 
+      "body": "Hey!! Yea I'd love to",
+      "date_created": "2012-03-10 15:47:18",
+      "author": null,
+      "author_name": "Elana",
       "conversation": 7
     }
-  }, 
+  },
   {
-    "pk": 35, 
-    "model": "vortex.text", 
+    "pk": 35,
+    "model": "vortex.text",
     "fields": {
-      "body": "you ever eaten at thunder jackson's?", 
-      "date_created": "2012-03-10 15:47:32", 
-      "author_name": "mponizil", 
-      "author": 1, 
+      "body": "you ever eaten at thunder jackson's?",
+      "date_created": "2012-03-10 15:47:32",
+      "author": 1,
+      "author_name": "mponizil",
       "conversation": 7
     }
-  }, 
+  },
   {
-    "pk": 36, 
-    "model": "vortex.text", 
+    "pk": 36,
+    "model": "vortex.text",
     "fields": {
-      "body": "you ever eaten at thunder jackson's?", 
-      "date_created": "2012-03-10 15:48:05", 
-      "author_name": "eddie", 
-      "author": 5, 
+      "body": "you ever eaten at thunder jackson's?",
+      "date_created": "2012-03-10 15:48:05",
+      "author": 5,
+      "author_name": "eddie",
       "conversation": 7
     }
-  }, 
+  },
   {
-    "pk": 37, 
-    "model": "vortex.text", 
+    "pk": 37,
+    "model": "vortex.text",
     "fields": {
-      "body": "wassup you free saturday?", 
-      "date_created": "2012-03-10 15:48:13", 
-      "author_name": "eddie", 
-      "author": 5, 
+      "body": "wassup you free saturday?",
+      "date_created": "2012-03-10 15:48:13",
+      "author": 5,
+      "author_name": "eddie",
       "conversation": 8
     }
-  }, 
+  },
   {
-    "pk": 38, 
-    "model": "vortex.text", 
+    "pk": 38,
+    "model": "vortex.text",
     "fields": {
-      "body": "Heyyyy no not really.. Maybe next Saturday?", 
-      "date_created": "2012-03-10 15:48:33", 
-      "author_name": "Chelsea", 
-      "author": null, 
+      "body": "Heyyyy no not really.. Maybe next Saturday?",
+      "date_created": "2012-03-10 15:48:33",
+      "author": null,
+      "author_name": "Chelsea",
       "conversation": 8
     }
-  }, 
+  },
   {
-    "pk": 39, 
-    "model": "vortex.text", 
+    "pk": 39,
+    "model": "vortex.text",
     "fields": {
-      "body": "this saturday or nothin babe", 
-      "date_created": "2012-03-10 15:48:51", 
-      "author_name": "ashwinn", 
-      "author": 6, 
+      "body": "this saturday or nothin babe",
+      "date_created": "2012-03-10 15:48:51",
+      "author": 6,
+      "author_name": "ashwinn",
       "conversation": 8
     }
-  }, 
+  },
   {
-    "pk": 40, 
-    "model": "vortex.text", 
+    "pk": 40,
+    "model": "vortex.text",
     "fields": {
-      "body": "next sat is cool", 
-      "date_created": "2012-03-10 15:49:06", 
-      "author_name": "eddie", 
-      "author": 5, 
+      "body": "next sat is cool",
+      "date_created": "2012-03-10 15:49:06",
+      "author": 5,
+      "author_name": "eddie",
       "conversation": 8
     }
-  }, 
+  },
   {
-    "pk": 41, 
-    "model": "vortex.text", 
+    "pk": 41,
+    "model": "vortex.text",
     "fields": {
-      "body": "Great! lol", 
-      "date_created": "2012-03-10 15:49:23", 
-      "author_name": "Chelsea", 
-      "author": null, 
+      "body": "Great! lol",
+      "date_created": "2012-03-10 15:49:23",
+      "author": null,
+      "author_name": "Chelsea",
       "conversation": 8
     }
-  }, 
+  },
   {
-    "pk": 42, 
-    "model": "vortex.text", 
+    "pk": 42,
+    "model": "vortex.text",
     "fields": {
-      "body": "aw ash you're such a cutie", 
-      "date_created": "2012-03-10 15:49:35", 
-      "author_name": "Bethanie", 
-      "author": null, 
+      "body": "aw ash you're such a cutie",
+      "date_created": "2012-03-10 15:49:35",
+      "author": null,
+      "author_name": "Bethanie",
       "conversation": 9
     }
-  }, 
+  },
   {
-    "pk": 43, 
-    "model": "vortex.text", 
+    "pk": 43,
+    "model": "vortex.text",
     "fields": {
-      "body": "yea baby you love my good looks", 
-      "date_created": "2012-03-10 15:49:53", 
-      "author_name": "andres", 
-      "author": 2, 
+      "body": "yea baby you love my good looks",
+      "date_created": "2012-03-10 15:49:53",
+      "author": 2,
+      "author_name": "andres",
       "conversation": 9
     }
-  }, 
+  },
   {
-    "pk": 44, 
-    "model": "vortex.text", 
+    "pk": 44,
+    "model": "vortex.text",
     "fields": {
-      "body": "Hahah thanks did you have fun last night?", 
-      "date_created": "2012-03-10 15:50:27", 
-      "author_name": "ashwinn", 
-      "author": 6, 
+      "body": "Hahah thanks did you have fun last night?",
+      "date_created": "2012-03-10 15:50:27",
+      "author": 6,
+      "author_name": "ashwinn",
       "conversation": 9
     }
-  }, 
+  },
   {
-    "pk": 1, 
-    "model": "vortex.comment", 
+    "pk": 1,
+    "model": "vortex.comment",
     "fields": {
-      "body": "dawgg you gotta lay the hammer down", 
-      "date_created": "2012-03-10 15:51:03", 
-      "author": 2, 
+      "body": "dawgg you gotta lay the hammer down",
+      "date_created": "2012-03-10 15:51:03",
+      "author": 2,
       "conversation": 1
     }
-  }, 
+  },
   {
-    "pk": 2, 
-    "model": "vortex.comment", 
+    "pk": 2,
+    "model": "vortex.comment",
     "fields": {
-      "body": "dog the hammer's been laid down", 
-      "date_created": "2012-03-10 15:51:15", 
-      "author": 1, 
+      "body": "dog the hammer's been laid down",
+      "date_created": "2012-03-10 15:51:15",
+      "author": 1,
       "conversation": 1
     }
-  }, 
+  },
   {
-    "pk": 3, 
-    "model": "vortex.comment", 
+    "pk": 3,
+    "model": "vortex.comment",
     "fields": {
-      "body": "show her the django code we figured out last night", 
-      "date_created": "2012-03-10 15:51:29", 
-      "author": 3, 
+      "body": "show her the django code we figured out last night",
+      "date_created": "2012-03-10 15:51:29",
+      "author": 3,
       "conversation": 1
     }
-  }, 
+  },
   {
-    "pk": 4, 
-    "model": "vortex.comment", 
+    "pk": 4,
+    "model": "vortex.comment",
     "fields": {
-      "body": "oh you got this bro", 
-      "date_created": "2012-03-10 15:51:45", 
-      "author": 2, 
+      "body": "oh you got this bro",
+      "date_created": "2012-03-10 15:51:45",
+      "author": 2,
       "conversation": 2
     }
-  }, 
+  },
   {
-    "pk": 5, 
-    "model": "vortex.comment", 
+    "pk": 5,
+    "model": "vortex.comment",
     "fields": {
-      "body": "in the bag", 
-      "date_created": "2012-03-10 15:51:56", 
-      "author": 6, 
+      "body": "in the bag",
+      "date_created": "2012-03-10 15:51:56",
+      "author": 6,
       "conversation": 2
     }
-  }, 
+  },
   {
-    "pk": 6, 
-    "model": "vortex.comment", 
+    "pk": 6,
+    "model": "vortex.comment",
     "fields": {
-      "body": "was this the babe who spilled beer all over the kitchen?", 
-      "date_created": "2012-03-10 15:52:04", 
-      "author": 1, 
+      "body": "was this the babe who spilled beer all over the kitchen?",
+      "date_created": "2012-03-10 15:52:04",
+      "author": 1,
       "conversation": 3
     }
-  }, 
+  },
   {
-    "pk": 7, 
-    "model": "vortex.comment", 
+    "pk": 7,
+    "model": "vortex.comment",
     "fields": {
-      "body": "naw dawg that was sarah f. this is the girl i met at the union square market", 
-      "date_created": "2012-03-10 15:52:40", 
-      "author": 2, 
+      "body": "naw dawg that was sarah f. this is the girl i met at the union square market",
+      "date_created": "2012-03-10 15:52:40",
+      "author": 2,
       "conversation": 3
     }
-  }, 
+  },
   {
-    "pk": 8, 
-    "model": "vortex.comment", 
+    "pk": 8,
+    "model": "vortex.comment",
     "fields": {
-      "body": "yea steve", 
-      "date_created": "2012-03-10 15:53:08", 
-      "author": 1, 
+      "body": "yea steve",
+      "date_created": "2012-03-10 15:53:08",
+      "author": 1,
       "conversation": 4
     }
-  }, 
+  },
   {
-    "pk": 9, 
-    "model": "vortex.comment", 
+    "pk": 9,
+    "model": "vortex.comment",
     "fields": {
-      "body": "wtf kind of name is dorothy?", 
-      "date_created": "2012-03-10 15:53:36", 
-      "author": 2, 
+      "body": "wtf kind of name is dorothy?",
+      "date_created": "2012-03-10 15:53:36",
+      "author": 2,
       "conversation": 4
     }
-  }, 
+  },
   {
-    "pk": 10, 
-    "model": "vortex.comment", 
+    "pk": 10,
+    "model": "vortex.comment",
     "fields": {
-      "body": "dont worry bro she's hot", 
-      "date_created": "2012-03-10 15:53:51", 
-      "author": 3, 
+      "body": "dont worry bro she's hot",
+      "date_created": "2012-03-10 15:53:51",
+      "author": 3,
       "conversation": 4
     }
-  }, 
+  },
   {
-    "pk": 11, 
-    "model": "vortex.comment", 
+    "pk": 11,
+    "model": "vortex.comment",
     "fields": {
-      "body": "i think you should be concerned about this guy", 
-      "date_created": "2012-03-10 15:54:00", 
-      "author": 5, 
+      "body": "i think you should be concerned about this guy",
+      "date_created": "2012-03-10 15:54:00",
+      "author": 5,
       "conversation": 5
     }
-  }, 
+  },
   {
-    "pk": 12, 
-    "model": "vortex.comment", 
+    "pk": 12,
+    "model": "vortex.comment",
     "fields": {
-      "body": "is this the bob you met at the supermarket?", 
-      "date_created": "2012-03-10 15:54:21", 
-      "author": 1, 
+      "body": "is this the bob you met at the supermarket?",
+      "date_created": "2012-03-10 15:54:21",
+      "author": 1,
       "conversation": 6
     }
-  }, 
+  },
   {
-    "pk": 13, 
-    "model": "vortex.comment", 
+    "pk": 13,
+    "model": "vortex.comment",
     "fields": {
-      "body": "can't believe you're still hittin on this girl", 
-      "date_created": "2012-03-10 15:54:43", 
-      "author": 6, 
+      "body": "can't believe you're still hittin on this girl",
+      "date_created": "2012-03-10 15:54:43",
+      "author": 6,
       "conversation": 7
     }
-  }, 
+  },
   {
-    "pk": 14, 
-    "model": "vortex.comment", 
+    "pk": 14,
+    "model": "vortex.comment",
     "fields": {
-      "body": "smokin hot", 
-      "date_created": "2012-03-10 15:55:02", 
-      "author": 5, 
+      "body": "smokin hot",
+      "date_created": "2012-03-10 15:55:02",
+      "author": 5,
       "conversation": 8
     }
-  }, 
+  },
   {
-    "pk": 15, 
-    "model": "vortex.comment", 
+    "pk": 15,
+    "model": "vortex.comment",
     "fields": {
-      "body": "smokin pot", 
-      "date_created": "2012-03-10 15:55:13", 
-      "author": 1, 
+      "body": "smokin pot",
+      "date_created": "2012-03-10 15:55:13",
+      "author": 1,
       "conversation": 8
     }
-  }, 
+  },
   {
-    "pk": 16, 
-    "model": "vortex.comment", 
+    "pk": 16,
+    "model": "vortex.comment",
     "fields": {
-      "body": "i cant tell if this girl is into me. what do you guys say?", 
-      "date_created": "2012-03-10 15:55:20", 
-      "author": 6, 
+      "body": "i cant tell if this girl is into me. what do you guys say?",
+      "date_created": "2012-03-10 15:55:20",
+      "author": 6,
       "conversation": 9
     }
-  }, 
+  },
   {
-    "pk": 17, 
-    "model": "vortex.comment", 
+    "pk": 17,
+    "model": "vortex.comment",
     "fields": {
-      "body": "hit ittt", 
-      "date_created": "2012-03-10 15:55:37", 
-      "author": 3, 
+      "body": "hit ittt",
+      "date_created": "2012-03-10 15:55:37",
+      "author": 3,
       "conversation": 9
     }
-  }, 
+  },
   {
-    "pk": 18, 
-    "model": "vortex.comment", 
+    "pk": 18,
+    "model": "vortex.comment",
     "fields": {
-      "body": "naw man you got to wine and dine", 
-      "date_created": "2012-03-10 15:55:51", 
-      "author": 2, 
+      "body": "naw man you got to wine and dine",
+      "date_created": "2012-03-10 15:55:51",
+      "author": 2,
       "conversation": 9
     }
-  }, 
+  },
   {
-    "pk": 19, 
-    "model": "vortex.comment", 
+    "pk": 19,
+    "model": "vortex.comment",
     "fields": {
-      "body": "take her to that spot on the upper west side that overlooks the park", 
-      "date_created": "2012-03-10 15:56:05", 
-      "author": 5, 
-      "conversation": 9
-    }
-  }, 
-  {
-    "pk": 1, 
-    "model": "vortex.councilmember", 
-    "fields": {
-      "date_created": "2012-03-10 16:04:07", 
-      "user": 2, 
-      "conversation": 1
-    }
-  }, 
-  {
-    "pk": 2, 
-    "model": "vortex.councilmember", 
-    "fields": {
-      "date_created": "2012-03-10 16:05:13", 
-      "user": 3, 
-      "conversation": 2
-    }
-  }, 
-  {
-    "pk": 3, 
-    "model": "vortex.councilmember", 
-    "fields": {
-      "date_created": "2012-03-10 16:05:37", 
-      "user": 1, 
-      "conversation": 3
-    }
-  }, 
-  {
-    "pk": 4, 
-    "model": "vortex.councilmember", 
-    "fields": {
-      "date_created": "2012-03-10 16:06:24", 
-      "user": 1, 
-      "conversation": 4
-    }
-  }, 
-  {
-    "pk": 5, 
-    "model": "vortex.councilmember", 
-    "fields": {
-      "date_created": "2012-03-10 16:06:49", 
-      "user": 5, 
-      "conversation": 5
-    }
-  }, 
-  {
-    "pk": 6, 
-    "model": "vortex.councilmember", 
-    "fields": {
-      "date_created": "2012-03-10 16:07:07", 
-      "user": 3, 
-      "conversation": 6
-    }
-  }, 
-  {
-    "pk": 7, 
-    "model": "vortex.councilmember", 
-    "fields": {
-      "date_created": "2012-03-10 16:07:13", 
-      "user": 6, 
-      "conversation": 6
-    }
-  }, 
-  {
-    "pk": 8, 
-    "model": "vortex.councilmember", 
-    "fields": {
-      "date_created": "2012-03-10 16:07:43", 
-      "user": 2, 
-      "conversation": 7
-    }
-  }, 
-  {
-    "pk": 9, 
-    "model": "vortex.councilmember", 
-    "fields": {
-      "date_created": "2012-03-10 16:07:49", 
-      "user": 1, 
-      "conversation": 7
-    }
-  }, 
-  {
-    "pk": 10, 
-    "model": "vortex.councilmember", 
-    "fields": {
-      "date_created": "2012-03-10 16:08:19", 
-      "user": 6, 
-      "conversation": 8
-    }
-  }, 
-  {
-    "pk": 11, 
-    "model": "vortex.councilmember", 
-    "fields": {
-      "date_created": "2012-03-10 16:08:44", 
-      "user": 2, 
-      "conversation": 9
-    }
-  }, 
-  {
-    "pk": 12, 
-    "model": "vortex.councilmember", 
-    "fields": {
-      "date_created": "2012-03-10 16:09:29", 
-      "user": 3, 
-      "conversation": 1
-    }
-  }, 
-  {
-    "pk": 13, 
-    "model": "vortex.councilmember", 
-    "fields": {
-      "date_created": "2012-03-10 16:09:44", 
-      "user": 2, 
-      "conversation": 2
-    }
-  }, 
-  {
-    "pk": 14, 
-    "model": "vortex.councilmember", 
-    "fields": {
-      "date_created": "2012-03-10 16:10:07", 
-      "user": 6, 
-      "conversation": 2
-    }
-  }, 
-  {
-    "pk": 15, 
-    "model": "vortex.councilmember", 
-    "fields": {
-      "date_created": "2012-03-10 16:10:29", 
-      "user": 2, 
-      "conversation": 4
-    }
-  }, 
-  {
-    "pk": 16, 
-    "model": "vortex.councilmember", 
-    "fields": {
-      "date_created": "2012-03-10 16:10:54", 
-      "user": 1, 
-      "conversation": 6
-    }
-  }, 
-  {
-    "pk": 17, 
-    "model": "vortex.councilmember", 
-    "fields": {
-      "date_created": "2012-03-10 16:11:13", 
-      "user": 6, 
-      "conversation": 7
-    }
-  }, 
-  {
-    "pk": 18, 
-    "model": "vortex.councilmember", 
-    "fields": {
-      "date_created": "2012-03-10 16:11:33", 
-      "user": 1, 
-      "conversation": 8
-    }
-  }, 
-  {
-    "pk": 19, 
-    "model": "vortex.councilmember", 
-    "fields": {
-      "date_created": "2012-03-10 16:11:51", 
-      "user": 3, 
-      "conversation": 9
-    }
-  }, 
-  {
-    "pk": 20, 
-    "model": "vortex.councilmember", 
-    "fields": {
-      "date_created": "2012-03-10 16:12:28", 
-      "user": 5, 
+      "body": "take her to that spot on the upper west side that overlooks the park",
+      "date_created": "2012-03-10 15:56:05",
+      "author": 5,
       "conversation": 9
     }
   }

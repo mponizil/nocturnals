@@ -8,6 +8,7 @@ class Conversation(models.Model):
     context = models.TextField(blank=True)
     target = models.CharField(max_length=255, blank=True)
     public = models.BooleanField(default=False)
+    council_members = models.ManyToManyField(User, verbose_name="council members", related_name="councils_of")
     
     def save(self):
         if self.date_created == None:
@@ -19,7 +20,7 @@ class Conversation(models.Model):
 
 class Text(models.Model):
     date_created = models.DateTimeField()
-    conversation = models.ForeignKey(Conversation, verbose_name="conversation this text belongs to", related_name="texts")
+    conversation = models.ForeignKey(Conversation, verbose_name="conversation this text belongs to", related_name="texts", null=True, blank=True)
     author = models.ForeignKey(User, verbose_name="author as a user object", related_name="texts", null=True, blank=True)
     author_name = models.CharField(max_length=255, verbose_name="author name as a string")
     body = models.TextField()
@@ -30,7 +31,7 @@ class Text(models.Model):
         super(Text, self).save()
     
     def __unicode__(self):
-        return self.author + ": " + self.body[:40]
+        return self.author_name + ": " + self.body[:40]
 
 class Comment(models.Model):
     date_created = models.DateTimeField()
@@ -58,16 +59,3 @@ class Council(models.Model):
     
     def __unicode__(self):
         return self.title
-
-class CouncilMember(models.Model):
-    date_created = models.DateTimeField()
-    conversation = models.ForeignKey(Conversation, verbose_name="conversation this user is a council member of", related_name="council_members")
-    user = models.ForeignKey(User, verbose_name="user this council member refers to", related_name="member_of_councils")
-    
-    def save(self):
-        if self.date_created == None:
-          self.date_created = datetime.now()
-        super(CouncilMember, self).save()
-    
-    def __unicode__(self):
-        return self.user.username + ": " + self.conversation.target[:40]

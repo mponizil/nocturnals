@@ -28,6 +28,7 @@ define([
     loggedOut: function() {
       SpiritApp.User.clear();
       $("#login-form")[0].reset();
+      $("#signup-form")[0].reset();
       var login_page = $("#login-page");
       $.mobile.changePage(login_page, { changeHash: false, reverse: true, transition: 'slide' });
     },

@@ -12,9 +12,7 @@ define([
 
   var Comments = Backbone.Collection.extend({
 
-    url: function() {
-      return CONFIG.ENDPOINT + '/api/v1/comment/?format=json';
-    },
+    url: CONFIG.ENDPOINT + '/api/v1/comment/?format=json',
 
     model: Comment
 

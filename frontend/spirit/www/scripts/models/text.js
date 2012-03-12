@@ -27,9 +27,7 @@ define([
     initialize: function() {
     },
 
-    url: function() {
-      return CONFIG.ENDPOINT + this.get("resource_uri") + "?format=json";
-    }
+    url: CONFIG.ENDPOINT + "/api/v1/text/"
 
   });
 
