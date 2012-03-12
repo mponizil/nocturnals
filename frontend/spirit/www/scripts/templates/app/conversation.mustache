@@ -6,12 +6,13 @@
 
 <div data-role="header">
   <a id="link-{{back.slug}}" data-icon="arrow-l" class="back">{{back.title}}</a>
-  <h1>Conversation</h1>
+  <h1>{{target}}</h1>
 </div>
 
 <div data-role="content">
+  <h3>{{author.username}}: {{context}}</h3>
   <div id="texts" class="clearfix">
-    <h2>Texts</h2>
+    <h3>Texts</h3>
     {{#texts}}
     <div>
       {{author_name}}: {{body}}
@@ -28,7 +29,7 @@
     </div>
   </div>
   <div id="comments">
-    <h2>Comments</h2>
+    <h3>Comments</h3>
     {{#comments}}
     <div>
       {{author.username}}: {{body}}
@@ -43,6 +44,14 @@
         </div>
       </form>
     </div>
+  </div>
+  <div id="council-members">
+    <h3>Council Members</h3>
+    {{#council_members}}
+    <div>
+      {{username}}
+    </div>
+    {{/council_members}}
   </div>
 </div>
 

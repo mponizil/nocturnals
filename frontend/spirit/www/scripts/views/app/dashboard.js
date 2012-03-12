@@ -12,8 +12,9 @@ define([
   'views/app/my-conversations',
   'views/app/import-conversations',
   'views/app/browse-feed',
+  'views/app/my-councils',
   'text!templates/app/dashboard.mustache!strip'
-  ], function ($, _, Backbone, Mustache, Conversations, MyConversationsView, ImportConversationsView, BrowseFeedView, dashboard_template) {
+  ], function ($, _, Backbone, Mustache, Conversations, MyConversationsView, ImportConversationsView, BrowseFeedView, MyCouncilsView, dashboard_template) {
 
   var DashboardView = Backbone.View.extend({
 
@@ -30,6 +31,9 @@ define([
       this.views.browse_feed = new BrowseFeedView({
         collection: new Conversations()
       });
+      this.views.my_councils = new MyCouncilsView({
+        collection: new Conversations()
+      });
     },
 
     template: function(params) {
@@ -40,7 +44,8 @@ define([
       'click #logout-link'          : 'logout',
       'click #my-conversations'     : 'myConversations',
       'click #import-conversations' : 'importConversations',
-      'click #browse-feed'          : 'browseFeed'
+      'click #browse-feed'          : 'browseFeed',
+      'click #my-councils'          : 'myCouncils'
     },
 
     render: function() {
@@ -74,6 +79,12 @@ define([
       var browse_feed_page = $("#browse-feed-page");
       $.mobile.changePage(browse_feed_page, { changeHash: false, transition: 'slide' });
       this.views.browse_feed.initPage();
+    },
+
+    myCouncils: function() {
+      var my_councils_page = $("#my-councils-page");
+      $.mobile.changePage(my_councils_page, { changeHash: false, transition: 'slide' });
+      this.views.my_councils.initPage();
     }
 
   });
