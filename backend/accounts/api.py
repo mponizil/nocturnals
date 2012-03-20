@@ -85,7 +85,6 @@ def auth(request):
         res = { "success": False, "error": "Invalid login." }
         return HttpResponse(json.dumps(res))
     
-    print username
     res = { "success": True, "data": { "user": { "id": request.user.id, "username": username } } }
     return HttpResponse(json.dumps(res))
 

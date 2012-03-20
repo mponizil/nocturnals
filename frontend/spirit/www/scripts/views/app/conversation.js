@@ -38,8 +38,8 @@ define([
 
     events: {
       'click #link-my-conversations' : 'myConversationsPage',
-      'click #link-browse-feed'      : 'browseFeedPage',
       'click #link-my-councils'      : 'myCouncilsPage',
+      'click #link-browse-feed'      : 'browseFeedPage',
       'submit #new-text-form'        : 'newText',
       'submit #new-comment-form'     : 'newComment'
     },
@@ -57,15 +57,15 @@ define([
       // unbind all events this view has created
     },
 
-    browseFeedPage: function() {
-      var browse_feed_page = $("#browse-feed-page");
-      $.mobile.changePage(browse_feed_page, { changeHash: false, reverse: true, transition: 'slide' });
-      // unbind all events this view has created
-    },
-
     myCouncilsPage: function() {
       var my_councils_page = $("#my-councils-page");
       $.mobile.changePage(my_councils_page, { changeHash: false, reverse: true, transition: 'slide' });
+      // unbind all events this view has created
+    },
+
+    browseFeedPage: function() {
+      var browse_feed_page = $("#browse-feed-page");
+      $.mobile.changePage(browse_feed_page, { changeHash: false, reverse: true, transition: 'slide' });
       // unbind all events this view has created
     },
 

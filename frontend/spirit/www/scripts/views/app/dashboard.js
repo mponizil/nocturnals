@@ -27,13 +27,13 @@ define([
       this.views.my_conversations = new MyConversationsView({
         collection: new Conversations()
       });
-      this.views.import_conversations = new ImportConversationsView();
-      this.views.browse_feed = new BrowseFeedView({
-        collection: new Conversations()
-      });
       this.views.my_councils = new MyCouncilsView({
         collection: new Conversations()
       });
+      this.views.browse_feed = new BrowseFeedView({
+        collection: new Conversations()
+      });
+      this.views.import_conversations = new ImportConversationsView();
     },
 
     template: function(params) {
@@ -43,9 +43,9 @@ define([
     events: {
       'click #logout-link'          : 'logout',
       'click #my-conversations'     : 'myConversations',
-      'click #import-conversations' : 'importConversations',
+      'click #my-councils'          : 'myCouncils',
       'click #browse-feed'          : 'browseFeed',
-      'click #my-councils'          : 'myCouncils'
+      'click #import-conversations' : 'importConversations'
     },
 
     render: function() {
@@ -69,10 +69,10 @@ define([
       this.views.my_conversations.initPage();
     },
 
-    importConversations: function() {
-      var import_conversations_page = $("#import-conversations-page");
-      $.mobile.changePage(import_conversations_page, { changeHash: false, transition: 'slide' });
-      this.views.import_conversations.initPage();
+    myCouncils: function() {
+      var my_councils_page = $("#my-councils-page");
+      $.mobile.changePage(my_councils_page, { changeHash: false, transition: 'slide' });
+      this.views.my_councils.initPage();
     },
 
     browseFeed: function() {
@@ -81,11 +81,11 @@ define([
       this.views.browse_feed.initPage();
     },
 
-    myCouncils: function() {
-      var my_councils_page = $("#my-councils-page");
-      $.mobile.changePage(my_councils_page, { changeHash: false, transition: 'slide' });
-      this.views.my_councils.initPage();
-    }
+    importConversations: function() {
+      var import_conversations_page = $("#import-conversations-page");
+      $.mobile.changePage(import_conversations_page, { changeHash: false, transition: 'slide' });
+      this.views.import_conversations.initPage();
+    },
 
   });
 
