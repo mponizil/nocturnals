@@ -1,0 +1,158 @@
+<mockup version="1.0" skin="sketch" measuredW="1495" measuredH="1674" mockupW="1470" mockupH="1651">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::iPhone" x="245" y="13" w="-1" h="-1" measuredW="282" measuredH="510" zOrder="0" locked="false" isInGroup="-1"/>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::TextInput" x="297" y="211" w="178" h="-1" measuredW="70" measuredH="27" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>username</text>
+      </controlProperties>
+    </control>
+    <control controlID="8" controlTypeID="com.balsamiq.mockups::TextInput" x="297" y="246" w="178" h="-1" measuredW="67" measuredH="27" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>password</text>
+      </controlProperties>
+    </control>
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::iPhone" x="566" y="13" w="-1" h="-1" measuredW="282" measuredH="510" zOrder="3" locked="false" isInGroup="-1"/>
+    <control controlID="13" controlTypeID="com.balsamiq.mockups::Title" x="324" y="125" w="-1" h="-1" measuredW="123" measuredH="56" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Signup</text>
+      </controlProperties>
+    </control>
+    <control controlID="15" controlTypeID="com.balsamiq.mockups::iPhoneMenu" x="591" y="110" w="227" h="-1" measuredW="215" measuredH="97" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>none</borderStyle>
+        <text>My%20Conversations%2C%20%3D%0AImport%20Conversations%2C%20%3E%0ABrowse%20Feed%2C%20%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="16" controlTypeID="com.balsamiq.mockups::iPhoneMenu" x="15" y="54" w="-1" h="-1" measuredW="215" measuredH="394" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>A%20Simple%20Label%0A+%20Add%20and%20sub-menu%2C%20%3E%0A-%20Delete%5Cr%28Cancel%29%0ATwo%20Labels%5C%2C%20and%20a%20comma%2C%20yup%0Av%20A%20Checkmark%2C%20%28%3E%29%0A*%20A%20Bullet%2C%20%3D%0A_%20Space%20for%20an%20icon%0A__%20Space%20for%20a%20big%20icon%0AOn%20button%2C%20ON%0AOff%20button%2C%20OFF%0A%20%0Av%20An%20empty%20row%2C%20%28above%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="17" controlTypeID="com.balsamiq.mockups::PointyButton" x="352" y="288" w="-1" h="-1" measuredW="67" measuredH="30" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <direction>center</direction>
+        <size>16</size>
+        <text>Signup</text>
+      </controlProperties>
+    </control>
+    <control controlID="18" controlTypeID="com.balsamiq.mockups::iPhone" x="245" y="610" w="-1" h="-1" measuredW="282" measuredH="510" zOrder="8" locked="false" isInGroup="-1"/>
+    <control controlID="20" controlTypeID="com.balsamiq.mockups::iPhoneMenu" x="272" y="711" w="227" h="-1" measuredW="215" measuredH="176" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>none</borderStyle>
+        <text>__%20My%20Conversations%0A%22Hey%20%3B%29%22%2C%20%3E%0A*%20%22Hey%5C%2C%20what%27s%20up%3F%22%2C%20%3E%0A*%20%22I%20have%20too%20much%20homework%20but...%22%2C%20%3E%0A+%20Import%20Conversations%2C%20%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="21" controlTypeID="com.balsamiq.mockups::iPhone" x="566" y="610" w="-1" h="-1" measuredW="282" measuredH="510" zOrder="10" locked="false" isInGroup="-1"/>
+    <control controlID="25" controlTypeID="com.balsamiq.mockups::iPhoneMenu" x="592" y="711" w="227" h="-1" measuredW="215" measuredH="60" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>none</borderStyle>
+        <text>__%20How%20to%20Import</text>
+      </controlProperties>
+    </control>
+    <control controlID="27" controlTypeID="com.balsamiq.mockups::SubTitle" x="626" y="974" w="-1" h="-1" measuredW="166" measuredH="37" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>555-345-4325</text>
+      </controlProperties>
+    </control>
+    <control controlID="29" controlTypeID="com.balsamiq.mockups::iPhoneMenu" x="591" y="816" w="227" h="-1" measuredW="215" measuredH="97" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Hey%20what%27s%20up%0ANothin%20really%20whats%20goin%20on%0AIdk%20think%20I%27m%20goin%20to%20a%20show</text>
+      </controlProperties>
+    </control>
+    <control controlID="30" controlTypeID="com.balsamiq.mockups::PointyButton" x="751" y="932" w="-1" h="-1" measuredW="69" measuredH="27" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Forward</text>
+      </controlProperties>
+    </control>
+    <control controlID="31" controlTypeID="com.balsamiq.mockups::TextInput" x="591" y="788" w="227" h="-1" measuredW="100" measuredH="27" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Rebecca%20Smith</text>
+      </controlProperties>
+    </control>
+    <control controlID="32" controlTypeID="com.balsamiq.mockups::iPhone" x="885" y="610" w="-1" h="-1" measuredW="282" measuredH="510" zOrder="16" locked="false" isInGroup="-1"/>
+    <control controlID="33" controlTypeID="com.balsamiq.mockups::iPhoneMenu" x="912" y="711" w="227" h="-1" measuredW="215" measuredH="176" zOrder="17" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>none</borderStyle>
+        <text>__%20Browse%20Feed%0A%22Hey%20%3B%29%22%2C%20%3E%0A%22Hey%5C%2C%20what%27s%20up%3F%22%2C%20%3E%0A%22I%20have%20too%20much%20homework%20but...%22%2C%20%3E%0A%22Idk..%20what%20do%20you%20think%3F%22%2C%20%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="35" controlTypeID="com.balsamiq.mockups::MenuBar" x="912" y="1006" w="227" h="29" measuredW="212" measuredH="29" zOrder="18" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>ShiftIcon%7Cxsmall</icon>
+        <text>Newest%2C%20Most%20Active</text>
+      </controlProperties>
+    </control>
+    <control controlID="37" controlTypeID="com.balsamiq.mockups::iPhone" x="245" y="1154" w="-1" h="-1" measuredW="282" measuredH="510" zOrder="19" locked="false" isInGroup="-1"/>
+    <control controlID="38" controlTypeID="com.balsamiq.mockups::iPhoneMenu" x="272" y="1255" w="227" h="-1" measuredW="215" measuredH="176" zOrder="20" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>none</borderStyle>
+        <text>__%20Import%20Conversation%0Av%20Which%20did%20you%20say%3F%0A%22Hey%20%3B%29%22%0A*%20%22Hey%20whats%20up%3F%22%0A%22Eh%20lot%20of%20homework%22</text>
+      </controlProperties>
+    </control>
+    <control controlID="39" controlTypeID="com.balsamiq.mockups::PointyButton" x="591" y="931" w="-1" h="-1" measuredW="69" measuredH="27" zOrder="21" locked="false" isInGroup="-1">
+      <controlProperties>
+        <direction>left</direction>
+        <text>Forward</text>
+      </controlProperties>
+    </control>
+    <control controlID="40" controlTypeID="com.balsamiq.mockups::iPhoneMenu" x="272" y="1000" w="227" h="-1" measuredW="215" measuredH="39" zOrder="22" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>none</borderStyle>
+        <text>*%20Process%20this%20conversation</text>
+      </controlProperties>
+    </control>
+    <control controlID="42" controlTypeID="com.balsamiq.mockups::PointyButton" x="303" y="1529" w="-1" h="-1" measuredW="171" measuredH="30" zOrder="23" locked="false" isInGroup="-1">
+      <controlProperties>
+        <direction>center</direction>
+        <size>16</size>
+        <text>Confirm%20Conversation</text>
+      </controlProperties>
+    </control>
+    <control controlID="43" controlTypeID="com.balsamiq.mockups::iPhone" x="566" y="1154" w="-1" h="-1" measuredW="282" measuredH="510" zOrder="24" locked="false" isInGroup="-1"/>
+    <control controlID="44" controlTypeID="com.balsamiq.mockups::iPhoneMenu" x="593" y="1255" w="227" h="-1" measuredW="215" measuredH="118" zOrder="25" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>none</borderStyle>
+        <text>__%20Who%20can%20comment%3F%0AFriends%0AAnyone%20%28posted%20anonymously%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="45" controlTypeID="com.balsamiq.mockups::PointyButton" x="623" y="1529" w="-1" h="-1" measuredW="165" measuredH="30" zOrder="26" locked="false" isInGroup="-1">
+      <controlProperties>
+        <direction>center</direction>
+        <size>16</size>
+        <text>Submit%20Conversation</text>
+      </controlProperties>
+    </control>
+    <control controlID="46" controlTypeID="com.balsamiq.mockups::iPhone" x="1203" y="610" w="-1" h="-1" measuredW="282" measuredH="510" zOrder="27" locked="false" isInGroup="-1"/>
+    <control controlID="47" controlTypeID="com.balsamiq.mockups::iPhoneMenu" x="1230" y="711" w="227" h="-1" measuredW="215" measuredH="97" zOrder="28" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>none</borderStyle>
+        <text>%22Hey%20%3B%29%22%0A*%20%22Hey%20whats%20up%3F%22%0A%22Not%20much%20just%20doin%20some%20homework%22</text>
+      </controlProperties>
+    </control>
+    <control controlID="50" controlTypeID="com.balsamiq.mockups::TextArea" x="1230" y="900" w="227" h="45" measuredW="200" measuredH="140" zOrder="29" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Oh%20tell%20her%20%22I%20already%20did%20my%20homework%20and%20got%20an%20A%22</text>
+      </controlProperties>
+    </control>
+    <control controlID="51" controlTypeID="com.balsamiq.mockups::TextArea" x="1230" y="945" w="227" h="45" measuredW="200" measuredH="140" zOrder="30" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>You%27re%20an%20idiot%21</text>
+      </controlProperties>
+    </control>
+    <control controlID="52" controlTypeID="com.balsamiq.mockups::CallOut" x="1420" y="902" w="-1" h="-1" measuredW="36" measuredH="40" zOrder="31" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>5</text>
+      </controlProperties>
+    </control>
+    <control controlID="53" controlTypeID="com.balsamiq.mockups::CallOut" x="1420" y="947" w="39" h="41" measuredW="37" measuredH="40" zOrder="32" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>2</text>
+      </controlProperties>
+    </control>
+    <control controlID="54" controlTypeID="com.balsamiq.mockups::Button" x="1289" y="1000" w="-1" h="-1" measuredW="109" measuredH="28" zOrder="33" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Post%20Comment</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

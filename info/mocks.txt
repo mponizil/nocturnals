@@ -1,0 +1,36 @@
+iphone app
+
+get advice
+- anonymously
+- close group of friends
+
+(1) signup
+- username
+- password
+- confirm password
+-> signup
+
+(2) dashboard
+- show existing conversations
+- HOW TO IMPORT NUMBERS -> ()
+- if none, prompt user to forward messages to SPECIAL NUMBER
+- view public conversations
+
+(3) who said what
+- check off which ones you said
+
+----
+(4) do you want to edit private details?
+----
+
+(5) determine who will comment
+- choose friends
+- public (posted anonymously, scrape names from contact list)
+
+(6) view public conversations
+- browse by: newest, most active
+- tap to view conversation
+
+(7) view conversation
+- post comment
+- vote on comments
