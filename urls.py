@@ -1,4 +1,5 @@
 from django.conf.urls.defaults import *
+from django.views.generic.simple import redirect_to
 
 from django.contrib import admin
 admin.autodiscover()
@@ -15,6 +16,8 @@ v1_api.register(TextResource())
 v1_api.register(CommentResource())
 
 urlpatterns = patterns('',
+    (r'^$', redirect_to, { 'url': '/static/www/index.html' }),
+
     (r'^auth/', include('accounts.urls')),
     (r'^vortex/', include('vortex.urls')),
     (r'^twil/', include('twil.urls')),
