@@ -24,7 +24,7 @@
    */
   Backbone.oldSync = Backbone.sync;
   Backbone.sync = function( method, model, options ) {
-    // console.log(method,model.url,options)
+    // console.log(method,model,options)
     var url = (typeof model.url === 'function') ? model.url() : model.url;
     if ( method === 'create' ) {
       var dfd = new $.Deferred();

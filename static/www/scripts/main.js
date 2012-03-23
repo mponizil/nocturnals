@@ -4,7 +4,7 @@
  */
 
 var CONFIG = {
-  ENDPOINT: "http://nocturnals.mponizil.com"
+  ENDPOINT: "http://localhost:8000"
 };
 var SpiritApp = {
   App: {},

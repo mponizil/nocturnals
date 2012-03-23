@@ -1018,7 +1018,7 @@
         // And that is done by passing query params specifying the collection of data to fetch. But still allow for the
         // case that url is a function.
         setUrl = (_.isFunction( rel.related.url )) ? rel.related.url( models ) : rel.related.url;
-        
+
         // An assumption is that when 'Backbone.Collection.url' is a function, it can handle building of set urls.
         // To make sure it can, test if the url we got by supplying a list of models to fetch is different from
         // the one supplied for the default fetch action (without args to 'url').
@@ -1072,7 +1072,7 @@
         
         requests = [ rel.related.fetch( opts ) ];
       }
-      
+
       return requests;
     },
     

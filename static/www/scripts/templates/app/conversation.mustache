@@ -7,6 +7,7 @@
 <div data-role="header">
   <a id="link-{{back.slug}}" data-icon="arrow-l" class="back">{{back.title}}</a>
   <h1>{{target}}</h1>
+  <a id="link-comments" data-icon="arrow-r">Comments</a>
 </div>
 
 <div data-role="content">
@@ -24,23 +25,6 @@
           <label for="new-text" class="ui-hidden-accessible">New message</label>
           <input type="text" name="new-text" id="new-text" value="" placeholder="New message" />
           <button type="submit" id="new-text-button">Send</button>
-        </div>
-      </form>
-    </div>
-  </div>
-  <div id="comments">
-    <h3>Comments</h3>
-    {{#comments}}
-    <div>
-      {{author.username}}: {{body}}
-    </div>
-    {{/comments}}
-    <div>
-      <form id="new-comment-form">
-        <div data-role="fieldcontain" class="ui-field-contain">
-          <label for="new-comment" class="ui-hidden-accessible">Post a comment</label>
-          <input type="text" name="new-comment" id="new-comment" value="" placeholder="Post a comment" />
-          <button type="submit" id="new-comment-button">Post</button>
         </div>
       </form>
     </div>
