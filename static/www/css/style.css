@@ -9,3 +9,22 @@
 .right {
   float: right;
 }
+
+.nav-glyphish-example .ui-btn .ui-btn-inner { padding-top: 40px !important; }
+.nav-glyphish-example .ui-btn .ui-icon { width: 30px!important; height: 30px!important; margin-left: -15px !important; box-shadow: none!important; -moz-box-shadow: none!important; -webkit-box-shadow: none!important; -webkit-border-radius: 0 !important; border-radius: 0 !important; }
+.home-button .ui-icon {
+  background:url(../scripts/libs/jquery.mobile/images/white/53-house.png) 50% 50% no-repeat;
+  background-size: 22px 22px;
+}
+.councils-button .ui-icon {
+  background:url(../scripts/libs/jquery.mobile/images/white/112-group.png) 50% 50% no-repeat;
+  background-size: 22px 22px;
+}
+.browse-button .ui-icon {
+  background:url(../scripts/libs/jquery.mobile/images/white/06-magnify.png) 50% 50% no-repeat;
+  background-size: 22px 22px;
+}
+.import-button .ui-icon {
+  background:url(../scripts/libs/jquery.mobile/images/white/08-chat.png) 50% 50% no-repeat;
+  background-size: 24px 22px;
+}
