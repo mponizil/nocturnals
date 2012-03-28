@@ -3,3 +3,4 @@
 *.db
 vortex/migrations
 apache
+local_settings.py
