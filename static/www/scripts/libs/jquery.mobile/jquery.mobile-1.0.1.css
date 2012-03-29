@@ -729,18 +729,18 @@ a.ui-link-inherit {
 
 .ui-btn-active {
 	border: 1px solid 		#155678 /*{global-active-border}*/;
-	background: 			#4596ce /*{global-active-background-color}*/;
+	background: 			#173859 /*{global-active-background-color}*/;
 	font-weight: bold;
 	color: 					#fff /*{global-active-color}*/;
 	cursor: pointer;
 	text-shadow: 0 /*{global-active-shadow-x}*/ -1px /*{global-active-shadow-y}*/ 1px /*{global-active-shadow-radius}*/ #145072 /*{global-active-shadow-color}*/;
 	text-decoration: none;
-	background-image: -webkit-gradient(linear, left top, left bottom, from( #85bae4 /*{global-active-background-start}*/), to( #5393c5 /*{global-active-background-end}*/)); /* Saf4+, Chrome */
-	background-image: -webkit-linear-gradient(#85bae4 /*{global-active-background-start}*/, #5393c5 /*{global-active-background-end}*/); /* Chrome 10+, Saf5.1+ */
-	background-image:    -moz-linear-gradient(#85bae4 /*{global-active-background-start}*/, #5393c5 /*{global-active-background-end}*/); /* FF3.6 */
-	background-image:     -ms-linear-gradient(#85bae4 /*{global-active-background-start}*/, #5393c5 /*{global-active-background-end}*/); /* IE10 */
-	background-image:      -o-linear-gradient(#85bae4 /*{global-active-background-start}*/, #5393c5 /*{global-active-background-end}*/); /* Opera 11.10+ */
-	background-image:         linear-gradient(#85bae4 /*{global-active-background-start}*/, #5393c5 /*{global-active-background-end}*/);
+	background-image: -webkit-gradient(linear, left top, left bottom, from( #173859 /*{global-active-background-start}*/), to( #1e4b77 /*{global-active-background-end}*/)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(#173859 /*{global-active-background-start}*/, #1e4b77 /*{global-active-background-end}*/); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient(#173859 /*{global-active-background-start}*/, #1e4b77 /*{global-active-background-end}*/); /* FF3.6 */
+	background-image:     -ms-linear-gradient(#173859 /*{global-active-background-start}*/, #1e4b77 /*{global-active-background-end}*/); /* IE10 */
+	background-image:      -o-linear-gradient(#173859 /*{global-active-background-start}*/, #1e4b77 /*{global-active-background-end}*/); /* Opera 11.10+ */
+	background-image:         linear-gradient(#173859 /*{global-active-background-start}*/, #1e4b77 /*{global-active-background-end}*/);
 	font-family: Helvetica, Arial, sans-serif /*{global-font-family}*/;
 }
 .ui-btn-active a.ui-link-inherit {
