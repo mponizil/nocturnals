@@ -6,7 +6,7 @@
  * Time: 9:23 AM
  */
 
-define(['order!libs/backbone/backbone-0.9.1','order!libs/backbone/backbone-relational','order!libs/backbone/backbone-tastypie'],
+define(['order!libs/backbone/backbone-0.9.1'],
     function () {
         return Backbone.noConflict();
     });

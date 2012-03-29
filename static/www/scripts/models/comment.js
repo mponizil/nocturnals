@@ -10,19 +10,7 @@ define([
   'models/user'
   ], function ($, _, Backbone, User) {
 
-  var Comment = Backbone.RelationalModel.extend({
-
-    relations: [{
-      type: Backbone.HasOne,
-      key: 'author',
-      relatedModel: User,
-      reverseRelation: {
-        key: 'conversations'
-      }
-    }],
-
-    defaults: {
-    },
+  var Comment = Backbone.Model.extend({
 
     initialize: function() {
     },

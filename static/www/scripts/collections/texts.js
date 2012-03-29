@@ -14,7 +14,11 @@ define([
 
     url: CONFIG.ENDPOINT + '/api/v1/text/?format=json',
 
-    model: Text
+    model: Text,
+
+    parse: function(data) {
+      return data.objects;
+    }
 
   });
 

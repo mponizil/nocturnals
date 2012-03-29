@@ -9,7 +9,7 @@ define([
   'Backbone'
   ], function ($, _, Backbone) {
 
-  var User = Backbone.RelationalModel.extend({
+  var User = Backbone.Model.extend({
 
     initialize: function() {
     }

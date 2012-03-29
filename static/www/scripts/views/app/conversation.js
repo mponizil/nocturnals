@@ -9,22 +9,21 @@ define([
   'Backbone',
   'Mustache',
   'models/text',
+  'collections/texts',
   'views/app/comments',
   'text!templates/app/conversation.mustache!strip'
-  ], function ($, _, Backbone, Mustache, Text, CommentsView, conversation_template) {
+  ], function ($, _, Backbone, Mustache, Text, Texts, CommentsView, conversation_template) {
 
   var ConversationView = Backbone.View.extend({
 
     el: $("#conversation-page"),
 
-    initialize: function() {
-    },
-
     initPage: function() {
       var _cv = this;
-      _cv.model.fetchRelated('texts', {
+      _cv.collection = new Texts();
+      _cv.collection.fetch({
         data: { conversation: _cv.model.get("id") },
-        success: function() { _cv.render(); }
+        success: function() { _cv.render() }
       });
     },
 
@@ -42,6 +41,7 @@ define([
 
     render: function() {
       var data = $.extend({}, this.model.toJSON(), { back: this.options.back });
+      data.texts = this.collection.toJSON();
       this.$el.html(this.template(data));
       this.$el.page("destroy").page();
       return this;
@@ -77,13 +77,13 @@ define([
     newText: function(event) {
       var new_text_body = this.$("#new-text").val();
       var new_text = new Text({
-        conversation: this.model,
-        author: SpiritApp.User,
+        conversation: { pk: this.model.get("id") },
+        author: SpiritApp.User.toJSON(),
         author_name: SpiritApp.User.get("username"),
         body: new_text_body
       });
-      // new_text.save();
-      this.model.get("texts").add(new_text);
+      new_text.save();
+      this.collection.add(new_text);
       this.render();
       return false;
     }

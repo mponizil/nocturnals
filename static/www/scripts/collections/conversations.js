@@ -14,7 +14,11 @@ define([
 
     url: CONFIG.ENDPOINT + "/api/v1/conversation/?format=json",
 
-    model: Conversation
+    model: Conversation,
+
+    parse: function(data) {
+      return data.objects;
+    }
 
   });
 

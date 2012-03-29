@@ -9,21 +9,20 @@ define([
   'Backbone',
   'Mustache',
   'models/comment',
+  'collections/comments',
   'text!templates/app/comments.mustache!strip'
-  ], function ($, _, Backbone, Mustache, Comment, comments_template) {
+  ], function ($, _, Backbone, Mustache, Comment, Comments, comments_template) {
 
   var CommentsView = Backbone.View.extend({
 
     el: $("#comments-page"),
 
-    initialize: function() {
-    },
-
     initPage: function() {
       var _cv = this;
-      _cv.model.fetchRelated('comments', {
+      _cv.collection = new Comments();
+      _cv.collection.fetch({
         data: { conversation: _cv.model.get("id") },
-        success: function() { _cv.render(); }
+        success: function() { _cv.render() }
       });
     },
 
@@ -38,6 +37,7 @@ define([
 
     render: function() {
       var data = $.extend({}, this.model.toJSON(), { back: this.options.back });
+      data.comments = this.collection.toJSON();
       this.$el.html(this.template(data));
       this.$el.page("destroy").page();
       return this;
@@ -56,7 +56,7 @@ define([
         body: new_comment_body
       });
       // new_comment.save();
-      this.model.get("comments").add(new_comment);
+      this.collection.add(new_comment);
       this.render();
       return false;
     }

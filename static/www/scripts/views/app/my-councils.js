@@ -43,10 +43,7 @@ define([
     },
 
     render: function() {
-      var conversations = _.map(this.collection.toJSON(), function(conversation, index) {
-        return $.extend({}, conversation, { index: index });
-      });
-      this.$el.html(this.template({ conversations: conversations }));
+      this.$el.html(this.template({ conversations: this.collection.toJSON() }));
       this.$el.page("destroy").page();
       return this;
     },
@@ -57,9 +54,9 @@ define([
     },
 
     conversationPage: function(event) {
-      var conversation_index = $(event.target).data("index");
+      var conversation_id = $(event.target).data("id");
       var conversation_view = new ConversationView({
-        model: this.collection.at(conversation_index),
+        model: this.collection.get(conversation_id),
         back: {
           slug: "my-councils",
           title: "My Councils"

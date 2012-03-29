@@ -14,7 +14,11 @@ define([
 
     url: CONFIG.ENDPOINT + '/api/v1/comment/?format=json',
 
-    model: Comment
+    model: Comment,
+
+    parse: function(data) {
+      return data.objects;
+    }
 
   });
 

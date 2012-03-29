@@ -1215,6 +1215,7 @@
     }
 
     // Make the request, allowing the user to override any Ajax options.
+    console.log(params)
     return $.ajax(_.extend(params, options));
   };
 

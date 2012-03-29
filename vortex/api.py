@@ -60,7 +60,7 @@ class TextResource(ModelResource):
 
 class CommentResource(ModelResource):
     conversation = fields.ForeignKey('vortex.api.ConversationResource', 'conversation')
-    author = fields.ForeignKey('accounts.api.UserResource', 'author')
+    author = fields.ForeignKey('accounts.api.UserResource', 'author', null=True, full=True)
     
     class Meta:
         queryset = Comment.objects.all()
