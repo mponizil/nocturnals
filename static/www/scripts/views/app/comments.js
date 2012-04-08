@@ -52,10 +52,11 @@ define([
     newComment: function(event) {
       var new_comment_body = this.$("#new-comment").val();
       var new_comment = new Comment({
-        author: SpiritApp.User,
+        conversation: this.model.get("resource_uri"),
+        author: SpiritApp.User.toJSON(),
         body: new_comment_body
       });
-      // new_comment.save();
+      new_comment.save();
       this.collection.add(new_comment);
       this.render();
       return false;

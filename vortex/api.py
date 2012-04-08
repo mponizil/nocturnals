@@ -9,12 +9,12 @@ from tastypie.resources import ModelResource, ALL, ALL_WITH_RELATIONS
 class ConversationAuthorization(Authorization):
     def apply_limits(self, request, object_list):
         if request is None:
-            print 'request is None'
+            return object_list
         public = request.GET.get("public", None)
         author = request.GET.get("author", None)
         council_members = request.GET.get("council_members", None)
-        if author is None and council_members is None:
-            object_list = object_list.filter(Q(author=request.user) | Q(council_members=request.user) | Q(public=True))
+        if author is None and council_members is None and len(object_list) > 1:
+            object_list = object_list.filter(Q(author=request.user.id) | Q(council_members=request.user.id) | Q(public=True))
         if author is not None and council_members is None:
             if int(author) != request.user.id:
                 object_list = object_list.filter(Q(council_members=request.user) | Q(public=True))

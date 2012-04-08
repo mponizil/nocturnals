@@ -1,0 +1,27 @@
+Filtering that should be executed when hitting these 'conversation' endpoints
+
+/conversation
+filter(public=True)
+
+/conversation?author=1
+
+/conversation?author=2
+filter(
+  Q(council_members=request.user.id) | Q(public=True)
+)
+
+/conversation?council_members=1
+
+/conversation?council_members=2
+filter(
+  Q(author=request.user.id) | Q(public=True)
+)
+
+/conversation?author=1&council_members=1
+
+/conversation?author=2&council_members=1
+
+/conversation?author=1&council_members=2
+
+/conversation?author=2&council_members=2
+filter(public=True)

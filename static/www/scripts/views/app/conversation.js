@@ -77,7 +77,7 @@ define([
     newText: function(event) {
       var new_text_body = this.$("#new-text").val();
       var new_text = new Text({
-        conversation: { pk: this.model.get("id") },
+        conversation: this.model.get("resource_uri"),
         author: SpiritApp.User.toJSON(),
         author_name: SpiritApp.User.get("username"),
         body: new_text_body
