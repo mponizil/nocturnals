@@ -23,6 +23,11 @@ define([
     initialize: function() {
       this.render();
 
+      // make grid the right size
+      _.bind(this.sizeGrid, this);
+      $(window).resize(this.sizeGrid);
+      this.sizeGrid();
+
       this.views = {};
       this.views.my_conversations = new MyConversationsView({
         collection: new Conversations()
@@ -61,6 +66,11 @@ define([
           SpiritApp.User.trigger("logged_out");
         }
       })
+    },
+
+    sizeGrid: function() {
+      var grid_height = $("body").height() - 41;
+      this.$("#dashboard-grid").height(grid_height);
     },
 
     myConversations: function() {

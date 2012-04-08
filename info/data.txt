@@ -1,0 +1,1 @@
+python manage.py dumpdata --exclude=auth.permission --exclude=contenttypes --exclude=sessions --exclude=sites --exclude=messages --exclude=staticfiles --exclude=admin --exclude=tastypie --indent 2 > data.json

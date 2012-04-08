@@ -24,6 +24,7 @@ define([
     initPage: function() {
       var _bfv = this;
       _bfv.collection.fetch({
+        data: { public: true },
         success: function() {
           _bfv.render();
         }
