@@ -10,8 +10,8 @@ define([
   'Mustache',
   'models/conversation',
   'collections/conversations',
-  'views/app/conversation',
-  'text!templates/app/browse-feed.mustache!strip'
+  'views/app/conversation/conversation',
+  'text!templates/app/pages/browse-feed.mustache!strip'
   ], function ($, _, Backbone, Mustache, Conversation, Conversations, ConversationView, browse_feed_template) {
 
   var BrowseFeedView = Backbone.View.extend({

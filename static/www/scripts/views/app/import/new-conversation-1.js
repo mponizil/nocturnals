@@ -8,7 +8,7 @@ define([
   'underscore',
   'Backbone',
   'Mustache',
-  'text!templates/app/new-conversation-1.mustache!strip'
+  'text!templates/app/import/new-conversation-1.mustache!strip'
   ], function ($, _, Backbone, Mustache, new_conversation_1_template) {
 
   var NewConversation1View = Backbone.View.extend({

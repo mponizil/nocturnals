@@ -10,8 +10,8 @@ define([
   'Mustache',
   'models/text',
   'collections/texts',
-  'views/app/comments',
-  'text!templates/app/conversation.mustache!strip'
+  'views/app/conversation/comments',
+  'text!templates/app/conversation/conversation.mustache!strip'
   ], function ($, _, Backbone, Mustache, Text, Texts, CommentsView, conversation_template) {
 
   var ConversationView = Backbone.View.extend({

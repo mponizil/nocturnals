@@ -1,5 +1,5 @@
 /**
- * views/app/my-conversations.js
+ * views/app/my-councils.js
  * Shows user their options
  */
 
@@ -10,19 +10,22 @@ define([
   'Mustache',
   'models/conversation',
   'collections/conversations',
-  'views/app/conversation',
-  'text!templates/app/my-conversations.mustache!strip'
-  ], function ($, _, Backbone, Mustache, Conversation, Conversations, ConversationView, my_conversations_template) {
+  'views/app/conversation/conversation',
+  'text!templates/app/pages/my-councils.mustache!strip'
+  ], function ($, _, Backbone, Mustache, Conversation, Conversations, ConversationView, my_councils_template) {
 
-  var MyConversationsView = Backbone.View.extend({
+  var MyCouncilsView = Backbone.View.extend({
 
-    el: $("#my-conversations-page"),
+    el: $("#my-councils-page"),
+
+    initialize: function() {
+    },
 
     initPage: function() {
       var _mcv = this;
       _mcv.collection.fetch({
         data: {
-          author: SpiritApp.User.get("id")
+          council_members: SpiritApp.User.get("id")
         },
         success: function() {
           _mcv.render();
@@ -31,8 +34,7 @@ define([
     },
 
     template: function(params) {
-      console.log(params)
-      return Mustache.to_html(my_conversations_template, params);
+      return Mustache.to_html(my_councils_template, params);
     },
 
     events: {
@@ -56,8 +58,8 @@ define([
       var conversation_view = new ConversationView({
         model: this.collection.get(conversation_id),
         back: {
-          slug: "my-conversations",
-          title: "My Conversations"
+          slug: "my-councils",
+          title: "My Councils"
         }
       });
       var conversation_page = $("#conversation-page");
@@ -67,6 +69,6 @@ define([
 
   });
 
-  return MyConversationsView;
+  return MyCouncilsView;
 
 });

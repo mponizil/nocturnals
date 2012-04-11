@@ -9,10 +9,10 @@ define([
   'Backbone',
   'Mustache',
   'collections/conversations',
-  'views/app/my-conversations',
-  'views/app/import-conversation',
-  'views/app/browse-feed',
-  'views/app/my-councils',
+  'views/app/pages/my-conversations',
+  'views/app/pages/import-conversation',
+  'views/app/pages/browse-feed',
+  'views/app/pages/my-councils',
   'text!templates/app/dashboard.mustache!strip'
   ], function ($, _, Backbone, Mustache, Conversations, MyConversationsView, ImportConversationView, BrowseFeedView, MyCouncilsView, dashboard_template) {
 

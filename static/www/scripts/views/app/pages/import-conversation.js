@@ -8,8 +8,8 @@ define([
   'underscore',
   'Backbone',
   'Mustache',
-  'views/app/new-conversation-1',
-  'views/app/new-conversation-2'
+  'views/app/import/new-conversation-1',
+  'views/app/import/new-conversation-2'
   ], function ($, _, Backbone, Mustache, NewConversation1View, NewConversation2View) {
 
   var ImportConversationView = Backbone.View.extend({
