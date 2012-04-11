@@ -10,17 +10,21 @@
   float: right;
 }
 
-#dashboard-page .ui-block-a,
-#dashboard-page .ui-block-b {
-  height: 50%;
-  background-color: yellow;
-  text-align: center;
-  background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* IE10+ */
-  background: linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
-  outline: 1px solid #ccc;
+.custom-icons .ui-btn .ui-btn-inner { padding-top: 40px !important; }
+.custom-icons .ui-btn .ui-icon { width: 30px!important; height: 30px!important; margin-left: -15px !important; box-shadow: none!important; -moz-box-shadow: none!important; -webkit-box-shadow: none!important; -webkit-border-radius: 0 !important; border-radius: 0 !important; }
+.home-button .ui-icon {
+  background:url(../scripts/libs/jquery.mobile/images/white/53-house.png) 50% 50% no-repeat;
+  background-size: 22px 22px;
+}
+.councils-button .ui-icon {
+  background:url(../scripts/libs/jquery.mobile/images/white/112-group.png) 50% 50% no-repeat;
+  background-size: 22px 22px;
+}
+.browse-button .ui-icon {
+  background:url(../scripts/libs/jquery.mobile/images/white/06-magnify.png) 50% 50% no-repeat;
+  background-size: 22px 22px;
+}
+.import-button .ui-icon {
+  background:url(../scripts/libs/jquery.mobile/images/white/08-chat.png) 50% 50% no-repeat;
+  background-size: 24px 22px;
 }

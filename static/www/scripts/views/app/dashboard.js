@@ -10,11 +10,11 @@ define([
   'Mustache',
   'collections/conversations',
   'views/app/my-conversations',
-  'views/app/import-conversations',
+  'views/app/import-conversation',
   'views/app/browse-feed',
   'views/app/my-councils',
   'text!templates/app/dashboard.mustache!strip'
-  ], function ($, _, Backbone, Mustache, Conversations, MyConversationsView, ImportConversationsView, BrowseFeedView, MyCouncilsView, dashboard_template) {
+  ], function ($, _, Backbone, Mustache, Conversations, MyConversationsView, ImportConversationView, BrowseFeedView, MyCouncilsView, dashboard_template) {
 
   var DashboardView = Backbone.View.extend({
 
@@ -22,11 +22,6 @@ define([
 
     initialize: function() {
       this.render();
-
-      // make grid the right size
-      _.bind(this.sizeGrid, this);
-      $(window).resize(this.sizeGrid);
-      this.sizeGrid();
 
       this.views = {};
       this.views.my_conversations = new MyConversationsView({
@@ -38,7 +33,7 @@ define([
       this.views.browse_feed = new BrowseFeedView({
         collection: new Conversations()
       });
-      this.views.import_conversations = new ImportConversationsView();
+      this.views.import_conversation = new ImportConversationView();
     },
 
     template: function(params) {
@@ -68,11 +63,6 @@ define([
       })
     },
 
-    sizeGrid: function() {
-      var grid_height = $("body").height() - 41;
-      this.$("#dashboard-grid").height(grid_height);
-    },
-
     myConversations: function() {
       var my_conversations_page = $("#my-conversations-page");
       $.mobile.changePage(my_conversations_page, { changeHash: false, transition: 'slide' });
@@ -92,9 +82,9 @@ define([
     },
 
     importConversations: function() {
-      var import_conversations_page = $("#import-conversations-page");
-      $.mobile.changePage(import_conversations_page, { changeHash: false, transition: 'slide' });
-      this.views.import_conversations.initPage();
+      var new_conversation_1_page = $("#new-conversation-1-page");
+      $.mobile.changePage(new_conversation_1_page, { changeHash: false, transition: 'slide' });
+      this.views.import_conversation.initPage();
     },
 
   });

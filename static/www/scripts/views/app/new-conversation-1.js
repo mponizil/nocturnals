@@ -8,12 +8,12 @@ define([
   'underscore',
   'Backbone',
   'Mustache',
-  'text!templates/app/import-conversations.mustache!strip'
-  ], function ($, _, Backbone, Mustache, import_conversations_template) {
+  'text!templates/app/new-conversation-1.mustache!strip'
+  ], function ($, _, Backbone, Mustache, new_conversation_1_template) {
 
-  var ImportConversationsView = Backbone.View.extend({
+  var NewConversation1View = Backbone.View.extend({
 
-    el: $("#import-conversations-page"),
+    el: $("#new-conversation-1-page"),
 
     initialize: function() {
     },
@@ -25,11 +25,12 @@ define([
     },
 
     template: function(params) {
-      return Mustache.to_html(import_conversations_template, params);
+      return Mustache.to_html(new_conversation_1_template, params);
     },
 
     events: {
-      'click #link-dashboard' : 'dashboardPage'
+      'click #link-dashboard'           : 'dashboardPage',
+      'submit #new-conversation-1-form' : 'newConversation'
     },
 
     render: function() {
@@ -40,10 +41,16 @@ define([
     dashboardPage: function() {
       var dashboard_page = $("#dashboard-page");
       $.mobile.changePage(dashboard_page, { changeHash: false, reverse: true, transition: 'slide' });
+    },
+
+    newConversation: function() {
+      console.log('submit');
+      this.trigger("step_2");
+      return false;
     }
 
   });
 
-  return ImportConversationsView;
+  return NewConversation1View;
 
 });
