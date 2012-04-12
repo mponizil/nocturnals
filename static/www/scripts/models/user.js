@@ -12,6 +12,11 @@ define([
   var User = Backbone.Model.extend({
 
     initialize: function() {
+    },
+
+    oppGender: function() {
+      if (this.get("gender") == "Female") return "Male";
+      else return "Female";
     }
 
   });

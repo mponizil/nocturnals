@@ -2,11 +2,17 @@ from django.db import models
 from datetime import datetime
 from django.contrib.auth.models import User
 
+GENDERS = (
+    (u'F', u'Female'),
+    (u'M', u'Male'),
+)
+
 class Conversation(models.Model):
     date_created = models.DateTimeField()
     author = models.ForeignKey(User, verbose_name="user who created this conversation", related_name="conversations")
     context = models.TextField(blank=True)
-    target = models.CharField(max_length=255, blank=True)
+    target = models.CharField(max_length=255)
+    gender = models.CharField(max_length=1, choices=GENDERS, default=u'F')
     public = models.BooleanField(default=False)
     council_members = models.ManyToManyField(User, verbose_name="council members", related_name="councils_of")
     

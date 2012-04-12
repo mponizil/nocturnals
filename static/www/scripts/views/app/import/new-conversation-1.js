@@ -8,18 +8,16 @@ define([
   'underscore',
   'Backbone',
   'Mustache',
+  'models/conversation',
   'text!templates/app/import/new-conversation-1.mustache!strip'
-  ], function ($, _, Backbone, Mustache, new_conversation_1_template) {
+  ], function ($, _, Backbone, Mustache, Conversation, new_conversation_1_template) {
 
   var NewConversation1View = Backbone.View.extend({
 
     el: $("#new-conversation-1-page"),
 
-    initialize: function() {
-    },
-
     initPage: function() {
-      this.$el.html(this.template());
+      this.render();
       this.$el.page("destroy").page();
       return this;
     },
@@ -34,18 +32,29 @@ define([
     },
 
     render: function() {
-      this.$el.html(this.template());
+      var conversation = this.model.toJSON();
+      conversation.gender = conversation.gender || SpiritApp.User.oppGender();
+      conversation.gender = conversation.gender.substring(0,1);
+      conversation.female = (conversation.gender != "M");
+      this.$el.html(this.template(conversation));
       return this;
     }  ,
 
     dashboardPage: function() {
       var dashboard_page = $("#dashboard-page");
       $.mobile.changePage(dashboard_page, { changeHash: false, reverse: true, transition: 'slide' });
+      this.model.clear();
     },
 
     newConversation: function() {
-      console.log('submit');
-      this.trigger("step_2");
+      var target = $("#target").val();
+      var gender = this.$("input[name='gender']:checked").val();
+      this.model.set({
+        author: SpiritApp.User.toJSON(),
+        target: target,
+        gender: gender
+      });
+      this.trigger("step_2", false);
       return false;
     }
 

@@ -111,6 +111,7 @@
     "pk": 1,
     "model": "accounts.userprofile",
     "fields": {
+      "gender": "M",
       "phone": "+17608463179",
       "friends": [],
       "user": 1
@@ -120,6 +121,7 @@
     "pk": 2,
     "model": "accounts.userprofile",
     "fields": {
+      "gender": "M",
       "phone": null,
       "friends": [],
       "user": 2
@@ -129,6 +131,7 @@
     "pk": 3,
     "model": "accounts.userprofile",
     "fields": {
+      "gender": "M",
       "phone": null,
       "friends": [],
       "user": 3
@@ -138,6 +141,7 @@
     "pk": 4,
     "model": "accounts.userprofile",
     "fields": {
+      "gender": "F",
       "phone": null,
       "friends": [],
       "user": 4
@@ -147,6 +151,7 @@
     "pk": 5,
     "model": "accounts.userprofile",
     "fields": {
+      "gender": "M",
       "phone": null,
       "friends": [],
       "user": 5
@@ -156,6 +161,7 @@
     "pk": 6,
     "model": "accounts.userprofile",
     "fields": {
+      "gender": "M",
       "phone": null,
       "friends": [],
       "user": 6
@@ -166,6 +172,7 @@
     "model": "vortex.conversation",
     "fields": {
       "target": "Cynthia",
+      "gender": "F",
       "author": 1,
       "context": "Hit on this girl last night and got her number",
       "date_created": "2012-03-10 15:28:27",
@@ -181,6 +188,7 @@
     "model": "vortex.conversation",
     "fields": {
       "target": "Rachel",
+      "gender": "F",
       "author": 1,
       "context": "Been talking to this chick for a couple weeks",
       "date_created": "2012-03-10 15:28:48",
@@ -197,6 +205,7 @@
     "model": "vortex.conversation",
     "fields": {
       "target": "Sarah",
+      "gender": "F",
       "author": 2,
       "context": "i need serious help with this babe",
       "date_created": "2012-03-10 15:29:03",
@@ -211,6 +220,7 @@
     "model": "vortex.conversation",
     "fields": {
       "target": "Dorothy",
+      "gender": "F",
       "author": 3,
       "context": "Can't get my mind off this girl",
       "date_created": "2012-03-10 15:29:22",
@@ -226,6 +236,7 @@
     "model": "vortex.conversation",
     "fields": {
       "target": "Tom",
+      "gender": "M",
       "author": 4,
       "context": "Hottest guy I've ever met",
       "date_created": "2012-03-10 15:29:36",
@@ -240,6 +251,7 @@
     "model": "vortex.conversation",
     "fields": {
       "target": "Bob",
+      "gender": "M",
       "author": 4,
       "context": "Can't tell if I'm into him",
       "date_created": "2012-03-10 15:29:54",
@@ -256,6 +268,7 @@
     "model": "vortex.conversation",
     "fields": {
       "target": "Elana",
+      "gender": "F",
       "author": 5,
       "context": "Smokin hot",
       "date_created": "2012-03-10 15:30:06",
@@ -272,6 +285,7 @@
     "model": "vortex.conversation",
     "fields": {
       "target": "Chelsea",
+      "gender": "F",
       "author": 5,
       "context": "This girl is crazy",
       "date_created": "2012-03-10 15:30:31",
@@ -287,6 +301,7 @@
     "model": "vortex.conversation",
     "fields": {
       "target": "Bethanie",
+      "gender": "F",
       "author": 6,
       "context": "Need help talkin to my girlfriend",
       "date_created": "2012-03-10 15:32:09",

@@ -29,17 +29,20 @@ class UserResource(ModelResource):
 def init(request):
     if request.user.is_authenticated():
         logged_in = True
+        user = {
+            "id": request.user.id,
+            "username": request.user.username,
+            "gender": request.user.userprofile.get_gender_display()
+        }
     else:
         logged_in = False
+        user = {}
     
     res = {
         "success": True,
         "data": {
             "logged_in": logged_in,
-            "user": {
-                "id": request.user.id,
-                "username": request.user.username
-            }
+            "user": user
         }
     }
     return HttpResponse(json.dumps(res))
@@ -49,23 +52,35 @@ def init(request):
 def register(request):
     username = request.POST['username']
     password = request.POST['password']
+    gender = request.POST['gender']
     
     if not username or not password:
         res = { "success": False, "error": "Please enter all the fields." }
         return HttpResponse(json.dumps(res))
     
     try:
-        user = User.objects.create_user(username,"",password)
+        new_user = User.objects.create_user(username,"",password)
     except IntegrityError as error:
         res = { "success": False, "error": "The username is taken." }
         return HttpResponse(json.dumps(res))
     
-    user.save()
+    new_user.save()
+    new_user.userprofile.gender = gender
+    new_user.userprofile.save()
     
-    auth_user = authenticate(username=username,password=password)
-    login(request, auth_user)
+    user = authenticate(username=username,password=password)
+    login(request, user)
     
-    res = { "success": True, "data": { "user": { "id": request.user.id, "username": username } } }
+    res = {
+        "success": True,
+        "data": {
+            "user": {
+                "id": user.id,
+                "username": username,
+                "gender": user.userprofile.get_gender_display()
+            }
+        }
+    }
     return HttpResponse(json.dumps(res))
 
 @csrf_exempt
@@ -78,14 +93,23 @@ def auth(request):
         res = { "success": False, "error": "Please enter all the fields." }
         return HttpResponse(json.dumps(res))
     
-    auth_user = authenticate(username=username, password=password)
-    if auth_user is not None:
-        login(request, auth_user)
+    user = authenticate(username=username, password=password)
+    if user is not None:
+        login(request, user)
     else:
         res = { "success": False, "error": "Invalid login." }
         return HttpResponse(json.dumps(res))
     
-    res = { "success": True, "data": { "user": { "id": request.user.id, "username": username } } }
+    res = {
+        "success": True,
+        "data": {
+            "user": {
+                "id": user.id,
+                "username": username,
+                "gender": user.userprofile.get_gender_display()
+            }
+        }
+    }
     return HttpResponse(json.dumps(res))
 
 def deauth(request):

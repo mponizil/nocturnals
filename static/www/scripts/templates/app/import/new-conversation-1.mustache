@@ -6,19 +6,19 @@
 
 <div data-role="header">
   <a id="link-dashboard" data-icon="arrow-l">Dashboard</a>
-  <h1>Import Conversations</h1>
+  <h1>{{#target}}{{target}} ({{gender}}){{/target}}{{^target}}Import{{/target}}</h1>
 </div>
 
 <div data-role="content">
   <form id="new-conversation-1-form">
     <div data-role="fieldcontain" class="ui-field-contain">
       <label for="target" class="ui-hidden-accessible">Name</label>
-      <input type="text" name="target" id="target" value="" placeholder="Target's Name" />
+      <input type="text" name="target" id="target" value="{{target}}" placeholder="Target's Name" />
     </div>
     <fieldset data-role="controlgroup" data-type="horizontal">
-      <input type="radio" name="radio-choice-1" id="radio-choice-1" value="choice-1" checked="checked" />
+      <input type="radio" name="gender" id="radio-choice-1" value="Female"{{#female}} checked="checked"{{/female}} />
       <label for="radio-choice-1">F</label>
-      <input type="radio" name="radio-choice-1" id="radio-choice-2" value="choice-2"  />
+      <input type="radio" name="gender" id="radio-choice-2" value="Male"{{^female}} checked="checked"{{/female}} />
       <label for="radio-choice-2">M</label>
     </fieldset>
     <div data-role="fieldcontain" class="ui-field-contain">

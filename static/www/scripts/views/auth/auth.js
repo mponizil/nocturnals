@@ -57,7 +57,8 @@ define([
       if (response.data.logged_in) {
         SpiritApp.User.set({
           id: response.data.user.id,
-          username: response.data.user.username
+          username: response.data.user.username,
+          gender: response.data.user.gender
         });
         SpiritApp.User.trigger("logged_in");
       } else {
