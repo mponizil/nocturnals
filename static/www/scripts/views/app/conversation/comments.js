@@ -27,11 +27,12 @@ define([
     },
 
     template: function(params) {
-      return Mustache.to_html(comments_template, params);
+      return Mustache.render(comments_template, params);
     },
 
     events: {
       'click #link-conversation' : 'conversationPage',
+      'swiperight'               : 'conversationPage',
       'submit #new-comment-form' : 'newComment'
     },
 

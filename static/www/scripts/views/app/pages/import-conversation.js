@@ -18,7 +18,6 @@ define([
 
     initialize: function() {
       this.views = {};
-      this.model = new Conversation();
 
       this.views.new_conversation_1 = new NewConversation1View({
         model: this.model

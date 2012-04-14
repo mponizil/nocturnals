@@ -7,6 +7,7 @@ define([
   'underscore',
   'Backbone',
   'models/user',
+  'models/conversation',
   'collections/conversations',
   'views/auth/auth',
   'views/app/pages/dashboard',
@@ -14,7 +15,7 @@ define([
   'views/app/pages/import-conversation',
   'views/app/pages/browse-feed',
   'text!templates/skeleton.mustache'
-  ], function ($, _, Backbone, User, Conversations, AuthView, DashboardView, ConversationsView, ImportConversationView, BrowseFeedView, skeleton_template) {
+  ], function ($, _, Backbone, User, Conversation, Conversations, AuthView, DashboardView, ConversationsView, ImportConversationView, BrowseFeedView, skeleton_template) {
 
   var AppView = Backbone.View.extend({
 
@@ -34,7 +35,9 @@ define([
       this.views.browse_feed = new BrowseFeedView({
         collection: new Conversations()
       });
-      this.views.import_conversation = new ImportConversationView();
+      this.views.import_conversation = new ImportConversationView({
+        model: new Conversation()
+      });
     },
 
     events: {

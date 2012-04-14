@@ -10,9 +10,10 @@ define([
   'Mustache',
   'models/text',
   'collections/texts',
+  'views/dialog',
   'views/app/conversation/comments',
   'text!templates/app/conversation/conversation.mustache!strip'
-  ], function ($, _, Backbone, Mustache, Text, Texts, CommentsView, conversation_template) {
+  ], function ($, _, Backbone, Mustache, Text, Texts, DialogView, CommentsView, conversation_template) {
 
   var ConversationView = Backbone.View.extend({
 
@@ -32,14 +33,18 @@ define([
     },
 
     events: {
-      'click #link-conversations' : 'conversationsPage',
-      'click #link-browse-feed'   : 'browseFeedPage',
-      'click #link-comments'      : 'commentsPage',
-      'submit #new-text-form'     : 'newText'
+      'click #link-conversations'  : 'conversationsPage',
+      'click #link-browse-feed'    : 'browseFeedPage',
+      'click #link-comments'       : 'commentsPage',
+      'swipeleft'                  : 'commentsPage',
+      'submit #new-text-form'      : 'newText',
+      'click #delete-conversation' : 'removeConversation',
+      'click #edit-conversation'   : 'editConversation'
     },
 
     render: function() {
-      var data = $.extend({}, this.model.toJSON(), { back: this.options.back });
+      var owner = (SpiritApp.User.get("id") == this.model.get("author").id);
+      var data = $.extend({}, this.model.toJSON(), { back: this.options.back, owner: owner });
       data.texts = this.collection.toJSON();
       this.$(".header, .content").remove();
       this.$el.prepend(this.template(data));
@@ -68,7 +73,7 @@ define([
       comments_view.initPage();
     },
 
-    newText: function(event) {
+    newText: function(e) {
       var new_text_body = this.$("#new-text").val();
       var new_text = new Text({
         conversation: this.model.get("resource_uri"),
@@ -80,6 +85,23 @@ define([
       this.collection.add(new_text);
       this.render();
       return false;
+    },
+
+    removeConversation: function(e) {
+      var _cv = this;
+      var confirmed = confirm("Are you sure you want to remove this conversation?");
+      if (confirmed) {
+        _cv.model.destroy({
+          url: CONFIG.ENDPOINT + "/api/v1/conversation/" + _cv.model.get("id"),
+          success: function() {
+            _cv.conversationsPage();
+          }
+        });
+      }
+    },
+
+    editConversation: function(e) {
+      // this.trigger("edit_conversation", this.model);
     }
 
   });

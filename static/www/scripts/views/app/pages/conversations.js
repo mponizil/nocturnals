@@ -22,6 +22,9 @@ define([
       this.collections = {};
       this.collections.my_conversations = new Conversations();
       this.collections.my_councils = new Conversations();
+
+      this.collections.my_conversations.on("destroy", this.render, this);
+      this.collections.my_councils.on("destroy", this.render, this);
     },
 
     initPage: function() {
