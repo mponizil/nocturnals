@@ -18,9 +18,6 @@ define([
 
     el: $("#my-councils-page"),
 
-    initialize: function() {
-    },
-
     initPage: function() {
       var _mcv = this;
       _mcv.collection.fetch({
@@ -39,18 +36,20 @@ define([
 
     events: {
       'click #link-dashboard' : 'dashboardPage',
-      'click li a'            : 'conversationPage'
+      'click .content li a'   : 'conversationPage'
     },
 
     render: function() {
-      this.$el.html(this.template({ conversations: this.collection.toJSON() }));
+      this.$(".header, .content").remove();
+      this.$el.prepend(this.template({ conversations: this.collection.toJSON() }));
       this.$el.page("destroy").page();
       return this;
     },
 
     dashboardPage: function() {
+      $(".footer a").removeClass("ui-btn-active ui-state-persist");
       var dashboard_page = $("#dashboard-page");
-      $.mobile.changePage(dashboard_page, { changeHash: false, reverse: true, transition: 'slide' });
+      $.mobile.changePage(dashboard_page, { changeHash: false, reverse: true, transition: 'fade' });
     },
 
     conversationPage: function(event) {

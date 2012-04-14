@@ -4,12 +4,12 @@
 </head>
 <body>
 
-<div data-role="header">
+<div data-role="header" class="header">
   <a id="link-dashboard" data-icon="arrow-l">Dashboard</a>
   <h1>My Conversations</h1>
 </div>
 
-<div data-role="content">
+<div data-role="content" class="content">
   <ul data-role="listview">
     {{#conversations}}
     <li><a data-id="{{id}}">{{target}}</a></li>

@@ -17,7 +17,6 @@ define([
 
     initPage: function() {
       this.render();
-      this.$el.page("destroy").page();
       return this;
     },
 
@@ -34,7 +33,9 @@ define([
       var conversation = this.model.toJSON();
       conversation.gender = conversation.gender.substring(0,1);
       conversation.public = (conversation.public == null) ? false : conversation.public;
-      this.$el.html(this.template(conversation));
+      this.$(".header, .content").remove();
+      this.$el.prepend(this.template(conversation));
+      this.$el.page("destroy").page();
       return this;
     },
 

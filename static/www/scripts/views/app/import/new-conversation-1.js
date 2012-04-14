@@ -18,7 +18,6 @@ define([
 
     initPage: function() {
       this.render();
-      this.$el.page("destroy").page();
       return this;
     },
 
@@ -36,13 +35,16 @@ define([
       conversation.gender = conversation.gender || SpiritApp.User.oppGender();
       conversation.gender = conversation.gender.substring(0,1);
       conversation.female = (conversation.gender != "M");
-      this.$el.html(this.template(conversation));
+      this.$(".header, .content").remove();
+      this.$el.prepend(this.template(conversation));
+      this.$el.page("destroy").page();
       return this;
-    }  ,
+    },
 
     dashboardPage: function() {
+      $(".footer a").removeClass("ui-btn-active ui-state-persist");
       var dashboard_page = $("#dashboard-page");
-      $.mobile.changePage(dashboard_page, { changeHash: false, reverse: true, transition: 'slide' });
+      $.mobile.changePage(dashboard_page, { changeHash: false, reverse: true, transition: 'fade' });
       this.model.clear();
     },
 

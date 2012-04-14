@@ -38,7 +38,8 @@ define([
     render: function() {
       var data = $.extend({}, this.model.toJSON(), { back: this.options.back });
       data.comments = this.collection.toJSON();
-      this.$el.html(this.template(data));
+      this.$(".header, .content").remove();
+      this.$el.prepend(this.template(data));
       this.$el.page("destroy").page();
       return this;
     },
