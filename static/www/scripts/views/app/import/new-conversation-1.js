@@ -1,6 +1,6 @@
 /**
- * views/app/dashboard.js
- * Shows user their options
+ * views/app/import/new-conversation-1.js
+ * Step 1 of import process
  */
 
 define([
@@ -26,7 +26,6 @@ define([
     },
 
     events: {
-      'click #link-dashboard'           : 'dashboardPage',
       'submit #new-conversation-1-form' : 'newConversation'
     },
 
@@ -39,13 +38,6 @@ define([
       this.$el.prepend(this.template(conversation));
       this.$el.page("destroy").page();
       return this;
-    },
-
-    dashboardPage: function() {
-      $(".footer a").removeClass("ui-btn-active ui-state-persist");
-      var dashboard_page = $("#dashboard-page");
-      $.mobile.changePage(dashboard_page, { changeHash: false, reverse: true, transition: 'fade' });
-      this.model.clear();
     },
 
     newConversation: function() {

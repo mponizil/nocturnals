@@ -1,6 +1,6 @@
 /**
- * views/app/dashboard.js
- * Shows user their options
+ * views/app/conversation/comments.js
+ * View conversation comments
  */
 
 define([

@@ -1,6 +1,6 @@
 /**
- * views/app/dashboard.js
- * Shows user their options
+ * views/app/pages/import-conversation.js
+ * Manages import process
  */
 
 define([

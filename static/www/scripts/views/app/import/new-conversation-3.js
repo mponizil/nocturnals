@@ -1,6 +1,6 @@
 /**
- * views/app/dashboard.js
- * Shows user their options
+ * views/app/import/new-conversation-3.js
+ * Step 3 of import process
  */
 
 define([

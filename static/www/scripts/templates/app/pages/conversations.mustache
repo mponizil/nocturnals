@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<div data-role="header" class="header">
+  <h1>My Conversations</h1>
+</div>
+
+<div data-role="content" class="content">
+  <ul data-role="listview">
+    <li data-role="list-divider">My Conversations</li>
+    {{#my_conversations}}
+    <li><a data-id="{{id}}" data-collection="my_conversations">{{target}}</a></li>
+    {{/my_conversations}}
+    <li data-role="list-divider">My Councils</li>
+    {{#my_councils}}
+    <li><a data-id="{{id}}" data-collection="my_councils">{{author.username}}: {{target}}</a></li>
+    {{/my_councils}}
+  </ul>
+</div>
+
+</body>
+</html>

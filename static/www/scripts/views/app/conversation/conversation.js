@@ -1,6 +1,6 @@
 /**
- * views/app/dashboard.js
- * Shows user their options
+ * views/app/conversation/conversation.js
+ * View a conversation
  */
 
 define([
@@ -32,11 +32,10 @@ define([
     },
 
     events: {
-      'click #link-my-conversations' : 'myConversationsPage',
-      'click #link-my-councils'      : 'myCouncilsPage',
-      'click #link-browse-feed'      : 'browseFeedPage',
-      'click #link-comments'         : 'commentsPage',
-      'submit #new-text-form'        : 'newText'
+      'click #link-conversations' : 'conversationsPage',
+      'click #link-browse-feed'   : 'browseFeedPage',
+      'click #link-comments'      : 'commentsPage',
+      'submit #new-text-form'     : 'newText'
     },
 
     render: function() {
@@ -48,15 +47,9 @@ define([
       return this;
     },
 
-    myConversationsPage: function() {
-      var my_conversations_page = $("#my-conversations-page");
-      $.mobile.changePage(my_conversations_page, { changeHash: false, reverse: true, transition: 'slide' });
-      this.undelegateEvents();
-    },
-
-    myCouncilsPage: function() {
-      var my_councils_page = $("#my-councils-page");
-      $.mobile.changePage(my_councils_page, { changeHash: false, reverse: true, transition: 'slide' });
+    conversationsPage: function() {
+      var conversations_page = $("#conversations-page");
+      $.mobile.changePage(conversations_page, { changeHash: false, reverse: true, transition: 'slide' });
       this.undelegateEvents();
     },
 

@@ -1,5 +1,5 @@
 /**
- * views/app/dashboard.js
+ * views/app/pages/dashboard.js
  * Shows user their options
  */
 
@@ -8,14 +8,14 @@ define([
   'underscore',
   'Backbone',
   'Mustache',
-  'text!templates/app/dashboard.mustache!strip'
+  'text!templates/app/pages/dashboard.mustache!strip'
   ], function ($, _, Backbone, Mustache, dashboard_template) {
 
   var DashboardView = Backbone.View.extend({
 
     el: $("#dashboard-page"),
 
-    initialize: function() {
+    initPage: function() {
       this.render();
     },
 
@@ -30,6 +30,7 @@ define([
     render: function() {
       this.$(".header, .content").remove();
       this.$el.prepend(this.template());
+      this.$el.page("destroy").page();
       return this;
     },
 
