@@ -63,14 +63,14 @@ define([
     },
 
     conversationPage: function(texts) {
-      var conversation_view = new ConversationView({
+      SpiritApp.App.conversation_view = new ConversationView({
         model: this.model,
         collection: texts,
         back: "conversations"
       });
       var conversation_page = $("#conversation-page");
       $.mobile.changePage(conversation_page, { changeHash: false, transition: 'slide' });
-      conversation_view.render();
+      SpiritApp.App.conversation_view.render();
     }
 
   });

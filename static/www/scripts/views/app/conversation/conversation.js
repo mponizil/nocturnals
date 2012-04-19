@@ -39,6 +39,7 @@ define([
       'click #link-comments'       : 'commentsPage',
       'swipeleft'                  : 'commentsPage',
       'submit #new-text-form'      : 'newText',
+      'click #add-council-members' : 'addCouncilMembers',
       'click #delete-conversation' : 'removeConversation',
       'click #edit-conversation'   : 'editConversation'
     },
@@ -64,7 +65,7 @@ define([
     },
 
     commentsPage: function() {
-      var comments_view = new CommentsView({
+      SpiritApp.App.comments_view = new CommentsView({
         model: this.model,
         collection: new Comments()
       });
@@ -86,14 +87,17 @@ define([
       return false;
     },
 
+    addCouncilMembers: function() {
+      
+    },
+
     removeConversation: function(e) {
       var _cv = this;
       var confirmed = confirm("Are you sure you want to remove this conversation?");
       if (confirmed) {
         _cv.model.destroy({
-          url: CONFIG.ENDPOINT + "/api/v1/conversation/" + _cv.model.get("id"),
+          url: CONFIG.ENDPOINT + _cv.model.get("resource_uri"),
           success: function() {
-            this.undelegateEvents();
             $("#nav-conversations").click();
           }
         });

@@ -46,14 +46,14 @@ define([
 
     conversationPage: function(event) {
       var conversation_id = $(event.target).data("id");
-      var conversation_view = new ConversationView({
+      SpiritApp.App.conversation_view = new ConversationView({
         model: this.collection.get(conversation_id),
         collection: new Texts(),
         back: "browse-feed"
       });
       var conversation_page = $("#conversation-page");
       $.mobile.changePage(conversation_page, { changeHash: false, transition: 'slide' });
-      conversation_view.initPage();
+      SpiritApp.App.conversation_view.initPage();
     }
 
   });

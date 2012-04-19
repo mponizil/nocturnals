@@ -73,12 +73,20 @@ define([
       var page_key = page_a.attr("id").replace("nav-",""); // page as referenced in dash format
       var page_view = page_a.data("view"); // page as referenced as Backbone view
 
-      this.updateFooter(page_key);
+      this.resetPages(page_key);
 
       // execute $.mobile.changePage
       var page = $("#" + page_key + "-page");
       $.mobile.changePage(page, { changeHash: false, transition: 'fade' });
       this.views[page_view].initPage();
+    },
+
+    resetPages: function(page_key) {
+      this.updateFooter(page_key);
+      if (SpiritApp.App.conversation_view) SpiritApp.App.conversation_view.undelegateEvents();
+      if (SpiritApp.App.comments_view) SpiritApp.App.comments_view.undelegateEvents();
+      if ($("#new-conversation-1-form")[0]) $("#new-conversation-1-form")[0].reset();
+      if ($("#new-conversation-2-form")[0]) $("#new-conversation-2-form")[0].reset();
     },
 
     // update footer nav to indicate which page is active

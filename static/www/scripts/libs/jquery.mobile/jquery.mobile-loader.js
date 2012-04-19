@@ -6,7 +6,7 @@
  * Time: 9:31 AM
  */
 
-define(['jQuery', 'libs/jquery.mobile/jquery.mobile-1.0.1'],
+define(['jQuery', 'libs/jquery.mobile/jquery.mobile-1.1.0'],
     function ($) {
         return $.mobile;
     });

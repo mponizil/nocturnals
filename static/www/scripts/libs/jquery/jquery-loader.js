@@ -6,7 +6,7 @@
  * Time: 9:30 AM
  */
 
-define(['libs/jquery/jquery-1.6.4'],
+define(['libs/jquery/jquery-1.7.2'],
     function () {
         return $;
     });
