@@ -43,13 +43,23 @@ define([
     },
 
     render: function() {
-      var owner = (SpiritApp.User.get("id") == this.model.get("author").id);
-      var data = $.extend({}, this.model.toJSON(), { back: this.options.back, owner: owner });
-      data.texts = this.collection.toJSON();
+      var data = this.prepareData();
       this.$(".header, .content").remove();
       this.$el.prepend(this.template(data));
       this.$el.page("destroy").page();
       return this;
+    },
+
+    prepareData: function() {
+      var owner = (SpiritApp.User.get("id") == this.model.get("author").id);
+      var data = $.extend({}, this.model.toJSON(), { back: this.options.back, owner: owner });
+      data.texts = _.map(this.collection.toJSON(), function(text) {
+        text.me = function() {
+          return text.author_name == SpiritApp.User.toJSON().username;
+        }
+        return text;
+      });
+      return data;
     },
 
     conversationsPage: function() {

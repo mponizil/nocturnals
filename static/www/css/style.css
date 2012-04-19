@@ -28,3 +28,24 @@
   background:url(../scripts/libs/jquery.mobile/images/white/08-chat.png) 50% 50% no-repeat;
   background-size: 24px 22px;
 }
+
+#texts .text {
+  width: 100%;
+}
+
+.import-toggle {
+  width: 10%;
+  float: left;
+}
+.new-text {
+  width: 80%;
+  float: left;
+}
+.new-text #new-text {
+  width: 80%;
+  float: left;
+}
+.new-text .ui-btn {
+  width: 10%;
+  float: right;
+}

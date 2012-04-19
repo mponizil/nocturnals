@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<div data-role="header" class="header">
+  <a id="link-new-conversation-2" data-icon="arrow-l">Back</a>
+  <h1>{{target}} ({{gender}})</h1>
+  <a id="link-submit-conversation" data-icon="arrow-r">Done</a>
+</div>
+
+<div data-role="content" class="content">
+  <div id="texts" class="clearfix">
+    {{#texts}}
+    <div class="text clearfix">
+      <div class="{{#me}}right{{/me}}{{^me}}left{{/me}}">{{author_name}}: {{body}}</div>
+    </div>
+    {{/texts}}
+  </div>
+  <form id="add-text-form">
+    <div data-role="fieldcontain" class="ui-field-contain clearfix">
+      <div class="import-toggle">
+        <select name="text_author" id="flip-a" data-role="slider">
+          <option value="them"{{^me}} selected="selected"{{/me}}>{{gender_pronoun}}</option>
+          <option value="me"{{#me}} selected="selected"{{/me}}>Me</option>
+        </select>
+      </div>
+      <div class="new-text clearfix">
+        <label for="new-text" class="ui-hidden-accessible">Message</label>
+        <input type="text" name="new-text" id="new-text" placeholder="Message" />
+        <button type="submit" id="new-text-button">Add</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+</body>
+</html>

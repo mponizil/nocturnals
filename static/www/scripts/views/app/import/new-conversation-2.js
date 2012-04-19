@@ -44,8 +44,8 @@ define([
     },
 
     createConversation: function() {
-      var context = $("#context").val();
-      var public = $("select[name='public']").val() == "public";
+      var context = this.$("#context").val();
+      var public = this.$("select[name='public']").val() == "public";
       this.model.set({
         context: context,
         public: public

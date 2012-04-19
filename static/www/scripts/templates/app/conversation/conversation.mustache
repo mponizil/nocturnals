@@ -15,8 +15,8 @@
   <div id="texts" class="clearfix">
     <h3>Texts</h3>
     {{#texts}}
-    <div>
-      {{author_name}}: {{body}}
+    <div class="text clearfix">
+      <div class="{{#me}}right{{/me}}{{^me}}left{{/me}}">{{author_name}}: {{body}}</div>
     </div>
     {{/texts}}
     <div>
