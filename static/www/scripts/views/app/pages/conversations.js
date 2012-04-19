@@ -10,9 +10,10 @@ define([
   'Mustache',
   'models/conversation',
   'collections/conversations',
+  'collections/texts',
   'views/app/conversation/conversation',
   'text!templates/app/pages/conversations.mustache!strip'
-  ], function ($, _, Backbone, Mustache, Conversation, Conversations, ConversationView, conversations_template) {
+  ], function ($, _, Backbone, Mustache, Conversation, Conversations, Texts, ConversationView, conversations_template) {
 
   var ConversationsView = Backbone.View.extend({
 
@@ -79,6 +80,7 @@ define([
       var collection = $(e.target).data("collection");
       var conversation_view = new ConversationView({
         model: this.collections[collection].get(conversation_id),
+        collection: new Texts(),
         back: "conversations"
       });
       var conversation_page = $("#conversation-page");

@@ -17,12 +17,15 @@ define([
 
     el: $("#comments-page"),
 
+    initialize: function() {
+      this.collection.on("reset", this.render, this);
+      this.collection.on("add", this.render, this);
+    },
+
     initPage: function() {
       var _cv = this;
-      _cv.collection = new Comments();
       _cv.collection.fetch({
-        data: { conversation: _cv.model.get("id") },
-        success: function() { _cv.render() }
+        data: { conversation: _cv.model.get("id") }
       });
     },
 
@@ -60,7 +63,6 @@ define([
       });
       new_comment.save();
       this.collection.add(new_comment);
-      this.render();
       return false;
     }
 

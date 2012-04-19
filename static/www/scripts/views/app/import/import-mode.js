@@ -9,16 +9,18 @@ define([
   'Backbone',
   'Mustache',
   'models/text',
-  'collections/texts',
   'text!templates/app/import/import-mode.mustache!strip'
-  ], function ($, _, Backbone, Mustache, Text, Texts, import_mode_template) {
+  ], function ($, _, Backbone, Mustache, Text, import_mode_template) {
 
   var ImportModeView = Backbone.View.extend({
 
     el: $("#import-mode-page"),
 
+    initialize: function() {
+      this.collection.on("add", this.render, this);
+    },
+
     initPage: function() {
-      this.collection = new Texts();
       this.render();
       return this;
     },
@@ -82,7 +84,6 @@ define([
       });
       new_text.save();
       this.collection.add(new_text);
-      this.render();
       return false;
     }
 

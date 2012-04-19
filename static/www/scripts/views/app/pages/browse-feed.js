@@ -10,9 +10,10 @@ define([
   'Mustache',
   'models/conversation',
   'collections/conversations',
+  'collections/texts',
   'views/app/conversation/conversation',
   'text!templates/app/pages/browse-feed.mustache!strip'
-  ], function ($, _, Backbone, Mustache, Conversation, Conversations, ConversationView, browse_feed_template) {
+  ], function ($, _, Backbone, Mustache, Conversation, Conversations, Texts, ConversationView, browse_feed_template) {
 
   var BrowseFeedView = Backbone.View.extend({
 
@@ -47,6 +48,7 @@ define([
       var conversation_id = $(event.target).data("id");
       var conversation_view = new ConversationView({
         model: this.collection.get(conversation_id),
+        collection: new Texts(),
         back: "browse-feed"
       });
       var conversation_page = $("#conversation-page");

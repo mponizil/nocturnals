@@ -9,22 +9,25 @@ define([
   'Backbone',
   'Mustache',
   'models/text',
-  'collections/texts',
+  'collections/comments',
   'views/dialog',
   'views/app/conversation/comments',
   'text!templates/app/conversation/conversation.mustache!strip'
-  ], function ($, _, Backbone, Mustache, Text, Texts, DialogView, CommentsView, conversation_template) {
+  ], function ($, _, Backbone, Mustache, Text, Comments, DialogView, CommentsView, conversation_template) {
 
   var ConversationView = Backbone.View.extend({
 
     el: $("#conversation-page"),
 
+    initialize: function() {
+      this.collection.on("reset", this.render, this);
+      this.collection.on("add", this.render, this);
+    },
+
     initPage: function() {
       var _cv = this;
-      _cv.collection = new Texts();
       _cv.collection.fetch({
-        data: { conversation: _cv.model.get("id") },
-        success: function() { _cv.render() }
+        data: { conversation: _cv.model.get("id") }
       });
     },
 
@@ -33,8 +36,6 @@ define([
     },
 
     events: {
-      'click #link-conversations'  : 'conversationsPage',
-      'click #link-browse-feed'    : 'browseFeedPage',
       'click #link-comments'       : 'commentsPage',
       'swipeleft'                  : 'commentsPage',
       'submit #new-text-form'      : 'newText',
@@ -62,21 +63,10 @@ define([
       return data;
     },
 
-    conversationsPage: function() {
-      var conversations_page = $("#conversations-page");
-      $.mobile.changePage(conversations_page, { changeHash: false, reverse: true, transition: 'slide' });
-      this.undelegateEvents();
-    },
-
-    browseFeedPage: function() {
-      var browse_feed_page = $("#browse-feed-page");
-      $.mobile.changePage(browse_feed_page, { changeHash: false, reverse: true, transition: 'slide' });
-      this.undelegateEvents();
-    },
-
     commentsPage: function() {
       var comments_view = new CommentsView({
-        model: this.model
+        model: this.model,
+        collection: new Comments()
       });
       var comments_page = $("#comments-page");
       $.mobile.changePage(comments_page, { changeHash: false, transition: 'slide' });
@@ -93,7 +83,6 @@ define([
       });
       new_text.save();
       this.collection.add(new_text);
-      this.render();
       return false;
     },
 
@@ -104,7 +93,8 @@ define([
         _cv.model.destroy({
           url: CONFIG.ENDPOINT + "/api/v1/conversation/" + _cv.model.get("id"),
           success: function() {
-            _cv.conversationsPage();
+            this.undelegateEvents();
+            $("#nav-conversations").click();
           }
         });
       }

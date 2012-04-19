@@ -9,11 +9,12 @@ define([
   'Backbone',
   'Mustache',
   'models/conversation',
+  'collections/texts',
   'views/app/import/new-conversation-1',
   'views/app/import/new-conversation-2',
   'views/app/import/import-mode',
   'views/app/conversation/conversation'
-  ], function ($, _, Backbone, Mustache, Conversation, NewConversation1View, NewConversation2View, ImportModeView, ConversationView) {
+  ], function ($, _, Backbone, Mustache, Conversation, Texts, NewConversation1View, NewConversation2View, ImportModeView, ConversationView) {
 
   var ImportConversationView = Backbone.View.extend({
 
@@ -27,7 +28,8 @@ define([
         model: this.model
       });
       this.views.import_mode = new ImportModeView({
-        model: this.model
+        model: this.model,
+        collection: new Texts()
       });
 
       this.views.new_conversation_1.on("step_2", this.newConversation2Page, this);

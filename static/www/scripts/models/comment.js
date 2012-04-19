@@ -6,14 +6,10 @@
 define([
   'jQuery',
   'underscore',
-  'Backbone',
-  'models/user'
-  ], function ($, _, Backbone, User) {
+  'Backbone'
+  ], function ($, _, Backbone) {
 
   var Comment = Backbone.Model.extend({
-
-    initialize: function() {
-    },
 
     url: CONFIG.ENDPOINT + "/api/v1/comment/"
 
