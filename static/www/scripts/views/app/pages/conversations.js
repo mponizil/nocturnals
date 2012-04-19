@@ -78,14 +78,14 @@ define([
     conversationPage: function(e) {
       var conversation_id = $(e.target).data("id");
       var collection = $(e.target).data("collection");
-      SpiritApp.App.conversation_view = new ConversationView({
+      SpiritApp.App.views.conversation = new ConversationView({
         model: this.collections[collection].get(conversation_id),
         collection: new Texts(),
         back: "conversations"
       });
       var conversation_page = $("#conversation-page");
       $.mobile.changePage(conversation_page, { changeHash: false, transition: 'slide' });
-      SpiritApp.App.conversation_view.initPage();
+      SpiritApp.App.views.conversation.initPage();
     }
 
   });

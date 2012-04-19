@@ -34,6 +34,8 @@ class ConversationResource(ModelResource):
     
     class Meta:
         queryset = Conversation.objects.all()
+        list_allowed_methods = ['get', 'post']
+        detail_allowed_methods = ['get', 'post', 'put', 'delete']
         resource_name = 'conversation'
         filtering = {
             'public': ALL,

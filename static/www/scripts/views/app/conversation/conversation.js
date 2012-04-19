@@ -12,8 +12,9 @@ define([
   'collections/comments',
   'views/dialog',
   'views/app/conversation/comments',
+  'views/app/import/add-council-members',
   'text!templates/app/conversation/conversation.mustache!strip'
-  ], function ($, _, Backbone, Mustache, Text, Comments, DialogView, CommentsView, conversation_template) {
+  ], function ($, _, Backbone, Mustache, Text, Comments, DialogView, CommentsView, AddCouncilMembersView, conversation_template) {
 
   var ConversationView = Backbone.View.extend({
 
@@ -65,13 +66,13 @@ define([
     },
 
     commentsPage: function() {
-      SpiritApp.App.comments_view = new CommentsView({
+      SpiritApp.App.views.comments = new CommentsView({
         model: this.model,
         collection: new Comments()
       });
       var comments_page = $("#comments-page");
       $.mobile.changePage(comments_page, { changeHash: false, transition: 'slide' });
-      SpiritApp.App.comments_view.initPage();
+      SpiritApp.App.views.comments.initPage();
     },
 
     newText: function(e) {
@@ -88,7 +89,12 @@ define([
     },
 
     addCouncilMembers: function() {
-      
+      SpiritApp.App.views.add_council_members = new AddCouncilMembersView({
+        model: this.model
+      });
+      var add_council_members_page = $("#add-council-members-page");
+      $.mobile.changePage(add_council_members_page, { changeHash: false, transition: 'slide' });
+      SpiritApp.App.views.add_council_members.initPage();
     },
 
     removeConversation: function(e) {

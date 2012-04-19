@@ -83,8 +83,9 @@ define([
 
     resetPages: function(page_key) {
       this.updateFooter(page_key);
-      if (SpiritApp.App.conversation_view) SpiritApp.App.conversation_view.undelegateEvents();
-      if (SpiritApp.App.comments_view) SpiritApp.App.comments_view.undelegateEvents();
+      if (this.views.conversation) this.views.conversation.undelegateEvents();
+      if (this.views.comments) this.views.comments.undelegateEvents();
+      if (this.views.add_council_members) this.views.add_council_members.undelegateEvents();
       if ($("#new-conversation-1-form")[0]) $("#new-conversation-1-form")[0].reset();
       if ($("#new-conversation-2-form")[0]) $("#new-conversation-2-form")[0].reset();
     },

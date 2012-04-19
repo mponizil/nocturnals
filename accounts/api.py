@@ -116,3 +116,14 @@ def deauth(request):
     logout(request)
     res = { "success": True }
     return HttpResponse(json.dumps(res))
+
+def search(request):
+    q = request.GET.get("q", None)
+    users = User.objects.filter(username__contains=q)
+    res = []
+    for user in users:
+        res.append({
+            "id": user.id,
+            "username": user.username
+        })
+    return HttpResponse(json.dumps(res))
