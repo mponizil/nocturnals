@@ -71,7 +71,7 @@ define([
       });
       var comments_page = $("#comments-page");
       $.mobile.changePage(comments_page, { changeHash: false, transition: 'slide' });
-      comments_view.initPage();
+      SpiritApp.App.comments_view.initPage();
     },
 
     newText: function(e) {
