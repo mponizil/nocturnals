@@ -10,8 +10,9 @@ define([
   'Mustache',
   'models/user',
   'collections/users',
+  'views/app/user',
   'text!templates/app/import/search-users-list.mustache'
-  ], function ($, _, Backbone, Mustache, User, Users, search_users_list_template) {
+  ], function ($, _, Backbone, Mustache, User, Users, UserView, search_users_list_template) {
 
   var SearchUsersListView = Backbone.View.extend({
 
@@ -25,6 +26,10 @@ define([
 
     template: function(params) {
       return Mustache.to_html(search_users_list_template, params);
+    },
+
+    events: {
+      'click a' : 'chooseUser'
     },
 
     render: function() {
@@ -60,7 +65,7 @@ define([
           }
         })
       } else {
-        _sul.collection.app_users.reset();
+        _sul.collections.app_users.reset();
       }
       return false;
     },
@@ -77,6 +82,19 @@ define([
           console.error(error);
         }, options);
       }
+    },
+
+    chooseUser: function(e) {
+      var user_id = $(e.target).data("id");
+      var collection = $(e.target).data("collection");
+      SpiritApp.App.views.user = new UserView({
+        model: this.collections[collection].get(user_id),
+        action: "council-member",
+        conversation: this.model
+      });
+      var user_page = $("#user-page");
+      $.mobile.changePage(user_page, { changeHash: false, transition: 'slide' });
+      SpiritApp.App.views.user.initPage();
     }
 
   });

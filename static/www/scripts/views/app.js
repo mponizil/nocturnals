@@ -86,6 +86,7 @@ define([
       if (this.views.conversation) this.views.conversation.undelegateEvents();
       if (this.views.comments) this.views.comments.undelegateEvents();
       if (this.views.add_council_members) this.views.add_council_members.undelegateEvents();
+      if (this.views.user) this.views.user.undelegateEvents();
       if ($("#new-conversation-1-form")[0]) $("#new-conversation-1-form")[0].reset();
       if ($("#new-conversation-2-form")[0]) $("#new-conversation-2-form")[0].reset();
     },
