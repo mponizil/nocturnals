@@ -17,6 +17,7 @@ define([
     el: $("#new-conversation-1-page"),
 
     initPage: function() {
+      this.model.clear();
       this.render();
       return this;
     },

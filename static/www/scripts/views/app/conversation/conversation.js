@@ -61,8 +61,8 @@ define([
       var owner = (SpiritApp.User.get("id") == this.model.get("author").id);
       var data = $.extend({}, this.model.toJSON(), { back: this.options.back, owner: owner });
       data.texts = _.map(this.collection.toJSON(), function(text) {
-        text.me = function() {
-          return text.author_name == SpiritApp.User.toJSON().username;
+        text.them = function() {
+          return text.author_name == data.target;
         }
         return text;
       });

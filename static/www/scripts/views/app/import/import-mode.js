@@ -30,7 +30,6 @@ define([
     },
 
     events: {
-      'click #link-new-conversation-2'  : 'newConversation2Page',
       'click #link-submit-conversation' : 'submitConversation',
       'submit #add-text-form'           : 'addText'
     },
@@ -47,18 +46,14 @@ define([
       var data = this.model.toJSON();
       data.gender = data.gender.substring(0,1);
       data.gender_pronoun = (data.gender == "F") ? "Her" : "Him";
-      data.me = this.$("select[name='text_author']").val() == "me";
+      data.them = this.$("select[name='text_author']").val() == "them";
       data.texts = _.map(this.collection.toJSON(), function(text) {
-        text.me = function() {
-          return text.author_name == SpiritApp.User.toJSON().username;
+        text.them = function() {
+          return text.author_name != SpiritApp.User.toJSON().username;
         }
         return text;
       });
       return data;
-    },
-
-    newConversation2Page: function() {
-      this.trigger("step_2", true);
     },
 
     submitConversation: function() {
@@ -68,12 +63,12 @@ define([
     addText: function() {
       var author = this.$("select[name='text_author']").val();
       var author_name;
-      if (author == "me") {
-        author = SpiritApp.User.toJSON();
-        author_name = author.username;
-      } else {
+      if (author == "them") {
         author = null;
         author_name = this.model.get("target");
+      } else {
+        author = SpiritApp.User.toJSON();
+        author_name = author.username;
       }
       var body = this.$("#new-text").val();
       var new_text = new Text({
