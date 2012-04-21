@@ -9,12 +9,14 @@ define([
   'Backbone',
   'Mustache',
   'models/text',
+  'models/user',
   'collections/comments',
   'views/dialog',
   'views/app/conversation/comments',
   'views/app/import/add-council-members',
+  'views/app/user',
   'text!templates/app/conversation/conversation.mustache!strip'
-  ], function ($, _, Backbone, Mustache, Text, Comments, DialogView, CommentsView, AddCouncilMembersView, conversation_template) {
+  ], function ($, _, Backbone, Mustache, Text, User, Comments, DialogView, CommentsView, AddCouncilMembersView, UserView, conversation_template) {
 
   var ConversationView = Backbone.View.extend({
 
@@ -38,12 +40,13 @@ define([
     },
 
     events: {
-      'click #link-comments'       : 'commentsPage',
-      'swipeleft'                  : 'commentsPage',
-      'submit #new-text-form'      : 'newText',
-      'click #add-council-members' : 'addCouncilMembers',
-      'click #delete-conversation' : 'removeConversation',
-      'click #council-members li'  : 'removeCouncilMember'
+      'click #link-comments'           : 'commentsPage',
+      'swipeleft'                      : 'commentsPage',
+      'submit #new-text-form'          : 'newText',
+      'click #add-council-members'     : 'addCouncilMembers',
+      'click #delete-conversation'     : 'removeConversation',
+      'click #council-members .user'   : 'viewUser',
+      'click #council-members .delete' : 'removeCouncilMember'
     },
 
     render: function() {
@@ -89,8 +92,19 @@ define([
       return false;
     },
 
+    viewUser: function(e) {
+      var user_id = $(e.target).parents("li").data("id");
+      SpiritApp.App.views.user = new UserView({
+        model: new User({ id: user_id }),
+        back: "conversation"
+      });
+      var user_page = $("#user-page");
+      $.mobile.changePage(user_page, { changeHash: false, transition: 'slide' });
+      SpiritApp.App.views.user.initPage();
+    },
+
     removeCouncilMember: function(e) {
-      var user_id = $(e.target).data("id");
+      var user_id = $(e.target).parents("li").data("id");
       var confirmed = confirm("Do you want to remove this council member?");
       if (confirmed) {
         var council_members = _.reject(this.model.get("council_members"), function(council_member) {

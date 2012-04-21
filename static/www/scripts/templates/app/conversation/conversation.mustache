@@ -32,7 +32,10 @@
     <h3>Council Members</h3>
     <ul data-role="listview">
     {{#council_members}}
-      <li data-id="{{id}}" data-icon="delete">{{username}}</li>
+      <li data-id="{{id}}">
+        <a class="user">{{username}}</a>
+        <a title="Remove" class="delete" data-icon="delete"></a>
+      </li>
     {{/council_members}}
     </ul>
   </div>

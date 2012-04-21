@@ -43,7 +43,7 @@ define([
       var _sul = this;
       var app_users = _.map(this.collections.app_users.toJSON(), function(app_user) {
         app_user.in_council = _.any(_sul.model.get("council_members"), function(council_member) {
-          return council_member.id == app_user.id;
+          return (council_member.id == app_user.id || app_user.id == SpiritApp.User.get("id"));
         });
         return app_user;
       });
@@ -96,7 +96,7 @@ define([
       var collection = $(e.target).data("collection");
       SpiritApp.App.views.user = new UserView({
         model: this.collections[collection].get(user_id),
-        action: "council-member",
+        back: "add-council-members",
         conversation: this.model
       });
       var user_page = $("#user-page");

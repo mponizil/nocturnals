@@ -119,7 +119,7 @@ def deauth(request):
 
 def search(request):
     q = request.GET.get("q", None)
-    users = User.objects.filter(username__contains=q)
+    users = User.objects.filter(username__icontains=q)
     res = []
     for user in users:
         res.append({
