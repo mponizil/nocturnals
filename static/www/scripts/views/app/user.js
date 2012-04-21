@@ -22,7 +22,7 @@ define([
     initPage: function() {
       var _uv = this;
       _uv.model.fetch({
-        data: { user: _uv.model.get("id") }
+        data: { id: _uv.model.get("id") }
       });
     },
 
@@ -57,8 +57,10 @@ define([
 
     addToCouncil: function(e) {
       this.options.conversation.get("council_members").push(this.model.toJSON());
-      // this.options.conversation.save();
-      console.log('add', this.model.get("username"), 'to', this.options.conversation.get("id"))
+      this.options.conversation.save(null, {
+        url: CONFIG.ENDPOINT + this.options.conversation.get("resource_uri")
+      });
+      this.back();
     }
 
   });

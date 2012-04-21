@@ -34,7 +34,7 @@ class ConversationResource(ModelResource):
     
     class Meta:
         queryset = Conversation.objects.all()
-        list_allowed_methods = ['get', 'post']
+        list_allowed_methods = ['get', 'post', 'put', 'delete']
         detail_allowed_methods = ['get', 'post', 'put', 'delete']
         resource_name = 'conversation'
         filtering = {
@@ -51,7 +51,7 @@ class TextResource(ModelResource):
     
     class Meta:
         queryset = Text.objects.all()
-        list_allowed_methods = ['get', 'post']
+        list_allowed_methods = ['get', 'post', 'put', 'delete']
         detail_allowed_methods = ['get', 'post', 'put', 'delete']
         resource_name = 'text'
         filtering = {

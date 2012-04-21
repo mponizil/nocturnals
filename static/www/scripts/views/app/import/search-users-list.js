@@ -40,8 +40,15 @@ define([
     },
 
     prepareData: function() {
+      var _sul = this;
+      var app_users = _.map(this.collections.app_users.toJSON(), function(app_user) {
+        app_user.in_council = _.any(_sul.model.get("council_members"), function(council_member) {
+          return council_member.id == app_user.id;
+        });
+        return app_user;
+      });
       var data = {
-        app_users: this.collections.app_users.toJSON(),
+        app_users: app_users,
         contacts: this.collections.contacts.toJSON()
       };
       return data;

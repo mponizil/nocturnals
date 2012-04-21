@@ -321,9 +321,13 @@
       var model = this;
       var success = options.success;
       options.success = function(resp, status, xhr) {
-        var resource_uri = xhr.getResponseHeader("Location").replace(CONFIG.ENDPOINT,""); // my code
-        var model_id = parseInt(resource_uri.match(/[\d]+(?=\/$)/)[0]); // my code
-        model.set({ id: model_id, resource_uri: resource_uri }); // my code
+        // store resource_uri after CREATE (my code)
+        if (xhr.getResponseHeader("Location")) {
+          var resource_uri = xhr.getResponseHeader("Location").replace(CONFIG.ENDPOINT,"");
+          var model_id = parseInt(resource_uri.match(/[\d]+(?=\/$)/)[0]);
+          model.set({ id: model_id, resource_uri: resource_uri });
+        }
+
         var serverAttrs = model.parse(resp, xhr);
         if (options.wait) serverAttrs = _.extend(attrs || {}, serverAttrs);
         if (!model.set(serverAttrs, options)) return false;

@@ -48,6 +48,7 @@ define([
     navBack: function() {
       var conversation_page = $("#conversation-page");
       $.mobile.changePage(conversation_page, { changeHash: false, reverse: true, transition: 'slide' });
+      SpiritApp.App.views.conversation.render();
       this.undelegateEvents();
     },
 

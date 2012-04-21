@@ -1,6 +1,8 @@
 <li data-role="list-divider">App Users</li>
 {{#app_users}}
+{{^in_council}}
 <li><a data-id="{{id}}" data-collection="app_users">{{username}}</a></li>
+{{/in_council}}
 {{/app_users}}
 <li data-role="list-divider">Contacts</li>
 {{#contacts}}

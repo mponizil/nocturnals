@@ -21,6 +21,7 @@ define([
     el: $("#conversation-page"),
 
     initialize: function() {
+      this.model.on("change", this.render, this);
       this.collection.on("reset", this.render, this);
       this.collection.on("add", this.render, this);
     },
@@ -42,7 +43,7 @@ define([
       'submit #new-text-form'      : 'newText',
       'click #add-council-members' : 'addCouncilMembers',
       'click #delete-conversation' : 'removeConversation',
-      'click #edit-conversation'   : 'editConversation'
+      'click #council-members li'  : 'removeCouncilMember'
     },
 
     render: function() {
@@ -88,6 +89,20 @@ define([
       return false;
     },
 
+    removeCouncilMember: function(e) {
+      var user_id = $(e.target).data("id");
+      var confirmed = confirm("Do you want to remove this council member?");
+      if (confirmed) {
+        var council_members = _.reject(this.model.get("council_members"), function(council_member) {
+          return council_member.id == user_id;
+        });
+        this.model.set("council_members", council_members);
+        this.model.save(null, {
+          url: CONFIG.ENDPOINT + this.model.get("resource_uri")
+        });
+      }
+    },
+
     addCouncilMembers: function() {
       SpiritApp.App.views.add_council_members = new AddCouncilMembersView({
         model: this.model
@@ -98,20 +113,15 @@ define([
     },
 
     removeConversation: function(e) {
-      var _cv = this;
       var confirmed = confirm("Are you sure you want to remove this conversation?");
       if (confirmed) {
-        _cv.model.destroy({
-          url: CONFIG.ENDPOINT + _cv.model.get("resource_uri"),
+        this.model.destroy({
+          url: CONFIG.ENDPOINT + this.model.get("resource_uri"),
           success: function() {
             $("#nav-conversations").click();
           }
         });
       }
-    },
-
-    editConversation: function(e) {
-      // this.trigger("edit_conversation", this.model);
     }
 
   });
