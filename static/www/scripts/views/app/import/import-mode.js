@@ -44,6 +44,8 @@ define([
 
     prepareData: function() {
       var data = this.model.toJSON();
+      data.back = (this.options.done == "conversation");
+      data.side = (data.back) ? "l" : "r";
       data.gender = data.gender.substring(0,1);
       data.gender_pronoun = (data.gender == "F") ? "Her" : "Him";
       data.them = this.$("select[name='text_author']").val() == "them";

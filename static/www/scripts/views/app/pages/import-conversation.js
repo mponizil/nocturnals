@@ -53,7 +53,8 @@ define([
     importModePage: function(reverse) {
       SpiritApp.App.views.import_mode = new ImportModeView({
         model: this.model,
-        collection: new Texts()
+        collection: new Texts(),
+        done: "new-conversation-2"
       });
       SpiritApp.App.views.import_mode.on("step_2", this.newConversation2Page, this);
       SpiritApp.App.views.import_mode.on("done", this.conversationPage, this);

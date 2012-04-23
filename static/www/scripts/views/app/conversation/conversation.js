@@ -143,7 +143,8 @@ define([
     importMode: function(e) {
       SpiritApp.App.views.import_mode = new ImportModeView({
         model: this.model,
-        collection: this.collection
+        collection: this.collection,
+        done: "conversation"
       });
       SpiritApp.App.views.import_mode.on("done", this.conversationPage, this);
       var import_mode_page = $("#import-mode-page");
@@ -153,7 +154,7 @@ define([
 
     conversationPage: function(texts) {
       var conversation_page = $("#conversation-page");
-      $.mobile.changePage(conversation_page, { changeHash: false, transition: 'slide' });
+      $.mobile.changePage(conversation_page, { changeHash: false, reverse: true, transition: 'slide' });
       SpiritApp.App.views.conversation.render();
     }
 

@@ -6,7 +6,7 @@
 
 <div data-role="header" class="header">
   <h1>{{target}} ({{gender}})</h1>
-  <a id="link-submit-conversation" data-icon="arrow-r" data-theme="b" class="ui-btn-right">Done</a>
+  <a id="link-submit-conversation" data-icon="arrow-{{side}}" data-theme="b" {{^back}}class="ui-btn-right"{{/back}}>Done</a>
 </div>
 
 <div data-role="content" class="content">
