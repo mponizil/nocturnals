@@ -77,13 +77,14 @@ define([
 
       // execute $.mobile.changePage
       var page = $("#" + page_key + "-page");
-      $.mobile.changePage(page, { changeHash: false, transition: 'fade' });
+      $.mobile.changePage(page, { changeHash: false, transition: 'none' });
       this.views[page_view].initPage();
     },
 
     resetPages: function(page_key) {
       this.updateFooter(page_key);
       if (this.views.conversation) this.views.conversation.undelegateEvents();
+      if (this.views.import_mode) this.views.import_mode.undelegateEvents();
       if (this.views.comments) this.views.comments.undelegateEvents();
       if (this.views.add_council_members) this.views.add_council_members.undelegateEvents();
       if (this.views.user) this.views.user.undelegateEvents();

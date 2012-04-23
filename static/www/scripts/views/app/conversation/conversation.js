@@ -15,8 +15,9 @@ define([
   'views/app/conversation/comments',
   'views/app/import/add-council-members',
   'views/app/user',
+  'views/app/import/import-mode',
   'text!templates/app/conversation/conversation.mustache!strip'
-  ], function ($, _, Backbone, Mustache, Text, User, Comments, DialogView, CommentsView, AddCouncilMembersView, UserView, conversation_template) {
+  ], function ($, _, Backbone, Mustache, Text, User, Comments, DialogView, CommentsView, AddCouncilMembersView, UserView, ImportModeView, conversation_template) {
 
   var ConversationView = Backbone.View.extend({
 
@@ -45,6 +46,7 @@ define([
       'submit #new-text-form'          : 'newText',
       'click #add-council-members'     : 'addCouncilMembers',
       'click #delete-conversation'     : 'removeConversation',
+      'click #import-mode'             : 'importMode',
       'click #council-members .user'   : 'viewUser',
       'click #council-members .delete' : 'removeCouncilMember'
     },
@@ -136,6 +138,23 @@ define([
           }
         });
       }
+    },
+
+    importMode: function(e) {
+      SpiritApp.App.views.import_mode = new ImportModeView({
+        model: this.model,
+        collection: this.collection
+      });
+      SpiritApp.App.views.import_mode.on("done", this.conversationPage, this);
+      var import_mode_page = $("#import-mode-page");
+      $.mobile.changePage(import_mode_page, { changeHash: false, transition: 'slide' });
+      SpiritApp.App.views.import_mode.initPage();
+    },
+
+    conversationPage: function(texts) {
+      var conversation_page = $("#conversation-page");
+      $.mobile.changePage(conversation_page, { changeHash: false, transition: 'slide' });
+      SpiritApp.App.views.conversation.render();
     }
 
   });

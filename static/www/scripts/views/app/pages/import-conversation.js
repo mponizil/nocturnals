@@ -27,16 +27,10 @@ define([
       this.views.new_conversation_2 = new NewConversation2View({
         model: this.model
       });
-      this.views.import_mode = new ImportModeView({
-        model: this.model,
-        collection: new Texts()
-      });
 
       this.views.new_conversation_1.on("step_2", this.newConversation2Page, this);
       this.views.new_conversation_2.on("step_1", this.newConversation1Page, this);
       this.views.new_conversation_2.on("step_3", this.importModePage, this);
-      this.views.import_mode.on("step_2", this.newConversation2Page, this);
-      this.views.import_mode.on("done", this.conversationPage, this);
     },
 
     initPage: function() {
@@ -57,9 +51,15 @@ define([
     },
 
     importModePage: function(reverse) {
+      SpiritApp.App.views.import_mode = new ImportModeView({
+        model: this.model,
+        collection: new Texts()
+      });
+      SpiritApp.App.views.import_mode.on("step_2", this.newConversation2Page, this);
+      SpiritApp.App.views.import_mode.on("done", this.conversationPage, this);
       var import_mode_page = $("#import-mode-page");
       $.mobile.changePage(import_mode_page, { changeHash: false, reverse: reverse, transition: 'slide' });
-      this.views.import_mode.initPage();
+      SpiritApp.App.views.import_mode.initPage();
     },
 
     conversationPage: function(texts) {

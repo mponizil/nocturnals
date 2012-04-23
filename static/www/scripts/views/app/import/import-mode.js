@@ -49,7 +49,7 @@ define([
       data.them = this.$("select[name='text_author']").val() == "them";
       data.texts = _.map(this.collection.toJSON(), function(text) {
         text.them = function() {
-          return text.author_name != SpiritApp.User.toJSON().username;
+          return text.author_name == data.target;
         }
         return text;
       });
@@ -57,6 +57,7 @@ define([
     },
 
     submitConversation: function() {
+      this.undelegateEvents();
       this.trigger("done", this.collection);
     },
 
