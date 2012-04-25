@@ -49,6 +49,11 @@ define([
     },
 
     conversationPage: function() {
+      var _c = this;
+      _c.model.set({ comments: [] });
+      this.collection.each(function(comment) {
+        _c.model.get("comments").push(comment.get("resource_uri"));
+      });
       var conversation_page = $("#conversation-page");
       $.mobile.changePage(conversation_page, { changeHash: false, reverse: true, transition: 'slide' });
       this.undelegateEvents();

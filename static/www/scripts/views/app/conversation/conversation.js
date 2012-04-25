@@ -137,6 +137,11 @@ define([
     },
 
     addCouncilMembers: function() {
+      var _c = this;
+      _c.model.set({ texts: [] });
+      this.collection.each(function(text) {
+        _c.model.get("texts").push(text.get("resource_uri"));
+      });
       SpiritApp.App.views.add_council_members = new AddCouncilMembersView({
         model: this.model
       });
