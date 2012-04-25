@@ -45,7 +45,7 @@ define([
     },
 
     conversationPage: function(event) {
-      var conversation_id = $(event.target).data("id");
+      var conversation_id = $(event.currentTarget).data("id");
       SpiritApp.App.views.conversation = new ConversationView({
         model: this.collection.get(conversation_id),
         collection: new Texts(),

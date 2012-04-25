@@ -49,3 +49,29 @@
   width: 10%;
   float: right;
 }
+
+#dashboard-page h3 {
+  text-align: center;
+  margin-bottom: 2.4em;
+}
+
+.triangle-border {
+  padding: 10px;
+  margin-bottom: 0.5em;
+}
+.dude {
+  border-color: #335caf;
+}
+.girl {
+  border-color: #af3333;
+}
+
+.choose-gender,
+.choose-privacy {
+  text-align: center;
+  padding-top: 1.4em;
+}
+.choose-gender fieldset,
+.choose-privacy fieldset {
+  display: inline;
+}

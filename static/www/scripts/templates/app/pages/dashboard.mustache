@@ -10,6 +10,27 @@
 </div>
 
 <div data-role="content" class="content">
+  <h3>Good to see you, {{user.username}}.</h3>
+  {{#latest}}
+  <ul data-role="listview">
+    <li data-role="list-divider">My Conversations</li>
+    {{#new_texts}}
+    <li data-id="{{id}}"><a data-id="{{id}}">
+      <h4>{{target}}</h4>
+      <p>{{author.username}}</p>
+      <span class="ui-li-count">NEW</span>
+    </a></li>
+    {{/new_texts}}
+    <li data-role="list-divider">My Councils</li>
+    {{#new_comments}}
+    <li data-id="{{id}}"><a data-id="{{id}}">
+      <h4>{{target}}</h4>
+      <p>{{author.username}}</p>
+      <span class="ui-li-count">NEW</span>
+    </a></li>
+    {{/new_comments}}
+  </ul>
+  {{/latest}}
 </div>
 
 </body>

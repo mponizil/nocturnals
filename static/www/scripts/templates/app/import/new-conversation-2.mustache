@@ -15,7 +15,7 @@
       <label for="context" class="ui-hidden-accessible">Description</label>
       <textarea name="context" id="context" placeholder="Description">{{context}}</textarea>
     </div>
-    <div data-role="fieldcontain">
+    <div data-role="fieldcontain" class="choose-privacy">
       <select name="public" id="flip-a" data-role="slider">
         <option value="public"{{#public}} selected="selected"{{/public}}>Public</option>
         <option value="private"{{^public}} selected="selected"{{/public}}>Private</option>

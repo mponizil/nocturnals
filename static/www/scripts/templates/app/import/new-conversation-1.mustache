@@ -14,12 +14,14 @@
       <label for="target" class="ui-hidden-accessible">Name</label>
       <input type="text" name="target" id="target" value="{{target}}" placeholder="Target's Name" />
     </div>
-    <fieldset data-role="controlgroup" data-type="horizontal">
-      <input type="radio" name="gender" id="radio-choice-1" value="Female"{{#female}} checked="checked"{{/female}} />
-      <label for="radio-choice-1">F</label>
-      <input type="radio" name="gender" id="radio-choice-2" value="Male"{{^female}} checked="checked"{{/female}} />
-      <label for="radio-choice-2">M</label>
-    </fieldset>
+    <div class="choose-gender">
+      <fieldset data-role="controlgroup" data-type="horizontal">
+        <input type="radio" name="gender" id="radio-choice-1" value="Female"{{#female}} checked="checked"{{/female}} />
+        <label for="radio-choice-1">F</label>
+        <input type="radio" name="gender" id="radio-choice-2" value="Male"{{^female}} checked="checked"{{/female}} />
+        <label for="radio-choice-2">M</label>
+      </fieldset>
+    </div>
     <div data-role="fieldcontain" class="ui-field-contain">
       <button type="submit" id="new-conversation-button">+ New</button>
     </div>
