@@ -48,7 +48,8 @@ define([
       'click #delete-conversation'     : 'removeConversation',
       'click #import-mode'             : 'importMode',
       'click #council-members .user'   : 'viewUser',
-      'click #council-members .delete' : 'removeCouncilMember'
+      'click #council-members .delete' : 'removeCouncilMember',
+      'click #texts .text'             : 'chooseText'
     },
 
     render: function() {
@@ -161,6 +162,24 @@ define([
       var conversation_page = $("#conversation-page");
       $.mobile.changePage(conversation_page, { changeHash: false, reverse: true, transition: 'slide' });
       SpiritApp.App.views.conversation.render();
+    },
+
+    chooseText: function(e) {
+      var text_id = $(e.currentTarget).data("id");
+      var text = this.collection.get(text_id);
+      if (text.get("author") && text.get("author").id != SpiritApp.User.get("id") && this.model.get("author").id == SpiritApp.User.get("id")) {
+        var confirmed = confirm("Are you sure you want to send the message: \"" + text.get("body") + "\"");
+        if (confirmed) {
+          var new_text = new Text({
+            conversation: this.model.get("resource_uri"),
+            author: SpiritApp.User.toJSON(),
+            author_name: SpiritApp.User.get("username"),
+            body: text.get("body")
+          });
+          new_text.save();
+          this.collection.add(new_text);
+        }
+      }
     }
 
   });

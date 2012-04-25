@@ -14,7 +14,7 @@
   <div id="texts" class="clearfix">
     <h3>Texts</h3>
     {{#texts}}
-    <div class="text clearfix">
+    <div class="text clearfix" data-id="{{id}}">
       <div class="triangle-border {{#them}}left{{/them}}{{^them}}right{{/them}} {{gender_class}}">{{author_name}}: {{body}}</div>
     </div>
     {{/texts}}

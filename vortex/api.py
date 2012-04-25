@@ -41,9 +41,10 @@ class ConversationResource(ModelResource):
         filtering = {
             'public': ALL,
             'author': ALL_WITH_RELATIONS,
-            'council_members': ALL_WITH_RELATIONS
+            'council_members': ALL_WITH_RELATIONS,
+            'texts': ALL_WITH_RELATIONS
         }
-        ordering = ['date_created']
+        ordering = ['date_created','date_modified','texts']
         authentication = Authentication()
         authorization = ConversationAuthorization()
 
@@ -59,6 +60,7 @@ class TextResource(ModelResource):
         filtering = {
             'conversation': ALL_WITH_RELATIONS
         }
+        ordering = ['date_created','date_modified']
         authentication = Authentication()
         authorization = Authorization()
 

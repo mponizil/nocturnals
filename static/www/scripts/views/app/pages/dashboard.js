@@ -27,8 +27,7 @@ define([
       var a = _d.collection.fetch({
         data: {
           author: SpiritApp.User.get("id"),
-          council_members: SpiritApp.User.get("id"),
-          order_by: "date_created"
+          council_members: SpiritApp.User.get("id")
         }
       });
     },
@@ -77,7 +76,6 @@ define([
     },
 
     conversationPage: function(e) {
-      console.log($(e.currentTarget))
       var conversation_id = $(e.currentTarget).data("id");
       SpiritApp.App.views.conversation = new ConversationView({
         model: this.collection.get(conversation_id),
