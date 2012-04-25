@@ -65,6 +65,9 @@
 .girl {
   border-color: #af3333;
 }
+.other {
+  border-color: #da9d3c;
+}
 
 .choose-gender,
 .choose-privacy {

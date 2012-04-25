@@ -70,10 +70,16 @@ define([
         text.gender_class = function() {
           var my_gender = (SpiritApp.User.get("gender") == "Male") ? "dude" : "girl";
           var opp_gender = (SpiritApp.User.get("gender") == "Male") ? "girl" : "dude";
-          return (text.author_name == data.target) ? opp_gender : my_gender;
-        }
+          var gender = "other";
+          if (text.author_name == data.target) gender = opp_gender;
+          if (text.author) {
+            if (text.author.id == SpiritApp.User.get("id")) gender = my_gender;
+          }
+          return gender;
+        };
         return text;
       });
+      console.log(data);
       return data;
     },
 

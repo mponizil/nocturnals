@@ -54,14 +54,22 @@ define([
         user: SpiritApp.User.toJSON(),
         latest: {}
       };
-      data.latest.new_texts = _.filter(this.collection.toJSON(), function(conversation) {
+      var new_texts = _.filter(this.collection.toJSON(), function(conversation) {
         return SpiritApp.User.get("id") == conversation.author.id;
-      }).slice(0,2);
-      data.latest.new_comments = _.filter(this.collection.toJSON(), function(conversation) {
+      });
+      var new_comments = _.filter(this.collection.toJSON(), function(conversation) {
         return _.any(conversation.council_members, function(council_member) {
           return SpiritApp.User.get("id") == council_member.id;
         })
-      }).slice(0,2);
+      });
+      // data.latest.new_texts = _.sortBy(new_texts, function(conversation) {
+      //   return conversation.texts
+      // }).slice(0,2);
+      // data.latest.new_comments = _.sortBy(new_comments, function(conversation) {
+      //   
+      // }).slice(0,2);
+      data.latest.new_texts = new_texts.slice(0,2);
+      data.latest.new_comments = new_comments.slice(0,2);
       return data;
     },
 

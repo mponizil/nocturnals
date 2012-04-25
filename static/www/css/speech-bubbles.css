@@ -621,6 +621,25 @@ blockquote p {
 	border-color:transparent #fff;
 }
 
+/* creates the larger triangle */
+.triangle-border.right.other:before {
+	top:10px; /* controls vertical position */
+	bottom:auto;
+    left:auto;
+	right:-30px; /* value = - border-left-width - border-right-width */
+	border-width:15px 0 15px 30px;
+	border-color:transparent #da9d3c;
+}
+
+/* creates the smaller  triangle */
+.triangle-border.right.other:after {
+	top:16px; /* value = (:before top) + (:before border-top) - (:after border-top) */
+	bottom:auto;
+    left:auto;
+	right:-21px; /* value = - border-left-width - border-right-width */
+	border-width:9px 0 9px 21px;
+	border-color:transparent #fff;
+}
 
 /* ============================================================================================================================
 == SPEECH BUBBLE ICON
