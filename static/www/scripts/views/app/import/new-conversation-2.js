@@ -45,6 +45,10 @@ define([
 
     createConversation: function() {
       var context = this.$("#context").val();
+      if (!context) {
+        alert("Please provide the context of the conversation.");
+        return false;
+      }
       var public = this.$("select[name='public']").val() == "public";
       this.model.set({
         context: context,

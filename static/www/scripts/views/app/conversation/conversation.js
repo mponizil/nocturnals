@@ -97,6 +97,7 @@ define([
 
     newText: function(e) {
       var new_text_body = this.$("#new-text").val();
+      if (!new_text_body) return false;
       var new_text = new Text({
         conversation: this.model.get("resource_uri"),
         author: SpiritApp.User.toJSON(),

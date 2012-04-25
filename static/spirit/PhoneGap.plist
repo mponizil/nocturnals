@@ -20,6 +20,7 @@
 	<false/>
 	<key>ExternalHosts</key>
 	<array>
+		<string>nocturnals.mponizil.com</string>
 		<string>localhost</string>
 	</array>
 	<key>Plugins</key>

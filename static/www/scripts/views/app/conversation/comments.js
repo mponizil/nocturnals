@@ -61,6 +61,7 @@ define([
 
     newComment: function(event) {
       var new_comment_body = this.$("#new-comment").val();
+      if (!new_comment_body) return false;
       var new_comment = new Comment({
         conversation: this.model.get("resource_uri"),
         author: SpiritApp.User.toJSON(),
