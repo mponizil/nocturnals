@@ -43,11 +43,17 @@ define([
 
     newConversation: function() {
       var target = $("#target").val();
+      if (!target) {
+        alert("Please enter your correspondent's name.");
+        return false;
+      }
       var gender = this.$("input[name='gender']:checked").val();
       this.model.set({
         author: SpiritApp.User.toJSON(),
         target: target,
-        gender: gender
+        gender: gender,
+        council_members: [],
+        texts: []
       });
       this.trigger("step_2", false);
       return false;

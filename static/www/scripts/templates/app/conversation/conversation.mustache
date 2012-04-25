@@ -19,7 +19,7 @@
     {{#texts}}
     <div class="text clearfix" data-id="{{id}}">
       <div class="bubble {{#them}}left{{/them}}{{^them}}right{{/them}} {{gender_class}}">
-        {{body}}
+        <strong>{{author_name}}</strong>: {{body}}
       </div>
     </div>
     {{/texts}}
@@ -28,7 +28,7 @@
         <div data-role="fieldcontain" class="ui-field-contain clearfix">
           <label for="new-text" class="ui-hidden-accessible">New message</label>
           <input type="text" name="new-text" id="new-text" value="" placeholder="New message" />
-          <button type="submit" id="new-text-button" data-mini="true">Send</button>
+          <button type="submit" id="new-text-button" data-mini="true" data-theme="b">Send</button>
         </div>
       </form>
     </div>
@@ -46,9 +46,9 @@
   </div>
   {{#owner}}
   <div id="owner-tools">
-    <button id="add-council-members">Add Council Members</button>
-    <button id="import-mode">Import Mode</button>
-    <button id="delete-conversation">Remove Conversation</button>
+    <button id="add-council-members" data-icon="plus">Add Council Members</button>
+    <button id="import-mode" data-icon="gear">Import Mode</button>
+    <button id="delete-conversation" data-theme="r" data-icon="minus">Remove Conversation</button>
   </div>
   {{/owner}}
 </div>

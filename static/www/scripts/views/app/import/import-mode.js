@@ -54,8 +54,11 @@ define([
           return text.author_name == data.target;
         },
         text.gender_class = function() {
-          var my_gender = (SpiritApp.User.get("gender") == "Male") ? "dude" : "girl";
-          var opp_gender = (SpiritApp.User.get("gender") == "Male") ? "girl" : "dude";
+          var my_gender = (SpiritApp.User.get("gender") == "M" || SpiritApp.User.get("gender") == "Male") ? "dude" : "girl";
+          var opp_gender = (SpiritApp.User.get("gender") == "M" || SpiritApp.User.get("gender") == "Male") ? "girl" : "dude";
+          if (text.author) {
+            if (text.author.id != SpiritApp.User.get("id")) my_gender = "other";
+          }
           return (text.author_name == data.target) ? opp_gender : my_gender;
         }
         return text;
@@ -64,6 +67,10 @@ define([
     },
 
     submitConversation: function() {
+      var _im = this;
+      this.collection.each(function(text) {
+        _im.model.get("texts").push(text.get("resource_uri"));
+      });
       this.undelegateEvents();
       this.trigger("done", this.collection);
     },

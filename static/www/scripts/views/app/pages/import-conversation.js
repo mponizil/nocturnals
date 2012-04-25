@@ -65,13 +65,14 @@ define([
 
     conversationPage: function(texts) {
       SpiritApp.App.views.conversation = new ConversationView({
-        model: this.model,
+        model: this.model.clone(),
         collection: texts,
         back: "conversations"
       });
       var conversation_page = $("#conversation-page");
       $.mobile.changePage(conversation_page, { changeHash: false, transition: 'slide' });
       SpiritApp.App.views.conversation.render();
+      SpiritApp.App.updateFooter();
     }
 
   });

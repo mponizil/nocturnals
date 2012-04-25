@@ -11,6 +11,10 @@ define([
 
   var Conversation = Backbone.Model.extend({
 
+    defaults: {
+      council_members: []
+    },
+
     url: CONFIG.ENDPOINT + "/api/v1/conversation/",
 
     parse: function(data) {

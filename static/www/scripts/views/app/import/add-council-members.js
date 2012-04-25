@@ -30,8 +30,9 @@ define([
     },
 
     events: {
-      'click #link-back'    : 'navBack',
-      'keyup #search-query' : 'searchUsers'
+      'click #link-back'     : 'navBack',
+      'keyup #search-query'  : 'searchUsers',
+      'submit #search-users' : 'searchUsers'
     },
 
     render: function() {
@@ -56,6 +57,7 @@ define([
       var query = this.$("#search-query").val();
       this.views.search_users_list.searchUsers(query);
       this.views.search_users_list.searchContacts(query);
+      return false;
     }
 
   });

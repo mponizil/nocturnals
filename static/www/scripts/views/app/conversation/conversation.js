@@ -61,6 +61,7 @@ define([
     },
 
     prepareData: function() {
+      var _c = this;
       var owner = (SpiritApp.User.get("id") == this.model.get("author").id);
       var data = $.extend({}, this.model.toJSON(), { back: this.options.back, owner: owner });
       data.texts = _.map(this.collection.toJSON(), function(text) {
@@ -69,17 +70,18 @@ define([
         };
         text.gender_class = function() {
           var my_gender = (SpiritApp.User.get("gender") == "Male") ? "dude" : "girl";
-          var opp_gender = (SpiritApp.User.get("gender") == "Male") ? "girl" : "dude";
+          var author_gender = (_c.model.get("gender") == "F" || _c.model.get("gender") == "Female") ? "dude" : "girl";
+          var opp_gender = (_c.model.get("gender") == "F" || _c.model.get("gender") == "Female") ? "girl" : "dude";
           var gender = "other";
           if (text.author_name == data.target) gender = opp_gender;
           if (text.author) {
-            if (text.author.id == SpiritApp.User.get("id")) gender = my_gender;
+            if (text.author.id == _c.model.get("author").id) gender = author_gender;
+            if (text.author.id == SpiritApp.User.get("id") && _c.model.get("author").id == SpiritApp.User.get("id")) gender = my_gender;
           }
           return gender;
         };
         return text;
       });
-      console.log(data);
       return data;
     },
 
@@ -177,7 +179,7 @@ define([
       var text_id = $(e.currentTarget).data("id");
       var text = this.collection.get(text_id);
       if (text.get("author") && text.get("author").id != SpiritApp.User.get("id") && this.model.get("author").id == SpiritApp.User.get("id")) {
-        var confirmed = confirm("Are you sure you want to send the message: \"" + text.get("body") + "\"");
+        var confirmed = confirm("Are you sure you want to send the message: \"" + text.get("body") + "\"?");
         if (confirmed) {
           var new_text = new Text({
             conversation: this.model.get("resource_uri"),

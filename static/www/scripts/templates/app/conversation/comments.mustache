@@ -6,17 +6,18 @@
 
 <div data-role="header" class="header">
   <a id="link-conversation" data-icon="arrow-l" class="back">Back</a>
-  <h1>{{target}}</h1>
+  <h1>Comments</h1>
 </div>
 
 <div data-role="content" class="content">
   <div id="comments">
-    <h3>Comments</h3>
-    {{#comments}}
-    <div>
-      {{author.username}}: {{body}}
+    <div class="comments-container clearfix">
+      {{#comments}}
+      <div class="bubble left other">
+        <strong>{{author.username}}</strong>: {{body}}
+      </div>
+      {{/comments}}
     </div>
-    {{/comments}}
     <div>
       <form id="new-comment-form">
         <div data-role="fieldcontain" class="ui-field-contain">

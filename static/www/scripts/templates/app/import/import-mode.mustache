@@ -13,7 +13,7 @@
   <div id="texts" class="clearfix">
     {{#texts}}
     <div class="text clearfix">
-      <div class="bubble {{#them}}left{{/them}}{{^them}}right{{/them}} {{gender_class}}">{{body}}</div>
+      <div class="bubble {{#them}}left{{/them}}{{^them}}right{{/them}} {{gender_class}}"><strong>{{author_name}}</strong>: {{body}}</div>
     </div>
     {{/texts}}
   </div>
@@ -28,7 +28,7 @@
       <div class="new-text-container clearfix">
         <label for="new-text" class="ui-hidden-accessible">Message</label>
         <input type="text" name="new-text" id="new-text" placeholder="Message" />
-        <button type="submit" id="new-text-button" data-mini="true">Add</button>
+        <button type="submit" id="new-text-button" data-mini="true"  data-theme="b">Add</button>
       </div>
     </div>
   </form>
