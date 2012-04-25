@@ -10,6 +10,20 @@
   float: right;
 }
 
+.triangle-border {
+  padding: 10px;
+  margin-bottom: 0.5em;
+}
+.dude {
+  border-color: #335caf;
+}
+.girl {
+  border-color: #af3333;
+}
+.other {
+  border-color: #da9d3c;
+}
+
 .custom-icons .ui-btn .ui-btn-inner { padding-top: 40px !important; }
 .custom-icons .ui-btn .ui-icon { width: 30px!important; height: 30px!important; margin-left: -15px !important; box-shadow: none!important; -moz-box-shadow: none!important; -webkit-box-shadow: none!important; -webkit-border-radius: 0 !important; border-radius: 0 !important; }
 .home-button .ui-icon {
@@ -29,23 +43,19 @@
   background-size: 24px 22px;
 }
 
+.choose-gender,
+.choose-privacy {
+  text-align: center;
+  padding-top: 1.4em;
+}
+.choose-gender fieldset,
+.choose-privacy fieldset {
+  display: inline;
+}
 
-
-.import-toggle {
-  width: 10%;
-  float: left;
-}
-.new-text {
-  width: 80%;
-  float: left;
-}
-.new-text #new-text {
-  width: 80%;
-  float: left;
-}
-.new-text .ui-btn {
-  width: 10%;
-  float: right;
+#dashboard-page h3 {
+  text-align: center;
+  margin-bottom: 2.4em;
 }
 
 #conversation-page .info h3 {
@@ -74,5 +84,22 @@
 }
 #conversation-page #new-text-form .ui-btn {
   width: 20%;
+  float: right;
+}
+
+#import-mode-page .import-toggle {
+  width: 10%;
+  float: left;
+}
+#import-mode-page .new-text {
+  width: 80%;
+  float: left;
+}
+#import-mode-page .new-text #new-text {
+  width: 80%;
+  float: left;
+}
+#import-mode-page .new-text .ui-btn {
+  width: 10%;
   float: right;
 }

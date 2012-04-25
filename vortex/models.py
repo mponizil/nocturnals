@@ -9,6 +9,7 @@ GENDERS = (
 
 class Conversation(models.Model):
     date_created = models.DateTimeField()
+    date_modified = models.DateTimeField()
     author = models.ForeignKey(User, verbose_name="user who created this conversation", related_name="conversations")
     context = models.TextField(blank=True)
     target = models.CharField(max_length=255)
@@ -19,6 +20,7 @@ class Conversation(models.Model):
     def save(self):
         if self.date_created == None:
           self.date_created = datetime.now()
+        self.date_modified = datetime.now()
         super(Conversation, self).save()
     
     def __unicode__(self):
@@ -26,6 +28,7 @@ class Conversation(models.Model):
 
 class Text(models.Model):
     date_created = models.DateTimeField()
+    date_modified = models.DateTimeField()
     conversation = models.ForeignKey(Conversation, verbose_name="conversation this text belongs to", related_name="texts", null=True, blank=True)
     author = models.ForeignKey(User, verbose_name="author as a user object", related_name="texts", null=True, blank=True)
     author_name = models.CharField(max_length=255, verbose_name="author name as a string")
@@ -34,6 +37,7 @@ class Text(models.Model):
     def save(self):
         if self.date_created == None:
           self.date_created = datetime.now()
+        self.date_modified = datetime.now()
         super(Text, self).save()
     
     def __unicode__(self):

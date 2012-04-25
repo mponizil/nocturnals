@@ -22,6 +22,7 @@ class ConversationAuthorization(Authorization):
             if int(council_members) != request.user.id:
                 object_list = object_list.filter(Q(author=request.user) | Q(public=True))
         if author is not None and council_members is not None:
+            object_list = Conversation.objects.filter(Q(author=request.user) | Q(council_members=request.user)).distinct()
             if int(author) != request.user.id and int(council_members) != request.user.id:
                 object_list = object_list.filter(public=True)
         return object_list
@@ -40,8 +41,10 @@ class ConversationResource(ModelResource):
         filtering = {
             'public': ALL,
             'author': ALL_WITH_RELATIONS,
-            'council_members': ALL_WITH_RELATIONS
+            'council_members': ALL_WITH_RELATIONS,
+            'texts': ALL_WITH_RELATIONS
         }
+        ordering = ['date_created','date_modified','texts']
         authentication = Authentication()
         authorization = ConversationAuthorization()
 
@@ -57,6 +60,7 @@ class TextResource(ModelResource):
         filtering = {
             'conversation': ALL_WITH_RELATIONS
         }
+        ordering = ['date_created','date_modified']
         authentication = Authentication()
         authorization = Authorization()
 

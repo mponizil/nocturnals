@@ -45,13 +45,14 @@ define([
 
     prepareData: function() {
       var data = this.model.toJSON();
-      data.council_member = (this.options.back == "add-council-members");
+      data.council_member = (this.options.back.slug == "add-council-members");
       return data;
     },
 
     back: function(e) {
-      var page = $("#" + this.options.back + "-page");
+      var page = $("#" + this.options.back.slug + "-page");
       $.mobile.changePage(page, { changeHash: false, reverse: true, transition: 'slide' });
+      this.options.back.view.trigger("user-back");
       this.undelegateEvents();
     },
 

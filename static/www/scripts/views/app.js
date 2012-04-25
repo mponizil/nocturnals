@@ -30,7 +30,9 @@ define([
       
       this.views = {};
       this.views.auth = new AuthView();
-      this.views.dashboard = new DashboardView();
+      this.views.dashboard = new DashboardView({
+        collection: new Conversations()
+      });
       this.views.conversations = new ConversationsView();
       this.views.browse_feed = new BrowseFeedView({
         collection: new Conversations()
@@ -64,7 +66,7 @@ define([
     loggedIn: function() {
       this.updateFooter("dashboard");
       var dashboard_page = $("#dashboard-page");
-      $.mobile.changePage(dashboard_page, { changeHash: false, transition: 'slide' });
+      $.mobile.changePage(dashboard_page, { changeHash: false, transition: 'fade' });
       this.views.dashboard.initPage();
     },
 

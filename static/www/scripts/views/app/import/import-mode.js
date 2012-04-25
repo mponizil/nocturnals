@@ -52,6 +52,11 @@ define([
       data.texts = _.map(this.collection.toJSON(), function(text) {
         text.them = function() {
           return text.author_name == data.target;
+        },
+        text.gender_class = function() {
+          var my_gender = (SpiritApp.User.get("gender") == "Male") ? "dude" : "girl";
+          var opp_gender = (SpiritApp.User.get("gender") == "Male") ? "girl" : "dude";
+          return (text.author_name == data.target) ? opp_gender : my_gender;
         }
         return text;
       });

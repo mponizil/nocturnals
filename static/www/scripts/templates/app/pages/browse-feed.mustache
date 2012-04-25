@@ -11,7 +11,10 @@
 <div data-role="content" class="content">
   <ul data-role="listview">
     {{#conversations}}
-    <li><a data-id="{{id}}">{{author.username}}: {{target}}</a></li>
+    <li data-id="{{id}}"><a data-id="{{id}}">
+      <h4>{{target}}</h4>
+      <p>{{author.username}}</p>
+    </a></li>
     {{/conversations}}
   </ul>
 </div>

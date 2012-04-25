@@ -48,7 +48,8 @@ define([
       'click #delete-conversation'     : 'removeConversation',
       'click #import-mode'             : 'importMode',
       'click #council-members .user'   : 'viewUser',
-      'click #council-members .delete' : 'removeCouncilMember'
+      'click #council-members .delete' : 'removeCouncilMember',
+      'click #texts .text'             : 'chooseText'
     },
 
     render: function() {
@@ -65,9 +66,20 @@ define([
       data.texts = _.map(this.collection.toJSON(), function(text) {
         text.them = function() {
           return text.author_name == data.target;
-        }
+        };
+        text.gender_class = function() {
+          var my_gender = (SpiritApp.User.get("gender") == "Male") ? "dude" : "girl";
+          var opp_gender = (SpiritApp.User.get("gender") == "Male") ? "girl" : "dude";
+          var gender = "other";
+          if (text.author_name == data.target) gender = opp_gender;
+          if (text.author) {
+            if (text.author.id == SpiritApp.User.get("id")) gender = my_gender;
+          }
+          return gender;
+        };
         return text;
       });
+      console.log(data);
       return data;
     },
 
@@ -98,7 +110,10 @@ define([
       var user_id = $(e.target).parents("li").data("id");
       SpiritApp.App.views.user = new UserView({
         model: new User({ id: user_id }),
-        back: "conversation"
+        back: {
+          view: this,
+          slug: "conversation"
+        }
       });
       var user_page = $("#user-page");
       $.mobile.changePage(user_page, { changeHash: false, transition: 'slide' });
@@ -156,6 +171,24 @@ define([
       var conversation_page = $("#conversation-page");
       $.mobile.changePage(conversation_page, { changeHash: false, reverse: true, transition: 'slide' });
       SpiritApp.App.views.conversation.render();
+    },
+
+    chooseText: function(e) {
+      var text_id = $(e.currentTarget).data("id");
+      var text = this.collection.get(text_id);
+      if (text.get("author") && text.get("author").id != SpiritApp.User.get("id") && this.model.get("author").id == SpiritApp.User.get("id")) {
+        var confirmed = confirm("Are you sure you want to send the message: \"" + text.get("body") + "\"");
+        if (confirmed) {
+          var new_text = new Text({
+            conversation: this.model.get("resource_uri"),
+            author: SpiritApp.User.toJSON(),
+            author_name: SpiritApp.User.get("username"),
+            body: text.get("body")
+          });
+          new_text.save();
+          this.collection.add(new_text);
+        }
+      }
     }
 
   });

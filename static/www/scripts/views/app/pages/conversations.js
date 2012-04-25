@@ -76,8 +76,8 @@ define([
     },
 
     conversationPage: function(e) {
-      var conversation_id = $(e.target).data("id");
-      var collection = $(e.target).data("collection");
+      var conversation_id = $(e.currentTarget).data("id");
+      var collection = $(e.currentTarget).data("collection");
       SpiritApp.App.views.conversation = new ConversationView({
         model: this.collections[collection].get(conversation_id),
         collection: new Texts(),
