@@ -29,9 +29,7 @@
   background-size: 24px 22px;
 }
 
-#texts .text {
-  width: 100%;
-}
+
 
 .import-toggle {
   width: 10%;
@@ -47,5 +45,34 @@
 }
 .new-text .ui-btn {
   width: 10%;
+  float: right;
+}
+
+#conversation-page .info h3 {
+  color: #2c2c2c;
+  font-weight: normal;
+  margin-bottom: 4px;
+}
+#conversation-page .info p {
+  color: #686868;
+  margin-top: 0;
+}
+#conversation-page #texts {
+  background-color: #ebebeb;
+  border: 4px solid #2c2c2c;
+  padding: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+#conversation-page #texts .text {
+  width: 100%;
+}
+#conversation-page #new-text {
+  width: 70%;
+  float: left;
+}
+#conversation-page #new-text-form .ui-btn {
+  width: 20%;
   float: right;
 }

@@ -10,9 +10,11 @@
 </div>
 
 <div data-role="content" class="content">
-  <h3>{{author.username}}: {{context}}</h3>
+  <div class="info">
+    <h2>{{context}}</h2>
+    <p>{{author.username}}</p>
+  </div>
   <div id="texts" class="clearfix">
-    <h3>Texts</h3>
     {{#texts}}
     <div class="text clearfix">
       <div class="{{#them}}left{{/them}}{{^them}}right{{/them}}">{{author_name}}: {{body}}</div>
@@ -20,10 +22,10 @@
     {{/texts}}
     <div>
       <form id="new-text-form">
-        <div data-role="fieldcontain" class="ui-field-contain">
+        <div data-role="fieldcontain" class="ui-field-contain clearfix">
           <label for="new-text" class="ui-hidden-accessible">New message</label>
           <input type="text" name="new-text" id="new-text" value="" placeholder="New message" />
-          <button type="submit" id="new-text-button">Send</button>
+          <button type="submit" id="new-text-button" data-mini="true">Send</button>
         </div>
       </form>
     </div>
