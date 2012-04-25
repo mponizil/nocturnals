@@ -22,6 +22,10 @@ define([
       this.collections.contacts = new Users();
       this.collections.app_users.on("reset", this.render, this);
       this.collections.contacts.on("reset", this.render, this);
+      this.on("user-back", function() {
+        $("#search-query").val("").focus();
+        this.render();
+      }, this);
     },
 
     template: function(params) {
@@ -96,7 +100,10 @@ define([
       var collection = $(e.target).data("collection");
       SpiritApp.App.views.user = new UserView({
         model: this.collections[collection].get(user_id),
-        back: "add-council-members",
+        back: {
+          view: this,
+          slug: "add-council-members"
+        },
         conversation: this.model
       });
       var user_page = $("#user-page");

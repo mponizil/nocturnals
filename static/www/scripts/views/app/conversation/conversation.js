@@ -104,7 +104,10 @@ define([
       var user_id = $(e.target).parents("li").data("id");
       SpiritApp.App.views.user = new UserView({
         model: new User({ id: user_id }),
-        back: "conversation"
+        back: {
+          view: this,
+          slug: "conversation"
+        }
       });
       var user_page = $("#user-page");
       $.mobile.changePage(user_page, { changeHash: false, transition: 'slide' });
