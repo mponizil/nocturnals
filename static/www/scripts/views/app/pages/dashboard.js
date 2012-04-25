@@ -16,6 +16,7 @@ define([
   var DashboardView = Backbone.View.extend({
 
     initialize: function() {
+      this.welcome = true;
       this.collection.on("reset", this.render, this);
       this.collection.on("add", this.render, this);
     },
@@ -27,9 +28,16 @@ define([
       var a = _d.collection.fetch({
         data: {
           author: SpiritApp.User.get("id"),
-          council_members: SpiritApp.User.get("id")
+          council_members: SpiritApp.User.get("id"),
+          order_by: "-date_modified"
         }
       });
+      if (_d.welcome) {
+        setTimeout(function() {
+          _d.$(".content h3:first").slideUp('slow');
+          _d.welcome = false;
+        }, 4000);
+      }
     },
 
     template: function(params) {
@@ -42,6 +50,7 @@ define([
     },
 
     render: function() {
+      var _d = this;
       var data = this.prepareData();
       this.$(".header, .content").remove();
       this.$el.prepend(this.template(data));
@@ -51,6 +60,7 @@ define([
 
     prepareData: function() {
       var data = {
+        welcome: this.welcome,
         user: SpiritApp.User.toJSON(),
         latest: {}
       };
@@ -62,12 +72,6 @@ define([
           return SpiritApp.User.get("id") == council_member.id;
         })
       });
-      // data.latest.new_texts = _.sortBy(new_texts, function(conversation) {
-      //   return conversation.texts
-      // }).slice(0,2);
-      // data.latest.new_comments = _.sortBy(new_comments, function(conversation) {
-      //   
-      // }).slice(0,2);
       data.latest.new_texts = new_texts.slice(0,2);
       data.latest.new_comments = new_comments.slice(0,2);
       return data;

@@ -1,0 +1,123 @@
+.bubble {
+    width:220px;
+    min-height:36px;
+    -moz-border-radius:15px;
+    -webkit-border-radius:15px;
+    padding:8px 15px;
+    border:1px solid rgba(0,0,0,0.25);
+    position:relative;
+    z-index:8;
+    -moz-box-shadow:inset 0px 0px 2px rgba(0,0,0,0.2),0px 1px 2px rgba(0,0,0,.2);
+    -webkit-box-shadow:inset 0px 0px 2px rgba(0,0,0,0.2),0px 1px 2px rgba(0,0,0,.2);
+    text-shadow:1px 1px rgba(255,255,255,.3);
+}
+.bubble:after {
+    content:'';
+    border-left:1px solid rgba(0,0,0,0.25);
+    border-bottom:1px solid rgba(0,0,0,0.25);
+    position:absolute;
+    height:13px;
+    width:13px;
+}
+.left {
+    margin:0 0 12px 58px;
+    margin:0 0 12px 12px;
+}
+.left:after {
+    left:-8px;
+    bottom:20px;   
+    -moz-transform:rotate(45deg);
+    -webkit-transform:rotate(45deg);
+}
+.right {
+    margin:0 58px 12px 0;
+    margin:0 12px 12px 0;
+}
+.right:after {
+    right:-8px;
+    bottom:20px;
+    -moz-transform:rotate(225deg);
+    -webkit-transform:rotate(225deg);
+}
+.bubble:before {
+    padding:0 10px 0 11px;
+    content:'';
+    position:absolute;
+    z-index:-5;
+    left:4px;
+    top:1px;
+    width:inherit;
+    height:14px;
+    -moz-border-radius:10px;
+    -moz-border-radius-bottomleft:5px;
+    -moz-border-radius-bottomright:5px;
+    -webkit-border-radius:10px;
+    -webkit-border-bottom-left-radius:5px;
+    -webkit-border-bottom-right-radius:5px;
+    background:-moz-linear-gradient(top, rgba(255, 255, 255, .7), rgba(255, 255, 255, .2));
+    background:-webkit-gradient(linear,left top,left bottom,from(rgba(255,255,255,.7)),to(rgba(255,255,255,.2)));
+}
+.avatar {
+    position:absolute;
+    width:32px;
+    height:32px;
+    bottom:12px;
+}
+.left .avatar {
+    left:-50px;
+}
+.right .avatar {
+    right:-50px;
+}
+.avatar img {
+    width:32px;
+    height:32px;
+    border:none;
+}
+.bubble small {
+    display:block;
+    margin:5px 0 0 0;
+    font-style:italic;
+    color:rgba(0,0,0,.3);
+    
+}
+.white,
+.white:after {
+    background:#ddd;
+}
+.green,
+.green:after {
+    background:#9ADB5C;
+}
+.blue,
+.blue:after {
+    background:#75BAEB;
+}
+.slate,
+.slate:after {
+    background:#BECFCD;
+}
+.orange,
+.orange:after {
+    background:#fc9e51;
+}
+.yellow,
+.yellow:after {
+    background:#fde288;
+}
+.pink,
+.pink:after {
+    background:#fb89df;
+}
+.dude,
+.dude:after {
+  background:#75BAEB;
+}
+.girl,
+.girl:after {
+  background:#fb89df;
+}
+.other,
+.other:after {
+  background:#BECFCD;
+}

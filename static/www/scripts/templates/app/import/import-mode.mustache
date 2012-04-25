@@ -13,22 +13,22 @@
   <div id="texts" class="clearfix">
     {{#texts}}
     <div class="text clearfix">
-      <div class="triangle-border {{#them}}left{{/them}}{{^them}}right{{/them}} {{gender_class}}">{{author_name}}: {{body}}</div>
+      <div class="bubble {{#them}}left{{/them}}{{^them}}right{{/them}} {{gender_class}}">{{body}}</div>
     </div>
     {{/texts}}
   </div>
   <form id="add-text-form">
     <div data-role="fieldcontain" class="ui-field-contain clearfix">
       <div class="import-toggle">
-        <select name="text_author" id="flip-a" data-role="slider">
+        <select name="text_author" id="flip-a" data-role="slider" data-mini="true">
           <option value="them"{{#them}} selected="selected"{{/them}}>{{gender_pronoun}}</option>
           <option value="me"{{^them}} selected="selected"{{/them}}>Me</option>
         </select>
       </div>
-      <div class="new-text clearfix">
+      <div class="new-text-container clearfix">
         <label for="new-text" class="ui-hidden-accessible">Message</label>
         <input type="text" name="new-text" id="new-text" placeholder="Message" />
-        <button type="submit" id="new-text-button">Add</button>
+        <button type="submit" id="new-text-button" data-mini="true">Add</button>
       </div>
     </div>
   </form>

@@ -10,7 +10,7 @@
 </div>
 
 <div data-role="content" class="content">
-  <h3>Good to see you, {{user.username}}.</h3>
+  {{#welcome}}<h3>Good to see you, {{user.username}}.</h3>{{/welcome}}
   {{#latest}}
   <ul data-role="listview">
     <li data-role="list-divider">My Conversations</li>
