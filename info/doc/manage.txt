@@ -1,2 +1,3 @@
-python manage.py dumpdata --indent 2 --exclude=contenttypes --exclude=sessions --exclude=site--exclude=messages --exclude=staticfiles --exclude=admin --exclude=tastypie > fixtures/sample_data.json 
-mponizil@mp_mbp:backend$ python manage.py dumpdata --indent 2 --exclude=auth.permission --exclude=contenttypes --exclude=sessions --exclude=sites --exclude=messages --exclude=staticfiles --exclude=admin --exclude=tastypie > fixtures/sample_data.json
+python manage.py dumpdata --indent 2 --exclude=contenttypes --exclude=sessions --exclude=site --exclude=messages --exclude=staticfiles --exclude=admin --exclude=tastypie > fixtures/sample_data.json
+
+python manage.py dumpdata --indent 2 --exclude=auth.permission --exclude=contenttypes --exclude=sessions --exclude=sites --exclude=messages --exclude=staticfiles --exclude=admin --exclude=tastypie > fixtures/sample_data.json
